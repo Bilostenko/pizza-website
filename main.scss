@@ -2,6 +2,7 @@
 
 body {
   font-family: $main;
+  font-size: 16px;
 }
 
 a {
@@ -57,8 +58,7 @@ a {
         display: block;
         width: 100%;
         padding: 8px;
-        font-size: 16px;
-        font-family: inherit;
+          font-family: inherit;
         border: 1px solid #ccc;
         border-radius: 4px;
         appearance: none;
@@ -79,8 +79,7 @@ a {
       }
 
       .dropdown select option {
-        font-size: 16px;
-        font-family: inherit;
+         font-family: inherit;
       }
 
     }
