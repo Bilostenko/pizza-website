@@ -20,13 +20,86 @@ a {
   width: 100vw;
   height: 190px;
 
-  .container{
+  .container {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    width: 1270px;
+    max-width: 1270px;
     height: 100%;
     background-color: red;
+    display: flex;
+
+    .nav__block {
+      background-color: green;
+      height: calc(100% - 16px);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+
+      .dropdown {
+        display: inline-block;
+        position: relative;
+      }
+
+      .dropdown label {
+        display: block;
+        margin-bottom: 10px;
+        color: $text-color;
+      }
+
+      .dropdown select {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        font-family: inherit;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        appearance: none;
+        background: transparent;
+        background-color: #7eb103;
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        cursor: pointer;
+        color: $text-color;
+      }
+      a{
+        color: $text-color;
+      }
+
+      .dropdown select:focus {
+        outline: none;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+      }
+
+      .dropdown select option {
+        font-size: 16px;
+        font-family: inherit;
+      }
+
+    }
+
+    .phone-icon {
+      display: inline-block;
+      font-size: 0.8em;
+      margin-right: 0.2em;
+      vertical-align: middle;
+    }
+
+    .nav__logo {
+      background-image: url(https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+    }
+
   }
 }

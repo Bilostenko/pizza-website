@@ -8,9 +8,8 @@
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet">
   <title>Pizza Order&Constructor</title>
 </head>
 
@@ -18,8 +17,25 @@
   <header>
     <nav class="navbar">
       <div class="container">
-        <div class="nav__block"></div>
-        <div class="nav__block"></div>
+        <div class="nav__block">
+          <div class="nav__logo"></div>
+        </div>
+        <div class="nav__block">
+          <div class="dropdown">
+            <label for="drop">Ваше місто :</label>
+            <select id="drop" name="type" required>
+              <option selected value="">Київ</option>
+              <option value="">Маріуполь</option>
+              <option value="">Бахмут</option>
+              <option value="">Ірпінь</option>
+              <option value="">Буча</option>
+            </select>
+          </div>
+          <div class="phone-number">
+            <span class="phone-icon">&#x1F4DE;</span>
+            <a href="tel:+380507776677">050 777 66 77</a>
+          </div>
+        </div>
         <div class="nav__block"></div>
         <div class="nav__block"></div>
       </div>
