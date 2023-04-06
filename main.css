@@ -40,6 +40,8 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  font-weight: 700;
+  font-size: 16px;
 }
 .navbar .container .nav__block .dropdown {
   display: inline-block;
@@ -90,4 +92,19 @@ a {
   background-position: center;
   height: 100%;
   width: 100%;
+}
+.navbar .container span {
+  color: #7eb103;
+}
+.navbar .container .nav__orders {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.navbar .container .nav__orders .address-icon {
+  color: white;
+}
+.navbar .container .nav__orders .address-time {
+  color: #E21719;
+  margin-top: 15px;
 }/*# sourceMappingURL=main.css.map */
