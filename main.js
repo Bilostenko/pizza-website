@@ -101,5 +101,5 @@ function updateTotalPrice() {
     totalPriceValue += parseFloat(checkedInput.value);
   }
 
-  totalPrice.innerHTML = "Total price: " + totalPriceValue + "$";
+  totalPrice.innerHTML = "До сплати: " + totalPriceValue + "$";
 }
