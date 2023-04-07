@@ -181,6 +181,10 @@ span {
   font-weight: 700;
 }
 
+.constructor__wrapper {
+  display: flex;
+}
+
 .size-controls {
   display: flex;
   height: 10vh;
