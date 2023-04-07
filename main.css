@@ -7,17 +7,29 @@ a {
   text-decoration: none;
 }
 
+span {
+  color: #7eb103;
+}
+
 :link,
 :visited {
   color: inherit;
 }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
 .navbar {
   font-size: 15px;
-  padding: 8px;
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
   width: 100vw;
   height: 190px;
+}
+.navbar .nav__address {
+  gap: 0 !important;
 }
 .navbar .container {
   padding-right: 15px;
@@ -69,9 +81,6 @@ a {
   cursor: pointer;
   color: white;
 }
-.navbar .container .nav__block a {
-  color: white;
-}
 .navbar .container .nav__block .dropdown select:focus {
   outline: none;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -79,13 +88,40 @@ a {
 .navbar .container .nav__block .dropdown select option {
   font-family: inherit;
 }
-.navbar .container .phone-icon {
+.navbar .container .nav__block a {
+  color: white;
+}
+.navbar .container .nav__block .language__switcher li {
+  float: left;
+  margin-top: 50px;
+}
+.navbar .container .nav__block .language__switcher li:first-child a {
+  border-radius: 30px 0 0 30px;
+  margin: 0;
+}
+.navbar .container .nav__block .language__switcher li:last-child a {
+  border-radius: 0 30px 30px 0;
+}
+.navbar .container .nav__block .language__switcher li + li {
+  margin-left: 0;
+}
+.navbar .container .nav__block .language__switcher li a {
+  margin: 0;
+  background-color: #66615b;
+  color: #fff;
+  border: 2px solid #66615b;
+  padding: 5px 10px;
+}
+.navbar .container .nav__block .language__switcher li a.active {
+  background-color: transparent !important;
+}
+.navbar .container .nav__block .phone-number .phone-icon {
   display: inline-block;
   font-size: 0.8em;
   margin-right: 0.2em;
   vertical-align: middle;
 }
-.navbar .container .nav__logo {
+.navbar .container .nav__block .nav__logo {
   background-image: url(https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -93,18 +129,297 @@ a {
   height: 100%;
   width: 100%;
 }
-.navbar .container span {
-  color: #7eb103;
+.navbar .container .nav__block .nav__address-first,
+.navbar .container .nav__block .nav__address-second {
+  display: block !important;
 }
-.navbar .container .nav__orders {
+.navbar .container .nav__block .nav__address-first,
+.navbar .container .nav__block .nav__address-second,
+.navbar .container .nav__block .nav__orders {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
-.navbar .container .nav__orders .address-icon {
+.navbar .container .nav__block .nav__address-first .address-icon,
+.navbar .container .nav__block .nav__address-second .address-icon,
+.navbar .container .nav__block .nav__orders .address-icon {
   color: white;
 }
-.navbar .container .nav__orders .address-time {
+.navbar .container .nav__block .nav__address-first .address-time,
+.navbar .container .nav__block .nav__address-second .address-time,
+.navbar .container .nav__block .nav__orders .address-time {
   color: #E21719;
   margin-top: 15px;
+}
+
+.sticky {
+  font-size: 15px;
+  background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
+  width: 100vw;
+  height: 70px;
+}
+.sticky .menu__list {
+  max-width: 1270px;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.sticky .menu__list .sticky__list {
+  color: white;
+  display: flex;
+  font-size: 16px;
+  float: left;
+  gap: 30px;
+}
+.sticky .menu__list .payament__sum {
+  margin-right: 100px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.size-controls {
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.size-controls label {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.size-controls label:last-child {
+  margin-right: 0;
+}
+.size-controls input[type=radio] {
+  margin-right: 20px;
+}
+.size-controls .total__price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+  color: #27ae60;
+}
+
+.ingredient-controls {
+  height: 70vmin;
+  width: calc(100% - 60vmin);
+  order: 3;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* ingredient */
+.ingredient__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.ingredient {
+  width: 17vmin;
+  height: 17vmin;
+  list-style: none;
+  background-position: center;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+}
+
+.ingredient:nth-child(1) {
+  background-image: url("./ingredients/Chicken.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(2) {
+  background-image: url("./ingredients/Pepperoni.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(3) {
+  background-image: url("./ingredients/Pepper.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(4) {
+  background-image: url("./ingredients/Pineapple.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(5) {
+  background-image: url("./ingredients/Corn.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(6) {
+  background-image: url("./ingredients/Cheese.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(7) {
+  background-image: url("./ingredients/Mustard.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(8) {
+  background-image: url("./ingredients/Ketchup.png");
+  cursor: pointer;
+}
+
+.ingredient:nth-child(9) {
+  background-image: url("./ingredients/Mayonnaise.png");
+  cursor: pointer;
+}
+
+.ingredient-text, .price {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.ingredient > label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.ingredient > label:has(input:checked) {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3333333333);
+}
+
+.preview {
+  height: 60vmin;
+  width: 60vmin;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pizza {
+  height: 90%;
+  width: 90%;
+  transition: 100ms;
+  background-image: url("./ingredients/Pizza.png");
+  background-size: 100% 100%;
+}
+
+:has([value="8"]:checked) ~ .preview > .pizza {
+  height: 75%;
+  width: 75%;
+}
+
+:has([value="6"]:checked) ~ .preview > .pizza {
+  height: 60%;
+  width: 60%;
+}
+
+.layers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  list-style: none;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.layer:nth-child(1) {
+  background-image: url("./ingredients/ChickenGroup.png");
+  background-size: 95% 85%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(2) {
+  background-image: url("./ingredients/PepperGroup.png");
+  background-size: 81% 76%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(3) {
+  background-image: url("./ingredients/PepperGroup.png");
+  background-size: 53% 53%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(4) {
+  background-image: url("./ingredients/PineappleGroup.png");
+  background-size: 54% 46%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(5) {
+  background-image: url("./ingredients/CornGroup.png");
+  background-size: 99% 93%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(6) {
+  background-image: url("./ingredients/CheeseGroup.png");
+  background-size: 73% 62%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(7) {
+  background-image: url("./ingredients/MustardGroup.png");
+  background-size: 117% 51%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(8) {
+  background-image: url("./ingredients/KetchupGroup.png");
+  background-size: 88% 40%;
+  background-repeat: no-repeat;
+}
+
+.layer:nth-child(9) {
+  background-image: url("./ingredients/MayonnaiseGroup.png");
+  background-size: 42% 138%;
+  background-repeat: no-repeat;
+}
+
+:has(.ingredient:nth-child(1) input:not(:checked)) + .preview .layer:nth-child(1),
+:has(.ingredient:nth-child(2) input:not(:checked)) + .preview .layer:nth-child(2),
+:has(.ingredient:nth-child(3) input:not(:checked)) + .preview .layer:nth-child(3),
+:has(.ingredient:nth-child(4) input:not(:checked)) + .preview .layer:nth-child(4),
+:has(.ingredient:nth-child(5) input:not(:checked)) + .preview .layer:nth-child(5),
+:has(.ingredient:nth-child(6) input:not(:checked)) + .preview .layer:nth-child(6),
+:has(.ingredient:nth-child(7) input:not(:checked)) + .preview .layer:nth-child(7),
+:has(.ingredient:nth-child(8) input:not(:checked)) + .preview .layer:nth-child(8),
+:has(.ingredient:nth-child(9) input:not(:checked)) + .preview .layer:nth-child(9) {
+  display: none;
+}
+
+.total {
+  background-color: lightseagreen;
+  height: 10vh;
+  width: 100%;
+  order: 4;
 }/*# sourceMappingURL=main.css.map */
