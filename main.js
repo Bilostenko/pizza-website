@@ -1,3 +1,5 @@
+import pizza from './pizza.mjs';
+
 // sticky navbar
 window.addEventListener('scroll', function () {
   const stickyNav = document.querySelector('.sticky');
@@ -103,3 +105,28 @@ function updateTotalPrice() {
 
   totalPrice.innerHTML = "До сплати: " + totalPriceValue + "$";
 }
+
+// cards container
+const cardsContainer = document.getElementById("cards-container");
+
+pizza.forEach((card) => {
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
+  const cardImg = document.createElement("img");
+  cardImg.src = card.image;
+  const cardName = document.createElement("p");
+  cardName.innerText = card.name;
+  const cardDescription = document.createElement("p");
+  cardDescription.innerText = card.description;
+  const cardcost = document.createElement("p");
+  cardcost.innerText = "Ціна: " + card.cost;
+  const cardButton = document.createElement("button");
+  cardButton.innerText = "Замовити";
+
+  cardDiv.appendChild(cardImg);
+  cardDiv.appendChild(cardName);
+  cardDiv.appendChild(cardDescription);
+  cardDiv.appendChild(cardcost);
+  cardDiv.appendChild(cardButton);
+  cardsContainer.appendChild(cardDiv);
+});

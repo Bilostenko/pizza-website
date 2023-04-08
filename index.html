@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="./main.js"></script>
+  <script defer type="module" src="./main.js"></script>
+  <script defer type="module" src="./pizza.mjs"></script>
+
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -171,19 +173,20 @@
   <section class="statistics">
     <div class="container statistics__wrapper">
       <div class="statistic__block">
-        <p class="statistic__pizza"></p>
+        <p class="statistic__pizza">367.34</p>
         <span>Випечено піц</span>
       </div>
       <div class="statistic__block">
-        <p class="statistic__clients"></p>
+        <p class="statistic__clients">41.472</p>
         <span>Задоволених клієнтів</span>
       </div>
       <div class="statistic__block">
-        <p class="statistics__years"></p>
+        <p class="statistics__years">13</p>
         <span>Років готуємо піцу</span>
       </div>
     </div>
   </section>
+  <section id="cards-container"></section>
 </body>
 
 </html>
