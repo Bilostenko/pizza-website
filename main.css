@@ -448,27 +448,107 @@ span {
   font-family: "Montserrat", sans-serif;
 }
 
-.card {
-  width: 300px;
-  border: 1px solid #ddd;
+#cards-container {
+  padding-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  border-bottom: 20px dotted #d4af37;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -o-border-image: linear-gradient(to right, #d4af37, #ffffff) 1;
+     border-image: linear-gradient(to right, #d4af37, #ffffff) 1;
+}
+#cards-container .card {
+  width: 400px;
+  border: 1px solid #d4af37;
   margin: 10px;
   display: inline-block;
   vertical-align: top;
   text-align: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px #d4af37;
+  border-radius: 5px;
 }
-.card img {
+#cards-container .card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 2px 5px #d4af37;
+}
+#cards-container .card img {
   width: 100%;
   height: auto;
+  border-radius: 5px 5px 0 0;
 }
-.card p {
+#cards-container .card p {
   margin: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
 }
-.card button {
+#cards-container .card button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #f44336;
+  background-color: #7eb103;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#combo-pizza {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+#combo-pizza .combo-title {
+  width: 100%;
+  text-align: center;
+  font-size: 32px !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #7eb103;
+}
+#combo-pizza .card {
+  width: 400px;
+  border: 1px solid #d4af37;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px #d4af37;
+  border-radius: 5px;
+}
+#combo-pizza .card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 2px 5px #d4af37;
+}
+#combo-pizza .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+#combo-pizza .card p {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+#combo-pizza .card button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #7eb103;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */
