@@ -14,6 +14,11 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// choose city => change phone number
+const dropdown = document.getElementById("drop");
+const selectedValue = dropdown.value;
+
+
 // pizza consturcotr
 /* drag and drop */
 const dragItems = document.querySelectorAll('.drag-item');

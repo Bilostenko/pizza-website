@@ -243,47 +243,47 @@ span {
 }
 
 .ingredient:nth-child(1) {
-  background-image: url("./ingredients/Chicken.png");
+  background-image: url("./img/ingredients/Chicken.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(2) {
-  background-image: url("./ingredients/Pepperoni.png");
+  background-image: url("./img/ingredients/Pepperoni.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(3) {
-  background-image: url("./ingredients/Pepper.png");
+  background-image: url("./img/ingredients/Pepper.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(4) {
-  background-image: url("./ingredients/Pineapple.png");
+  background-image: url("./img/ingredients/Pineapple.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(5) {
-  background-image: url("./ingredients/Corn.png");
+  background-image: url("./img/ingredients/Corn.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(6) {
-  background-image: url("./ingredients/Cheese.png");
+  background-image: url("./img/ingredients/Cheese.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(7) {
-  background-image: url("./ingredients/Mustard.png");
+  background-image: url("./img/ingredients/Mustard.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(8) {
-  background-image: url("./ingredients/Ketchup.png");
+  background-image: url("./img/ingredients/Ketchup.png");
   cursor: pointer;
 }
 
 .ingredient:nth-child(9) {
-  background-image: url("./ingredients/Mayonnaise.png");
+  background-image: url("./img/ingredients/Mayonnaise.png");
   cursor: pointer;
 }
 
@@ -323,7 +323,7 @@ span {
   height: 90%;
   width: 90%;
   transition: 100ms;
-  background-image: url("./ingredients/Pizza.png");
+  background-image: url("./img/ingredients/Pizza.png");
   background-size: 100% 100%;
 }
 
@@ -354,55 +354,55 @@ span {
 }
 
 .layer:nth-child(1) {
-  background-image: url("./ingredients/ChickenGroup.png");
+  background-image: url("./img/ingredients/ChickenGroup.png");
   background-size: 95% 85%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(2) {
-  background-image: url("./ingredients/PepperGroup.png");
+  background-image: url("./img/ingredients/PepperGroup.png");
   background-size: 81% 76%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(3) {
-  background-image: url("./ingredients/PepperGroup.png");
+  background-image: url("./img/ingredients/PepperGroup.png");
   background-size: 53% 53%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(4) {
-  background-image: url("./ingredients/PineappleGroup.png");
+  background-image: url("./img/ingredients/PineappleGroup.png");
   background-size: 54% 46%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(5) {
-  background-image: url("./ingredients/CornGroup.png");
+  background-image: url("./img/ingredients/CornGroup.png");
   background-size: 99% 93%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(6) {
-  background-image: url("./ingredients/CheeseGroup.png");
+  background-image: url("./img/ingredients/CheeseGroup.png");
   background-size: 73% 62%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(7) {
-  background-image: url("./ingredients/MustardGroup.png");
+  background-image: url("./img/ingredients/MustardGroup.png");
   background-size: 117% 51%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(8) {
-  background-image: url("./ingredients/KetchupGroup.png");
+  background-image: url("./img/ingredients/KetchupGroup.png");
   background-size: 88% 40%;
   background-repeat: no-repeat;
 }
 
 .layer:nth-child(9) {
-  background-image: url("./ingredients/MayonnaiseGroup.png");
+  background-image: url("./img/ingredients/MayonnaiseGroup.png");
   background-size: 42% 138%;
   background-repeat: no-repeat;
 }
@@ -427,7 +427,7 @@ span {
 }
 
 .statistics {
-  width: 100vw;
+  width: 100%;
   height: 100px;
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
   border: 2px solid #d4af37;
@@ -604,4 +604,40 @@ span {
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 10px;
+}
+
+footer {
+  background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
+  width: 100%;
+  height: 190px;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  color: #dbd9d9;
+  font-size: 18px;
+}
+footer .container {
+  padding-right: 2%;
+  padding-left: 2%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 2750px;
+  height: 100%;
+  display: inline-block;
+}
+footer .container .footer__info-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 2%;
+  gap: 2%;
+}
+footer .container .footer__info-list li:nth-child(2) {
+  display: flex;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
