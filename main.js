@@ -14,9 +14,39 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// choose city => change phone number
+// choose city => change phone number and address
 const dropdown = document.getElementById("drop");
-const selectedValue = dropdown.value;
+const phoneElement = document.getElementById("phone");
+const address1 = document.getElementById("street1");
+const address2 = document.getElementById("street2");
+
+dropdown.addEventListener("change", function () {
+  const selectedValue = dropdown.value;
+
+  if (selectedValue === "Kyiv") {
+    phoneElement.textContent = "050 777 66 77";
+    address1.textContent = "вул. Джуніорська, 1";
+    address2.textContent = "вул. Мідловська, 11";
+  } else if (selectedValue === "Mariupol") {
+    phoneElement.textContent = "063 333 67 98";
+    address1.textContent = "вул. Січових Рубістів, 2";
+    address2.textContent = "вул. Жабаскрипт, 12";
+  } else if (selectedValue === "Bakhmut") {
+    phoneElement.textContent = "066 433 55 65";
+    address1.textContent = "вул. Пам'яті Інтернів, 34";
+    address2.textContent = "вул. Мітингова, 55";
+  } else if (selectedValue === "Irpin") {
+    phoneElement.textContent = "099 466 71 50";
+    address1.textContent = "вул. Михайла Великосельського, 12";
+    address2.textContent = "вул. Просвятителів, 23";
+  } else if (selectedValue === "Bucha") {
+    phoneElement.textContent = "050 111 32 11";
+    address1.textContent = "вул. Вкатунів, 5А";
+    address2.textContent = "вул. Вигорання, 6";
+  }
+});
+
+
 
 
 // pizza consturcotr
