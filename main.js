@@ -46,6 +46,20 @@ dropdown.addEventListener("change", function () {
   }
 });
 
+// change website lenguage
+const langElements = document.querySelectorAll(".lang");
+
+langElements.forEach(langElement => {
+  langElement.addEventListener('click', () => {
+    if(langElement.textContent == "UA"){
+
+    } else {
+      
+    };
+  });
+});
+
+
 
 
 
