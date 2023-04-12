@@ -27,19 +27,19 @@ dropdown.addEventListener("change", function () {
     phoneElement.textContent = "050 777 66 77";
     address1.textContent = "вул. Джуніорська, 1";
     address2.textContent = "вул. Мідловська, 11";
-  } else if (selectedValue === "Mariupol") {
+  } else if (selectedValue === "Odesa") {
     phoneElement.textContent = "063 333 67 98";
     address1.textContent = "вул. Січових Рубістів, 2";
     address2.textContent = "вул. Жабаскрипт, 12";
-  } else if (selectedValue === "Bakhmut") {
+  } else if (selectedValue === "Lviv") {
     phoneElement.textContent = "066 433 55 65";
     address1.textContent = "вул. Пам'яті Інтернів, 34";
     address2.textContent = "вул. Мітингова, 55";
-  } else if (selectedValue === "Irpin") {
+  } else if (selectedValue === "Kharkiv") {
     phoneElement.textContent = "099 466 71 50";
     address1.textContent = "вул. Михайла Великосельського, 12";
     address2.textContent = "вул. Просвятителів, 23";
-  } else if (selectedValue === "Bucha") {
+  } else if (selectedValue === "Yalta") {
     phoneElement.textContent = "050 111 32 11";
     address1.textContent = "вул. Вкатунів, 5А";
     address2.textContent = "вул. Вигорання, 6";
