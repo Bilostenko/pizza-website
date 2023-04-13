@@ -26,11 +26,17 @@ dropdown.addEventListener("change", function () {
   if (selectedValue === "Kyiv") {
     phoneElement.textContent = "050 777 66 77";
     address1.textContent = "вул. Джуніорська, 1";
+    address1.setAttribute("data-i18n", "Kyiv-address1");
     address2.textContent = "вул. Мідловська, 11";
+    address2.setAttribute("data-i18n", "Kyiv-address2");
+    
   } else if (selectedValue === "Odesa") {
     phoneElement.textContent = "063 333 67 98";
-    address1.textContent = "вул. Січових Рубістів, 2";
+    address1.textContent = "вул. Січових Рубістів, 2"
+    address1.setAttribute("data-i18n", "Odesa-address1");;
     address2.textContent = "вул. Жабаскрипт, 12";
+    address2.setAttribute("data-i18n", "Odesa-address2");
+
   } else if (selectedValue === "Lviv") {
     phoneElement.textContent = "066 433 55 65";
     address1.textContent = "вул. Пам'яті Інтернів, 34";
@@ -48,16 +54,35 @@ dropdown.addEventListener("change", function () {
 
 // change website lenguage
 const langElements = document.querySelectorAll(".lang");
+let currentLanguage = "ua"; // язык по умолчанию
+console.log(selectedLanguage)
+
+function loadLanguage(lang) {
+  fetch(`locales/${lang}.json`)
+    .then(response => response.json())
+    .then(data => {
+      // здесь происходит замена текстовых элементов на странице
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        element.textContent = data[element.getAttribute('data-i18n')];
+      });
+      // сохраняем текущий язык
+      currentLanguage = lang;
+    })
+    .catch(error => console.error(error));
+}
+
+loadLanguage(currentLanguage);
 
 langElements.forEach(langElement => {
   langElement.addEventListener('click', () => {
-    if(langElement.textContent == "UA"){
-
+    if (langElement.textContent == "UA") {
+      loadLanguage("ua");
     } else {
-      
+      loadLanguage("en");
     };
   });
 });
+
 
 
 
