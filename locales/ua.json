@@ -14,5 +14,12 @@
   "Kharkiv-address1": "вул. Михайла Великосельського, 12",
   "Kharkiv-address2": "вул. Просвятителів, 23",
   "Yalta-address1": "вул. Вкатунів, 5А",
-  "Yalta-address2": "вул. Вигорання, 6"
+  "Yalta-address2": "вул. Вигорання, 6",
+  "orders" : "ПРИЙОМ ЗАМОВЛЕНЬ:",
+  "work-time" : "з 10:30 до 21:30",
+  "pizza" : "Піца",
+  "kombo-menu" : "Комбо меню",
+  "drinks" : "Напої",
+  "pizza-constructor" : "Піца-конструктор",
+  "total-price" : "До сплати: 00"
 }

@@ -14,19 +14,31 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// change language
-// const dropdown = document.getElementById("drop");
-// const phoneElement = document.getElementById("phone");
-// const address1 = document.getElementById("street1");
-// const address2 = document.getElementById("street2");
+// change language-------------------
+const languageSwitcher = document.querySelector('form');
+const languageRadios = languageSwitcher.querySelectorAll('input[type="radio"]');
+const translatableElements = document.querySelectorAll('[data-i18n]');
 
-// // функция для обновления текста в опциях
-// function updateOptionsTexts(lang) {
-//   const options = dropdown.querySelectorAll('option');
-//   options.forEach(option => {
-//     option.textContent = lang[option.getAttribute('data-i18n')];
-//   });
-// }
+// update translations
+function updateTranslation(language) {
+  fetch(`locales/${language}.json`)
+    .then(response => response.json())
+    .then(data => {
+      translatableElements.forEach(element => {
+        const translationKey = element.dataset.i18n;
+        if (data.hasOwnProperty(translationKey)) {
+          element.textContent = data[translationKey];
+        }
+      });
+    });
+}
+updateTranslation(languageRadios[0].value);
+
+languageSwitcher.addEventListener('change', event => {
+  if (event.target.name === 'language') {
+    updateTranslation(event.target.value);
+  }
+});
 
 // dropdown.addEventListener("change", function () {
 //   const selectedValue = dropdown.value;
@@ -66,61 +78,6 @@ window.addEventListener('scroll', function () {
 //     address2.setAttribute("data-i18n", "Yalta-address2");
 //   }
 // });
-
-// function updateAddresses(lang) {
-//   const selectedValue = dropdown.value;
-
-//   if (selectedValue === "Kyiv") {
-//     address1.textContent = lang["Kyiv-address1"];
-//     address2.textContent = lang["Kyiv-address2"];
-//   } else if (selectedValue === "Odesa") {
-//     address1.textContent = lang["Odesa-address1"];
-//     address2.textContent = lang["Odesa-address2"];
-//   } else if (selectedValue === "Lviv") {
-//     address1.textContent = lang["Lviv-address1"];
-//     address2.textContent = lang["Lviv-address2"];
-//   } else if (selectedValue === "Kharkiv") {
-//     address1.textContent = lang["Kharkiv-address1"];
-//     address2.textContent = lang["Kharkiv-address2"];
-//   } else if (selectedValue === "Yalta") {
-//     address1.textContent = lang["Yalta-address1"];
-//     address2.textContent = lang["Yalta-address2"];
-//   }
-// }
-
-
-// функция для загрузки языка
-function loadLanguage(lang) {
-  fetch(`locales/${lang}.json`)
-    .then(response => response.json())
-    .then(data => {
-      // здесь происходит замена текстовых элементов на странице
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        element.textContent = data[element.getAttribute('data-i18n')];
-      });
-      updateAddresses(data); // обновляем названия улиц
-      updateOptionsTexts(data);
-
-      // обновляем текст в опциях
-      updateOptionsTexts(data);
-      // сохраняем текущий язык
-      currentLanguage = lang;
-    })
-    .catch(error => console.error(error));
-}
-const langElements = document.querySelectorAll(".lang");
-let currentLanguage = "ua"; // язык по умолчанию
-loadLanguage(currentLanguage);
-
-langElements.forEach(langElement => {
-  langElement.addEventListener('click', () => {
-    if (langElement.textContent == "UA") {
-      loadLanguage("ua");
-    } else {
-      loadLanguage("en");
-    }
-  });
-});
 
 // pizza consturcotr
 /* drag and drop */

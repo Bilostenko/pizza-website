@@ -98,45 +98,45 @@ span {
         color: $text-color;
       }
 
-      .nav__block {
-        ul.language__switcher {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          display: flex;
-          
-          > li > label {
-           cursor: pointer;
-          }
-      
-          li {
-            margin-right: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
+
+
+      ul.language__switcher {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        >li>label {
+          cursor: pointer;
+        }
+
+        li {
+          margin-right: 10px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #333;
+          background-color: #fff;
+          padding: 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #f0f0f0;
             cursor: pointer;
-            transition: all 0.3s ease;
-      
-            &:hover {
-              background-color: #f0f0f0;
-              cursor: pointer;
-            }
-      
-            input[type="radio"] {
-              display: none;
-      
-              &:checked + .lang {
-                background-color: #000;
-                color: #fff;
-              }
+          }
+
+          input[type="radio"] {
+            display: none;
+
+            &:checked+.lang {
+              background-color: #000;
+              color: #fff;
             }
           }
         }
       }
-      
+
 
       .phone-number {
         .phone-icon {

@@ -14,5 +14,12 @@
   "Kharkiv-address1": "Mykhaila Velykoselskoho str., 12",
   "Kharkiv-address2": "Prosviatyteliv str., 23",
   "Yalta-address1": "Vkatuniv str., 5A",
-  "Yalta-address2": "Vyhorannia str., 6"
+  "Yalta-address2": "Vyhorannia str., 6",
+  "orders" : "Receivin orders",
+  "work-time" : "10:30 am - 9:30 pm",
+  "pizza" : "Pizza",
+  "kombo-menu" : "Kombo menu",
+  "drinks" : "Drinks",
+  "pizza-constructor" : "Pizza-constructor",
+  "total-price" : "Checkout: 00"
 }
