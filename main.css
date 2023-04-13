@@ -89,29 +89,36 @@ span {
 .navbar .container .nav__block a {
   color: white;
 }
-.navbar .container .nav__block .language__switcher li {
-  float: left;
-  margin-top: 50px;
-}
-.navbar .container .nav__block .language__switcher li:first-child a {
-  border-radius: 30px 0 0 30px;
+.navbar .container .nav__block .nav__block ul.language__switcher {
   margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
 }
-.navbar .container .nav__block .language__switcher li:last-child a {
-  border-radius: 0 30px 30px 0;
+.navbar .container .nav__block .nav__block ul.language__switcher > li > label {
+  cursor: pointer;
 }
-.navbar .container .nav__block .language__switcher li + li {
-  margin-left: 0;
+.navbar .container .nav__block .nav__block ul.language__switcher li {
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.navbar .container .nav__block .language__switcher li a {
-  margin: 0;
-  background-color: #66615b;
+.navbar .container .nav__block .nav__block ul.language__switcher li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.navbar .container .nav__block .nav__block ul.language__switcher li input[type=radio] {
+  display: none;
+}
+.navbar .container .nav__block .nav__block ul.language__switcher li input[type=radio]:checked + .lang {
+  background-color: #000;
   color: #fff;
-  border: 2px solid #66615b;
-  padding: 5px 10px;
-}
-.navbar .container .nav__block .language__switcher li a.active {
-  background-color: transparent !important;
 }
 .navbar .container .nav__block .phone-number .phone-icon {
   display: inline-block;

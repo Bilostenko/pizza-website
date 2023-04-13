@@ -6,6 +6,13 @@
   "Odesa-city": "Odesa",
   "Yalta-city": "Yalta",
   "Kyiv-address1": "Djuniorska str.,1",
-  "Kyiv-address2": "Middlovska str.,11"
-
+  "Kyiv-address2": "Middlovska str.,11",
+  "Odesa-address1": "Sichivyh Rubistiv str, 2",
+  "Odesa-address2": "JabaScrypt str., 12",
+  "Lviv-address1": "Pamiati Interniv str., 34",
+  "Lviv-address2": "Mitynhova str., 55",
+  "Kharkiv-address1": "Mykhaila Velykoselskoho str., 12",
+  "Kharkiv-address2": "Prosviatyteliv str., 23",
+  "Yalta-address1": "Vkatuniv str., 5A",
+  "Yalta-address2": "Vyhorannia str., 6"
 }

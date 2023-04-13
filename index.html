@@ -28,15 +28,15 @@
           <div class="dropdown">
             <label for="drop" data-i18n="your-city">Ваше місто :</label>
             <select id="drop" name="type" required>
-              <option selected value="Kyiv" data-i18n="Kyiv-city"></option>
-              <option value="Odesa" data-i18n="Odesa-city"></option>
-              <option value="Lviv" data-i18n="Lviv-city"></option>
-              <option value="Kharkiv" data-i18n="Kharkiv-city"></option>
-              <option value="Yalta" data-i18n="Yalta-city"></option>
+              <option selected value="Kyiv" data-i18n="Kyiv-city">Київ</option>
+              <option value="Odesa" data-i18n="Odesa-city">Одеса</option>
+              <option value="Lviv" data-i18n="Lviv-city">Львів</option>
+              <option value="Kharkiv" data-i18n="Kharkiv-city">Харків</option>
+              <option value="Yalta" data-i18n="Yalta-city">Ялта</option>
             </select>
           </div>
           <div class="phone-number">
-            <span class="phone-icon" >&#x1F4DE;</span>
+            <span class="phone-icon">&#x1F4DE;</span>
             <a href="tel:+380507776677" id="phone">050 777 66 77</a>
           </div>
         </div>
@@ -54,12 +54,24 @@
             <span class="address-time">з 10:30 до 21:30</span>
           </div>
         </div>
-        <div class="nav__block">
-          <ul class="language__switcher">
-            <li><a href="#" class="lang">UA</a></li>
-            <li><a href="#" class="lang">EN</a></li>
-          </ul>
-        </div>
+          <div class="nav__block">
+            <form>
+              <ul class="language__switcher">
+                <li>
+                  <label>
+                    <input type="radio" name="language" value="ua" checked>
+                    UA
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="language" value="en">
+                    EN
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
       </div>
     </nav>
     <nav class="sticky">
@@ -195,10 +207,10 @@
       <ul class="footer__info-list">
         <li class="footer__info-list-item"><a href="tel:+380444528755">+38044452875</a></li>
         <li class="footer__info-list-item">
-          <a href="https://uk-ua.facebook.com/hellokitty/" target="_blank"><img src="./img/footer/icons8-facebook-100.png"
-              alt="Facebook"></a>
-          <a href="https://www.instagram.com/hellokitty/" target="_blank"><img src="./img/footer/icons8-instagram-100.png"
-              alt="Instagram"></a>
+          <a href="https://uk-ua.facebook.com/hellokitty/" target="_blank"><img
+              src="./img/footer/icons8-facebook-100.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/hellokitty/" target="_blank"><img
+              src="./img/footer/icons8-instagram-100.png" alt="Instagram"></a>
         </li>
         <li class="footer__info-list-item">
           <a href=""> Доставка та оплата</a>

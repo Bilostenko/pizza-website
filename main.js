@@ -8,55 +8,88 @@ window.addEventListener('scroll', function () {
   const stickyOffsetTop = stickyNav.offsetTop;
 
   if (window.pageYOffset > stickyOffsetTop) {
-      stickyNav.classList.add('fixed');
+    stickyNav.classList.add('fixed');
   } else {
-      stickyNav.classList.remove('fixed');
+    stickyNav.classList.remove('fixed');
   }
 });
 
-// choose city => change phone number and address
-const dropdown = document.getElementById("drop");
-const phoneElement = document.getElementById("phone");
-const address1 = document.getElementById("street1");
-const address2 = document.getElementById("street2");
+// change language
+// const dropdown = document.getElementById("drop");
+// const phoneElement = document.getElementById("phone");
+// const address1 = document.getElementById("street1");
+// const address2 = document.getElementById("street2");
 
-dropdown.addEventListener("change", function () {
-  const selectedValue = dropdown.value;
+// // функция для обновления текста в опциях
+// function updateOptionsTexts(lang) {
+//   const options = dropdown.querySelectorAll('option');
+//   options.forEach(option => {
+//     option.textContent = lang[option.getAttribute('data-i18n')];
+//   });
+// }
 
-  if (selectedValue === "Kyiv") {
-    phoneElement.textContent = "050 777 66 77";
-    address1.textContent = "вул. Джуніорська, 1";
-    address1.setAttribute("data-i18n", "Kyiv-address1");
-    address2.textContent = "вул. Мідловська, 11";
-    address2.setAttribute("data-i18n", "Kyiv-address2");
-    
-  } else if (selectedValue === "Odesa") {
-    phoneElement.textContent = "063 333 67 98";
-    address1.textContent = "вул. Січових Рубістів, 2"
-    address1.setAttribute("data-i18n", "Odesa-address1");;
-    address2.textContent = "вул. Жабаскрипт, 12";
-    address2.setAttribute("data-i18n", "Odesa-address2");
+// dropdown.addEventListener("change", function () {
+//   const selectedValue = dropdown.value;
+//   updateAddresses(selectedValue);
 
-  } else if (selectedValue === "Lviv") {
-    phoneElement.textContent = "066 433 55 65";
-    address1.textContent = "вул. Пам'яті Інтернів, 34";
-    address2.textContent = "вул. Мітингова, 55";
-  } else if (selectedValue === "Kharkiv") {
-    phoneElement.textContent = "099 466 71 50";
-    address1.textContent = "вул. Михайла Великосельського, 12";
-    address2.textContent = "вул. Просвятителів, 23";
-  } else if (selectedValue === "Yalta") {
-    phoneElement.textContent = "050 111 32 11";
-    address1.textContent = "вул. Вкатунів, 5А";
-    address2.textContent = "вул. Вигорання, 6";
-  }
-});
+//   if (selectedValue === "Kyiv") {
+//     phoneElement.textContent = "050 777 66 77";
+//     address1.textContent = "вул. Джуніорська, 1";
+//     address1.setAttribute("data-i18n", "Kyiv-address1");
+//     address2.textContent = "вул. Мідловська, 11";
+//     address2.setAttribute("data-i18n", "Kyiv-address2");
 
-// change website lenguage
-const langElements = document.querySelectorAll(".lang");
-let currentLanguage = "ua"; // язык по умолчанию
-console.log(selectedLanguage)
+//   } else if (selectedValue === "Odesa") {
+//     phoneElement.textContent = "063 333 67 98";
+//     address1.textContent = "вул. Січових Рубістів, 2"
+//     address1.setAttribute("data-i18n", "Odesa-address1");
+//     address2.textContent = "вул. Жабаскрипт, 12";
+//     address2.setAttribute("data-i18n", "Odesa-address2");
 
+//   } else if (selectedValue === "Lviv") {
+//     phoneElement.textContent = "066 433 55 65";
+//     address1.textContent = "вул. Пам'яті Інтернів, 34";
+//     address1.setAttribute("data-i18n", "Lviv-address1");
+//     address2.textContent = "вул. Мітингова, 55";
+//     address2.setAttribute("data-i18n", "Lviv-address2");
+//   } else if (selectedValue === "Kharkiv") {
+//     phoneElement.textContent = "099 466 71 50";
+//     address1.textContent = "вул. Михайла Великосельського, 12";
+//     address1.setAttribute("data-i18n", "Kharkiv-address1");
+//     address2.textContent = "вул. Просвятителів, 23";
+//     address2.setAttribute("data-i18n", "Kharkiv-address2");
+//   } else if (selectedValue === "Yalta") {
+//     phoneElement.textContent = "050 111 32 11";
+//     address1.textContent = "вул. Вкатунів, 5А";
+//     address1.setAttribute("data-i18n", "Yalta-address1");
+//     address2.textContent = "вул. Вигорання, 6";
+//     address2.setAttribute("data-i18n", "Yalta-address2");
+//   }
+// });
+
+// function updateAddresses(lang) {
+//   const selectedValue = dropdown.value;
+
+//   if (selectedValue === "Kyiv") {
+//     address1.textContent = lang["Kyiv-address1"];
+//     address2.textContent = lang["Kyiv-address2"];
+//   } else if (selectedValue === "Odesa") {
+//     address1.textContent = lang["Odesa-address1"];
+//     address2.textContent = lang["Odesa-address2"];
+//   } else if (selectedValue === "Lviv") {
+//     address1.textContent = lang["Lviv-address1"];
+//     address2.textContent = lang["Lviv-address2"];
+//   } else if (selectedValue === "Kharkiv") {
+//     address1.textContent = lang["Kharkiv-address1"];
+//     address2.textContent = lang["Kharkiv-address2"];
+//   } else if (selectedValue === "Yalta") {
+//     address1.textContent = lang["Yalta-address1"];
+//     address2.textContent = lang["Yalta-address2"];
+//   }
+// }
+
+
+// функция для загрузки языка
 function loadLanguage(lang) {
   fetch(`locales/${lang}.json`)
     .then(response => response.json())
@@ -65,12 +98,18 @@ function loadLanguage(lang) {
       document.querySelectorAll('[data-i18n]').forEach(element => {
         element.textContent = data[element.getAttribute('data-i18n')];
       });
+      updateAddresses(data); // обновляем названия улиц
+      updateOptionsTexts(data);
+
+      // обновляем текст в опциях
+      updateOptionsTexts(data);
       // сохраняем текущий язык
       currentLanguage = lang;
     })
     .catch(error => console.error(error));
 }
-
+const langElements = document.querySelectorAll(".lang");
+let currentLanguage = "ua"; // язык по умолчанию
 loadLanguage(currentLanguage);
 
 langElements.forEach(langElement => {
@@ -79,14 +118,9 @@ langElements.forEach(langElement => {
       loadLanguage("ua");
     } else {
       loadLanguage("en");
-    };
+    }
   });
 });
-
-
-
-
-
 
 // pizza consturcotr
 /* drag and drop */
