@@ -182,12 +182,12 @@ const clientCount = document.querySelector('.statistic__clients');
 // оновлюємо число піци кожні 3 секунди
 setInterval(() => {
   pizzaCount.textContent = (parseFloat(pizzaCount.textContent) + 1).toFixed(0);
-}, 3000);
+}, 2000);
 
 // оновлюємо число клієнтів кожні 5 секунд
 setInterval(() => {
   clientCount.textContent = (parseFloat(clientCount.textContent) + 1).toFixed(0);
-}, 5000);
+}, 3000);
 
 
 // // cards container

@@ -9,6 +9,7 @@
   <script defer type="module" src="./pizza.mjs"></script>
   <script defer type="module" src="./drinks.mjs"></script>
 
+  <link rel="icon" type="image/png" href="./img/ico.ico">
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,7 +78,7 @@
     <nav class="sticky">
       <div class="container menu__list">
         <ul class="sticky__list">
-          <li class="sticky__list-item" data-i18n="pizza-constructor">Піца-конструктор</li>
+          <li class="sticky__list-item" data-i18n="pizza-constructor"><a href='#stepNo1'>Піца-конструктор</a></li>
           <li class="sticky__list-item" data-i18n="pizza">Піца</li>
           <li class="sticky__list-item" data-i18n="kombo-menu">Комбо меню</li>
           <li class="sticky__list-item" data-i18n="drinks">Напої</li>
@@ -87,13 +88,13 @@
     </nav>
   </header>
   <!-- pizza constructor -->
-  <section class="constructor">
+  <section class="constructor" id='stepNo1'>
     <div class="size-controls">
-      <label for="large">Велика: 10 $</label>
+      <label for="large" data-i18n="size-large" >Велика: 10 $</label>
       <input type="radio" id="large" name="size" value="10">
-      <label for="middle">Середня: 8 $</label>
+      <label for="middle" data-i18n="size-medium">Середня: 8 $</label>
       <input type="radio" id="middle" name="size" value="8">
-      <label for="small">Маленька: 6 $</label>
+      <label for="small" data-i18n="size-small">Маленька: 6 $</label>
       <input type="radio" id="small" name="size" value="6">
     </div>
     <div class="constructor__wrapper">
@@ -103,63 +104,63 @@
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="2">
             </label>
-            <span class="ingredient-text">Курка</span>
+            <span class="ingredient-text" data-i18n="chiken">Курка</span>
             <span class="price">2$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="3">
             </label>
-            <span class="ingredient-text">Ковбаса</span>
+            <span class="ingredient-text" data-i18n="sausage">Ковбаска</span>
             <span class="price">3$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="4">
             </label>
-            <span class="ingredient-text">Перець</span>
+            <span class="ingredient-text" data-i18n="pepper">Перець</span>
             <span class="price">4$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="5">
             </label>
-            <span class="ingredient-text">Ананас</span>
+            <span class="ingredient-text" data-i18n="pineapple">Ананас</span>
             <span class="price">5$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="6">
             </label>
-            <span class="ingredient-text">Кукуркудза</span>
+            <span class="ingredient-text" data-i18n="corn">Кукуркудза</span>
             <span class="price">6$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="7">
             </label>
-            <span class="ingredient-text">Сир</span>
+            <span class="ingredient-text" data-i18n="cheese">Сир</span>
             <span class="price">7$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="8">
             </label>
-            <span class="ingredient-text">Гірчиця</span>
+            <span class="ingredient-text" data-i18n="mustard">Гірчиця</span>
             <span class="price">8$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="9">
             </label>
-            <span class="ingredient-text">Кетчуп</span>
+            <span class="ingredient-text" data-i18n="ketchup">Кетчуп</span>
             <span class="price">9$</span>
           </li>
           <li class="ingredient drag-item" draggable='true'>
             <label>
               <input type="checkbox" hidden class='ingredient-input' value="10">
             </label>
-            <span class="ingredient-text">Майонез</span>
+            <span class="ingredient-text" data-i18n="mayonnaise">Майонез</span>
             <span class="price">10$</span>
           </li>
         </ul>
@@ -187,15 +188,15 @@
     <div class="container statistics__wrapper">
       <div class="statistic__block">
         <p class="statistic__pizza">36734</p>
-        <span>Випечено піц</span>
+        <span data-i18n="baked-pizza">Випечено піц</span>
       </div>
       <div class="statistic__block">
         <p class="statistic__clients">41472</p>
-        <span>Задоволених клієнтів</span>
+        <span data-i18n="satisfied-ustomers">Задоволених клієнтів</span>
       </div>
       <div class="statistic__block">
         <p class="statistics__years">13</p>
-        <span>Років готуємо піцу</span>
+        <span data-i18n="years-of-making-pizza">Років готуємо піцу</span>
       </div>
     </div>
   </section>
@@ -213,19 +214,19 @@
               src="./img/footer/icons8-instagram-100.png" alt="Instagram"></a>
         </li>
         <li class="footer__info-list-item">
-          <a href=""> Доставка та оплата</a>
+          <a href="" data-i18n="delivery-and-payment">Доставка та оплата</a>
         </li>
         <li class="footer__info-list-item">
-          <a href="">Юридична інформація</a>
+          <a href="" data-i18n="legal-information">Юридична інформація</a>
         </li>
         <li class="footer__info-list-item">
-          <a href="">Контакти</a>
+          <a href="" data-i18n="contacts">Контакти</a>
         </li>
         <li class="footer__info-list-item">
-          <a href="">Політика конфідеціальності</a>
+          <a href="" data-i18n="privacy-policy">Політика конфідеціальності</a>
         </li>
         <li class="footer__info-list-item">
-          <a href="">Про нас</a>
+          <a href="" data-i18n="about-us">Про нас</a>
         </li>
       </ul>
     </div>
