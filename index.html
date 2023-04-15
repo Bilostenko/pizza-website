@@ -78,7 +78,10 @@
     <nav class="sticky">
       <div class="container menu__list">
         <ul class="sticky__list">
-          <li class="sticky__list-item" data-i18n="pizza-constructor"><a href='#stepNo1'>Піца-конструктор</a></li>
+
+          <li class="sticky__list-item" data-i18n="pizza-constructor">
+            <a id="pizza-constructor-link" href="#qw">Піца-конструктор</a>
+          </li>          
           <li class="sticky__list-item" data-i18n="pizza">Піца</li>
           <li class="sticky__list-item" data-i18n="kombo-menu">Комбо меню</li>
           <li class="sticky__list-item" data-i18n="drinks">Напої</li>
@@ -88,8 +91,8 @@
     </nav>
   </header>
   <!-- pizza constructor -->
-  <section class="constructor" id='stepNo1'>
-    <div class="size-controls">
+  <section class="constructor" id="qw">
+     <div class="size-controls">
       <label for="large" data-i18n="size-large" >Велика: 10 $</label>
       <input type="radio" id="large" name="size" value="10">
       <label for="middle" data-i18n="size-medium">Середня: 8 $</label>
@@ -230,6 +233,7 @@
         </li>
       </ul>
     </div>
+
   </footer>
 </body>
 
