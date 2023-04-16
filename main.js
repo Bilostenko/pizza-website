@@ -40,44 +40,49 @@ languageSwitcher.addEventListener('change', event => {
   }
 });
 
-// dropdown.addEventListener("change", function () {
-//   const selectedValue = dropdown.value;
-//   updateAddresses(selectedValue);
+// changing data according to dropdown value
+const dropdown = document.querySelector("#drop");
+const phoneElement = document.querySelector("#phone");
+const address1 = document.querySelector("#street1");
+const address2 = document.querySelector("#street2");
 
-//   if (selectedValue === "Kyiv") {
-//     phoneElement.textContent = "050 777 66 77";
-//     address1.textContent = "вул. Джуніорська, 1";
-//     address1.setAttribute("data-i18n", "Kyiv-address1");
-//     address2.textContent = "вул. Мідловська, 11";
-//     address2.setAttribute("data-i18n", "Kyiv-address2");
+dropdown.addEventListener("change", function () {
+  const selectedValue = dropdown.value;
 
-//   } else if (selectedValue === "Odesa") {
-//     phoneElement.textContent = "063 333 67 98";
-//     address1.textContent = "вул. Січових Рубістів, 2"
-//     address1.setAttribute("data-i18n", "Odesa-address1");
-//     address2.textContent = "вул. Жабаскрипт, 12";
-//     address2.setAttribute("data-i18n", "Odesa-address2");
+  if (selectedValue === "Kyiv") {
+    phoneElement.textContent = "050 777 66 77";
+    address1.textContent = "вул. Джуніорська, 1";
+    address2.textContent = "вул. Мідловська, 11";
+    address1.setAttribute("data-i18n", "Kyiv-address1");
+    address2.setAttribute("data-i18n", "Kyiv-address2"); 
 
-//   } else if (selectedValue === "Lviv") {
-//     phoneElement.textContent = "066 433 55 65";
-//     address1.textContent = "вул. Пам'яті Інтернів, 34";
-//     address1.setAttribute("data-i18n", "Lviv-address1");
-//     address2.textContent = "вул. Мітингова, 55";
-//     address2.setAttribute("data-i18n", "Lviv-address2");
-//   } else if (selectedValue === "Kharkiv") {
-//     phoneElement.textContent = "099 466 71 50";
-//     address1.textContent = "вул. Михайла Великосельського, 12";
-//     address1.setAttribute("data-i18n", "Kharkiv-address1");
-//     address2.textContent = "вул. Просвятителів, 23";
-//     address2.setAttribute("data-i18n", "Kharkiv-address2");
-//   } else if (selectedValue === "Yalta") {
-//     phoneElement.textContent = "050 111 32 11";
-//     address1.textContent = "вул. Вкатунів, 5А";
-//     address1.setAttribute("data-i18n", "Yalta-address1");
-//     address2.textContent = "вул. Вигорання, 6";
-//     address2.setAttribute("data-i18n", "Yalta-address2");
-//   }
-// });
+  } else if (selectedValue === "Odesa") {
+    phoneElement.textContent = "063 333 67 98";
+    address1.textContent = "вул. Січових Рубістів, 2"
+    address1.setAttribute("data-i18n", "Odesa-address1");
+    address2.textContent = "вул. Жабаскрипт, 12";
+    address2.setAttribute("data-i18n", "Odesa-address2");
+
+  } else if (selectedValue === "Lviv") {
+    phoneElement.textContent = "066 433 55 65";
+    address1.textContent = "вул. Пам'яті Інтернів, 34";
+    address1.setAttribute("data-i18n", "Lviv-address1");
+    address2.textContent = "вул. Мітингова, 55";
+    address2.setAttribute("data-i18n", "Lviv-address2");
+  } else if (selectedValue === "Kharkiv") {
+    phoneElement.textContent = "099 466 71 50";
+    address1.textContent = "вул. Михайла Великосельського, 12";
+    address1.setAttribute("data-i18n", "Kharkiv-address1");
+    address2.textContent = "вул. Просвятителів, 23";
+    address2.setAttribute("data-i18n", "Kharkiv-address2");
+  } else if (selectedValue === "Yalta") {
+    phoneElement.textContent = "050 111 32 11";
+    address1.textContent = "вул. Вкатунів, 5А";
+    address1.setAttribute("data-i18n", "Yalta-address1");
+    address2.textContent = "вул. Вигорання, 6";
+    address2.setAttribute("data-i18n", "Yalta-address2");
+  }
+});
 
 // pizza consturcotr
 /* drag and drop */
