@@ -54,7 +54,7 @@ dropdown.addEventListener("change", function () {
     address1.textContent = "вул. Джуніорська, 1";
     address2.textContent = "вул. Мідловська, 11";
     address1.setAttribute("data-i18n", "Kyiv-address1");
-    address2.setAttribute("data-i18n", "Kyiv-address2"); 
+    address2.setAttribute("data-i18n", "Kyiv-address2");
 
   } else if (selectedValue === "Odesa") {
     phoneElement.textContent = "063 333 67 98";
@@ -327,4 +327,25 @@ const drinksContainer = document.getElementById("drinks-container");
 drinks.forEach((card) => {
   const cardDiv = createCard(card, false, true);
   drinksContainer.appendChild(cardDiv);
+});
+
+// scrolling to menu-items
+// Due to the fact that some elements are dynamically generated through JavaScript, the navigation was also made through JavaScript.
+document.querySelector('a[href="#pizza-construct-nav"]').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#pizza-construct-nav').scrollIntoView({ behavior: 'smooth' });
+});
+document.querySelector('a[href="#cards-container-nav"]').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#cards-container-nav').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('a[href="#kombo-menu-nav"]').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#combo-pizza').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('a[href="#drinks-nav"]').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('#drinks-container').scrollIntoView({ behavior: 'smooth' });
 });

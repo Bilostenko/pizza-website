@@ -26,7 +26,7 @@
           <div class="nav__logo"></div>
         </div>
         <div class="nav__block">
-          <div class="dropdown">
+          <div class="dropdown"  id="pizza-construct-nav">
             <label for="drop" data-i18n="your-city">Ваше місто :</label>
             <select id="drop" name="type" required>
               <option selected value="Kyiv" data-i18n="Kyiv-city">Київ</option>
@@ -44,11 +44,11 @@
         <div class="nav__block nav__address">
           <div class="nav__address-first">
             <span class="address-icon">&#x1F4CD;</span>
-            <span class="address-text" id="street1">вул. Джуніорська, 1</span>
+            <span class="address-text" id="street1" data-i18n="Kyiv-address1">вул. Джуніорська, 1</span>
           </div>
           <div class="nav__address-second">
             <span class="address-icon">&#x1F4CD;</span>
-            <span class="address-text" id="street2">вул. Мідловська, 11</span>
+            <span class="address-text" id="street2" data-i18n="Kyiv-address2">вул. Мідловська, 11</span>
           </div>
           <div class="nav__orders">
             <span class="address-icon" data-i18n="orders">ПРИЙОМ ЗАМОВЛЕНЬ:</span>
@@ -78,20 +78,19 @@
     <nav class="sticky">
       <div class="container menu__list">
         <ul class="sticky__list">
-
-          <li class="sticky__list-item" data-i18n="pizza-constructor">
-            <a id="pizza-constructor-link" href="#qw" target="_self">Піца-конструктор</a>
+          <li class="sticky__list-item"><a id="pizza-constructor-link" data-i18n="pizza-constructor" href="#pizza-construct-nav">Піца-конструктор</a>
           </li>          
-          <li class="sticky__list-item" data-i18n="pizza">Піца</li>
-          <li class="sticky__list-item" data-i18n="kombo-menu">Комбо меню</li>
-          <li class="sticky__list-item" data-i18n="drinks">Напої</li>
+          <li class="sticky__list-item"><a data-i18n="pizza" href="#cards-container-nav">Піца</a></li>
+          <li class="sticky__list-item"><a  data-i18n="kombo-menu" href="#kombo-menu-nav">Комбо меню</a></li>
+          <li class="sticky__list-item"><a data-i18n="drinks" href="#drinks-nav"> Напої</a>
+           </li>
         </ul>
         <span class="payament__sum total__price" data-i18n="total-price">До сплати: 00</span>
       </div>
     </nav>
   </header>
   <!-- pizza constructor -->
-  <section class="constructor" id="qw">
+  <section class="constructor">
      <div class="size-controls">
       <label for="large" data-i18n="size-large" >Велика: 10 $</label>
       <input type="radio" id="large" name="size" value="10">
@@ -187,7 +186,7 @@
     </div>
   </section>
 
-  <section class="statistics">
+  <section class="statistics" id="cards-container-nav">
     <div class="container statistics__wrapper">
       <div class="statistic__block">
         <p class="statistic__pizza">36734</p>
