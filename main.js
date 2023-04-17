@@ -31,6 +31,7 @@ function updateTranslation(language) {
         }
       });
     });
+
 }
 updateTranslation(languageRadios[0].value);
 
@@ -180,16 +181,15 @@ function updateTotalPrice() {
 
 // statistics
 
-// отримати елементи DOM для чисел піци та клієнтів
 const pizzaCount = document.querySelector('.statistic__pizza');
 const clientCount = document.querySelector('.statistic__clients');
 
-// оновлюємо число піци кожні 3 секунди
+// refreshes the number of pizzas every 2 seconds
 setInterval(() => {
   pizzaCount.textContent = (parseFloat(pizzaCount.textContent) + 1).toFixed(0);
 }, 2000);
 
-// оновлюємо число клієнтів кожні 5 секунд
+// refreshes the number of clients every 3 seconds
 setInterval(() => {
   clientCount.textContent = (parseFloat(clientCount.textContent) + 1).toFixed(0);
 }, 3000);
@@ -282,6 +282,7 @@ function createCard(card, isCombo = false, isDrink = false) {
 
   const cardTitle = document.createElement("p");
   cardTitle.innerText = isCombo ? "Комбо меню" : isDrink ? "Напої" : "";
+  cardTitle.setAttribute("data-i18n", cardTitle.textContent === "Комбо меню" ? "combo" : "drinks-lng");
   cardTitle.classList.add("combo-title");
   cardDiv.appendChild(cardTitle);
 
@@ -331,21 +332,21 @@ drinks.forEach((card) => {
 
 // scrolling to menu-items
 // Due to the fact that some elements are dynamically generated through JavaScript, the navigation was also made through JavaScript.
-document.querySelector('a[href="#pizza-construct-nav"]').addEventListener('click', function(event) {
+document.querySelector('a[href="#pizza-construct-nav"]').addEventListener('click', function (event) {
   event.preventDefault();
   document.querySelector('#pizza-construct-nav').scrollIntoView({ behavior: 'smooth' });
 });
-document.querySelector('a[href="#cards-container-nav"]').addEventListener('click', function(event) {
+document.querySelector('a[href="#cards-container-nav"]').addEventListener('click', function (event) {
   event.preventDefault();
   document.querySelector('#cards-container-nav').scrollIntoView({ behavior: 'smooth' });
 });
 
-document.querySelector('a[href="#kombo-menu-nav"]').addEventListener('click', function(event) {
+document.querySelector('a[href="#kombo-menu-nav"]').addEventListener('click', function (event) {
   event.preventDefault();
   document.querySelector('#combo-pizza').scrollIntoView({ behavior: 'smooth' });
 });
 
-document.querySelector('a[href="#drinks-nav"]').addEventListener('click', function(event) {
+document.querySelector('a[href="#drinks-nav"]').addEventListener('click', function (event) {
   event.preventDefault();
   document.querySelector('#drinks-container').scrollIntoView({ behavior: 'smooth' });
 });
