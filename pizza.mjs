@@ -3,13 +3,14 @@ const pizza = [
     "name": "Dolce Pere",
     "description": "Вершкова основа, моцарелла, рікота, груша, горгондзола, грецький горіх",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_f8e5d58e48dd0b15a2d15737925e4e56.jpg",
-    "cost": "10$"
+    "cost": "10$",
+    "data-i18n": "bla-bla-bla"
   },
   {
     "name": "Тендітний Помідор",
     "description": "Вершкова основа, моцарелла, рікота, помідор, помідори черрі, пармезан",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_d3c8726c47d80b7800a03216342be5f1.png",
-    "cost": "8"
+    "data-i18n": "ololololo"
   },
   {
     "name": "Песто Прошуто",

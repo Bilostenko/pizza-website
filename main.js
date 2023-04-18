@@ -17,13 +17,14 @@ window.addEventListener('scroll', function () {
 // change language-------------------
 const languageSwitcher = document.querySelector('form');
 const languageRadios = languageSwitcher.querySelectorAll('input[type="radio"]');
-const translatableElements = document.querySelectorAll('[data-i18n]');
 
 // update translations
-function updateTranslation(language) {
+function updateTranslation() {
+  const language = localStorage.getItem('language') || 'en';
   fetch(`locales/${language}.json`)
     .then(response => response.json())
     .then(data => {
+      const translatableElements = document.querySelectorAll('[data-i18n]');
       translatableElements.forEach(element => {
         const translationKey = element.dataset.i18n;
         if (data.hasOwnProperty(translationKey)) {
@@ -33,11 +34,12 @@ function updateTranslation(language) {
     });
 
 }
-updateTranslation(languageRadios[0].value);
+updateTranslation();
 
 languageSwitcher.addEventListener('change', event => {
   if (event.target.name === 'language') {
-    updateTranslation(event.target.value);
+    localStorage.setItem('language', event.target.value);
+    updateTranslation();
   }
 });
 
@@ -52,37 +54,28 @@ dropdown.addEventListener("change", function () {
 
   if (selectedValue === "Kyiv") {
     phoneElement.textContent = "050 777 66 77";
-    address1.textContent = "вул. Джуніорська, 1";
-    address2.textContent = "вул. Мідловська, 11";
     address1.setAttribute("data-i18n", "Kyiv-address1");
     address2.setAttribute("data-i18n", "Kyiv-address2");
 
   } else if (selectedValue === "Odesa") {
     phoneElement.textContent = "063 333 67 98";
-    address1.textContent = "вул. Січових Рубістів, 2"
     address1.setAttribute("data-i18n", "Odesa-address1");
-    address2.textContent = "вул. Жабаскрипт, 12";
     address2.setAttribute("data-i18n", "Odesa-address2");
 
   } else if (selectedValue === "Lviv") {
     phoneElement.textContent = "066 433 55 65";
-    address1.textContent = "вул. Пам'яті Інтернів, 34";
     address1.setAttribute("data-i18n", "Lviv-address1");
-    address2.textContent = "вул. Мітингова, 55";
     address2.setAttribute("data-i18n", "Lviv-address2");
   } else if (selectedValue === "Kharkiv") {
     phoneElement.textContent = "099 466 71 50";
-    address1.textContent = "вул. Михайла Великосельського, 12";
     address1.setAttribute("data-i18n", "Kharkiv-address1");
-    address2.textContent = "вул. Просвятителів, 23";
     address2.setAttribute("data-i18n", "Kharkiv-address2");
   } else if (selectedValue === "Yalta") {
     phoneElement.textContent = "050 111 32 11";
-    address1.textContent = "вул. Вкатунів, 5А";
     address1.setAttribute("data-i18n", "Yalta-address1");
-    address2.textContent = "вул. Вигорання, 6";
     address2.setAttribute("data-i18n", "Yalta-address2");
   }
+  updateTranslation();
 });
 
 // pizza consturcotr
@@ -281,8 +274,7 @@ function createCard(card, isCombo = false, isDrink = false) {
   cardDiv.classList.add("card");
 
   const cardTitle = document.createElement("p");
-  cardTitle.innerText = isCombo ? "Комбо меню" : isDrink ? "Напої" : "";
-  cardTitle.setAttribute("data-i18n", cardTitle.textContent === "Комбо меню" ? "combo" : "drinks-lng");
+  cardTitle.setAttribute("data-i18n", isCombo ? "combo" : isDrink ? "drinks-lng" : "pizza" );
   cardTitle.classList.add("combo-title");
   cardDiv.appendChild(cardTitle);
 
@@ -296,16 +288,19 @@ function createCard(card, isCombo = false, isDrink = false) {
 
   const cardDescription = document.createElement("p");
   cardDescription.innerText = isDrink ? "" : card.description;
+  cardDescription.dataset.i18n = card["data-i18n"];
   cardDiv.appendChild(cardDescription);
 
   const cardcost = document.createElement("p");
   cardcost.innerText = "Ціна: " + card.cost + "$";
+  cardcost.dataset.i18n = "price";
   cardDiv.appendChild(cardcost);
 
   const cardButton = document.createElement("button");
   cardButton.innerText = "В кошик";
+  cardButton.dataset.i18n = "add-to-cart";
   cardDiv.appendChild(cardButton);
-
+  updateTranslation();
   return cardDiv;
 }
 
