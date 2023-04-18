@@ -219,6 +219,11 @@ span {
   color: #27ae60;
 }
 
+.payment-icon {
+  width: 56px;
+  margin: 10px;
+}
+
 .ingredient-controls {
   height: 70vmin;
   width: calc(100% - 60vmin);

@@ -350,3 +350,6 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
   event.preventDefault();
   document.querySelector('#drinks-container').scrollIntoView({ behavior: 'smooth' });
 });
+
+// modal window
+
