@@ -26,7 +26,7 @@
           <div class="nav__logo"></div>
         </div>
         <div class="nav__block">
-          <div class="dropdown"  id="pizza-construct-nav">
+          <div class="dropdown" id="pizza-construct-nav">
             <label for="drop" data-i18n="your-city">Ваше місто :</label>
             <select id="drop" name="type" required>
               <option selected value="Kyiv" data-i18n="Kyiv-city">Київ</option>
@@ -55,35 +55,36 @@
             <span class="address-time" data-i18n="work-time">з 10:30 до 21:30</span>
           </div>
         </div>
-          <div class="nav__block">
-            <form>
-              <ul class="language__switcher">
-                <li>
-                  <label>
-                    <input type="radio" name="language" value="ua" checked>
-                    UA
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="radio" name="language" value="en">
-                    EN
-                  </label>
-                </li>
-              </ul>
-            </form>
-          </div>
+        <div class="nav__block">
+          <form>
+            <ul class="language__switcher">
+              <li>
+                <label>
+                  <input type="radio" name="language" value="ua" checked>
+                  UA
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="language" value="en">
+                  EN
+                </label>
+              </li>
+            </ul>
+          </form>
+        </div>
       </div>
     </nav>
     <nav class="sticky">
       <div class="container menu__list">
         <ul class="sticky__list">
-          <li class="sticky__list-item"><a id="pizza-constructor-link" data-i18n="pizza-constructor" href="#pizza-construct-nav">Піца-конструктор</a>
-          </li>          
+          <li class="sticky__list-item"><a id="pizza-constructor-link" data-i18n="pizza-constructor"
+              href="#pizza-construct-nav">Піца-конструктор</a>
+          </li>
           <li class="sticky__list-item"><a data-i18n="pizza" href="#cards-container-nav">Піца</a></li>
-          <li class="sticky__list-item"><a  data-i18n="kombo-menu" href="#kombo-menu-nav">Комбо меню</a></li>
+          <li class="sticky__list-item"><a data-i18n="kombo-menu" href="#kombo-menu-nav">Комбо меню</a></li>
           <li class="sticky__list-item"><a data-i18n="drinks" href="#drinks-nav"> Напої</a>
-           </li>
+          </li>
         </ul>
         <span class="payament__sum total__price" data-i18n="total-price">До сплати: 00</span>
       </div>
@@ -91,8 +92,8 @@
   </header>
   <!-- pizza constructor -->
   <section class="constructor">
-     <div class="size-controls">
-      <label for="large" data-i18n="size-large" >Велика: 10 $</label>
+    <div class="size-controls">
+      <label for="large" data-i18n="size-large">Велика: 10 $</label>
       <input type="radio" id="large" name="size" value="10">
       <label for="middle" data-i18n="size-medium">Середня: 8 $</label>
       <input type="radio" id="middle" name="size" value="8">
@@ -169,7 +170,8 @@
       </div>
 
       <div class="preview">
-        <div class="pizza drop-container"> <!-- дропзона -->
+        <div class="pizza drop-container">
+          <!-- дропзона -->
           <ul class="layers">
             <li class="layer"></li>
             <li class="layer"></li>
@@ -232,8 +234,47 @@
         </li>
       </ul>
     </div>
-
   </footer>
+  <!-- modal window -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h4>Оформлення замовлення</h4>
+      <form>
+        <div class="input-field">
+          <input id="name" type="text" required>
+          <label for="name">Ім'я</label>
+        </div>
+        <div class="input-field">
+          <input id="email" type="email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <input id="address" type="text" required>
+          <label for="address">Вкажіть адресу доставки</label>
+        </div>
+        <div class="input-field">
+          <input id="phone" type="tel" required>
+          <label for="phone">Телефон</label>
+        </div>
+        <div class="payment-form">
+          <h2>Розрахунок:</h2>
+          <input type="radio" id="card" name="payment" value="card">
+          <label for="card">Банківська картка кур'єру</label><br>
+          <input type="radio" id="cash" name="payment" value="cash">
+          <label for="cash">Готівкою</label><br>
+        </div>
+        <label for="comment">Залишити коментар:</label>
+        <textarea id="comment" name="comment"></textarea>
+      </form>
+      <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Відмінити</a>
+        <a href="#" class="modal-action waves-effect waves-green btn-flat" id="submit">Замовити</a>
+      </div>
+    </div>
+
+  </div>
+
+
 </body>
 
 </html>
