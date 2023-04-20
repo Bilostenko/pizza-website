@@ -268,6 +268,8 @@ setInterval(() => {
 //   drinksContainer.appendChild(cardDiv);
 // });
 
+
+
 // create card function
 function createCard(card, isCombo = false, isDrink = false) {
   const cardDiv = document.createElement("div");
@@ -292,8 +294,9 @@ function createCard(card, isCombo = false, isDrink = false) {
   cardDiv.appendChild(cardDescription);
 
   const cardcost = document.createElement("p");
-  cardcost.innerText = "Ціна: " + card.cost + "$";
+ 
   cardcost.dataset.i18n = "price";
+  cardcost.innerText = "Ціна: " + card.cost + "$";
   cardDiv.appendChild(cardcost);
 
   const cardButton = document.createElement("button");

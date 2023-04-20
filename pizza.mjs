@@ -3,7 +3,7 @@ const pizza = [
     "name": "Dolce Pere",
     "description": "Вершкова основа, моцарелла, рікота, груша, горгондзола, грецький горіх",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_f8e5d58e48dd0b15a2d15737925e4e56.jpg",
-    "cost": "10$",
+    "cost": "10",
     "data-i18n": "dolce-pere"
   },
   {

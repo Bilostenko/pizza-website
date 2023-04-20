@@ -25,7 +25,7 @@ span {
 .navbar {
   font-size: 15px;
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
-  width: 100vw;
+  width: 100%;
   height: 190px;
 }
 .navbar .nav__address {
@@ -169,7 +169,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
+  padding-left: 15px;
   margin: 0 auto;
 }
 .sticky .menu__list .sticky__list {
@@ -439,10 +439,11 @@ span {
 }
 
 .statistics {
-  width: 100%;
+  width: 93%;
   height: 100px;
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
   border: 2px solid #d4af37;
+  margin: 0 auto;
 }
 .statistics .statistics__wrapper {
   width: 100%;
