@@ -7,7 +7,7 @@
   "Yalta-city": "Yalta",
   "Kyiv-address1": "Djuniorska str.,1",
   "Kyiv-address2": "Middlovska str.,11",
-  "Odesa-address1": "Sichivyh Rubistiv str, 2",
+  "Odesa-address1": "Sichovyh Rubistiv str, 2",
   "Odesa-address2": "JabaScrypt str., 12",
   "Lviv-address1": "Pamiati Interniv str., 34",
   "Lviv-address2": "Mitynhova str., 55",
@@ -67,6 +67,11 @@
   "provans" : "Cream base, mozzarella, chicken, Gorgonzola cheese, French mustard.",
   "vegetariana" : "Tomato base, tomatoes, Provencal herbs, arugula, mushrooms, sun-dried tomatoes, olives.",
   "4-cheese" : "Cream base, mozzarella, Parmesan, Gorgonzola cheese, ricotta.",
-  "hawaiian " : "Tomato base, mozzarella, chicken, pineapple, tomatoes.",
-  "hunterr " : "Tomato base, mozzarella, hunter sausages, mushrooms, Parmesan.",
+  "hawaiian" : "Tomato base, mozzarella, chicken, pineapple, tomatoes.",
+  "hunter" : "Tomato base, mozzarella, hunter sausages, mushrooms, Parmesan.",
+  "margaryta " : "Tomato base, mozzarella, tomatoes, Provencal herbs.",
+  "meat " : "Tomato base, mozzarella, salami, ham, bacon.",
+  "рam-and-mushrooms. " : "Tomato base, mozzarella, ham, mushrooms.",
+  "pere" : "Dolce pere",
+  "tendet_tomato" : "Tendet Tomato"
 }

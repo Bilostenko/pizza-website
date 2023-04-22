@@ -276,7 +276,7 @@ function createCard(card, isCombo = false, isDrink = false) {
   cardDiv.classList.add("card");
 
   const cardTitle = document.createElement("p");
-  cardTitle.setAttribute("data-i18n", isCombo ? "combo" : isDrink ? "drinks-lng" : "pizza" );
+  cardTitle.setAttribute("data-i18n", isCombo ? "combo" : isDrink ? "drinks-lng" : "pizza");
   cardTitle.classList.add("combo-title");
   cardDiv.appendChild(cardTitle);
 
@@ -284,17 +284,18 @@ function createCard(card, isCombo = false, isDrink = false) {
   cardImg.src = card.image;
   cardDiv.appendChild(cardImg);
 
-  const cardName = document.createElement("p");
-  cardName.innerText = card.name;
+  const cardName = document.createElement("h2");
+  // cardName.setAttribute("data-i18n", "zalupa"); 
+  cardName.dataset.i18n = card["pizza-name"];
   cardDiv.appendChild(cardName);
-
+ 
   const cardDescription = document.createElement("p");
   cardDescription.innerText = isDrink ? "" : card.description;
   cardDescription.dataset.i18n = card["data-i18n"];
   cardDiv.appendChild(cardDescription);
 
-  const cardcost = document.createElement("p");
- 
+  const cardcost = document.createElement("h3");
+
   cardcost.dataset.i18n = "price";
   cardcost.innerText = "Ціна: " + card.cost + "$";
   cardDiv.appendChild(cardcost);

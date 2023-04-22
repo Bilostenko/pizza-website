@@ -253,10 +253,12 @@ span {
   }
 
 }
-.payment-icon{
+
+.payment-icon {
   width: 56px;
   margin: 10px;
 }
+
 .ingredient-controls {
   height: 70vmin;
   width: calc(100% - 60vmin);
@@ -537,10 +539,19 @@ span {
       border-radius: 5px 5px 0 0;
     }
 
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+    h3{
+      font-size: 26px;
+      font-weight: 700;
+    }
+
     p {
       margin: 10px 0;
       font-size: 20px;
-      font-weight: 700;
+     
     }
 
     button {
@@ -737,16 +748,17 @@ footer {
     width: 50%;
     color: #d4af37;
 
-    #comment{
+    #comment {
       width: 400px;
       height: 50px;
       resize: none;
     }
+
     .modal-footer {
       margin-top: 34px;
       padding: 10px;
       text-align: right;
-      
+
 
       a {
         margin-left: 10px;
