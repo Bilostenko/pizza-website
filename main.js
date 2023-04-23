@@ -285,7 +285,6 @@ function createCard(card, isCombo = false, isDrink = false) {
   cardDiv.appendChild(cardImg);
 
   const cardName = document.createElement("h2");
-  // cardName.setAttribute("data-i18n", "zalupa"); 
   cardName.dataset.i18n = card["pizza-name"];
   cardDiv.appendChild(cardName);
  

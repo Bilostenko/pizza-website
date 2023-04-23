@@ -133,49 +133,49 @@ const pizza = [
     "data-i18n": "for-buslaeva"
   },
   {
-    "name": "Прованс",
+    "pizza-name": "provans-name",
     "description": "Вершкова основа, моцарела, курка, горгондзола, французька гірчиця",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_be5ee65f0c8e2ba40abbd4cf82fe2be0.jpg",
     "cost": "11",
     "data-i18n": "provans"
   },
   {
-    "name": "vegetariana",
+    "pizza-name": "vegetariana-name",
     "description": "Томатна основа, помiдори, прованськi трави, рукола, печерицi,в‘ялені томати, оливки.",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_6600969429ce0d35d5cc980b5dc77c17.jpg",
     "cost": "12",
     "data-i18n": "tendet-tomato"
   },
   {
-    "name": "4-cheese",
+    "pizza-name": "4-cheese-name",
     "description": "Вершкова основа, моцарела, пармезан, горгондзола, рiкота",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_9cb1625db95721dcf7626949aea9d8f1.jpg",
     "cost": "9",
     "data-i18n": "tendet-tomato"
   },
   {
-    "name": "Гавайська",
+    "pizza-name": "hawaiian-name",
     "description": "Томатна основа, моцарела, курка, ананас, помідори",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_1f8758cba36b00d27b8057b263907674.jpg",
     "cost": "11",
     "data-i18n": "hawaiian"
   },
   {
-    "name": "Мисливська",
+    "pizza-name": "hunter-name",
     "description": "Томатна основа, моцарела, мисливськi ковбаски, печерицi, пармезан",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_dfc01c4afcbcea9b81c2fd786cd2fa66.jpg",
     "cost": "13",
     "data-i18n": "hunter"
   },
   {
-    "name": "Маргарита",
+    "pizza-name": "margaryta-name",
     "description": "Томатна основа, моцарела, помідори, прованські трави",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_a3a22ad43a4c3eaba0fc9e7e2fda9195.jpg",
     "cost": "12",
     "data-i18n": "margaryta"
   },
   {
-    "name": "М’ясна",
+    "pizza-name": "meat-name",
     "description": "Томатна основа, моцарела, салямі, шинка, бекон",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_2a504a4bf3d1545f5988237ba17d2c38.jpg",
     "cost": "23",
@@ -183,6 +183,7 @@ const pizza = [
   },
   {
     "name": "Шинка Та Гриби",
+    "pizza-name": "ham-and-mushrooms-name",
     "description": "Томатна основа, моцарела, шинка, печериці",
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_373efe50da26cdbd5f79831d734d7038.jpg",
     "cost": "10",
