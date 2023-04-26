@@ -188,88 +188,6 @@ setInterval(() => {
 }, 3000);
 
 
-// // cards container
-// const cardsContainer = document.getElementById("cards-container");
-
-// pizza.forEach((card) => {
-//   const cardDiv = document.createElement("div");
-//   cardDiv.classList.add("card");
-//   const cardImg = document.createElement("img");
-//   cardImg.src = card.image;
-//   const cardName = document.createElement("p");
-//   cardName.innerText = card.name;
-//   const cardDescription = document.createElement("p");
-//   cardDescription.innerText = card.description;
-//   const cardcost = document.createElement("p");
-//   cardcost.innerText = "Ціна: " + card.cost + "$";
-//   const cardButton = document.createElement("button");
-//   cardButton.innerText = "В кошик";
-
-//   cardDiv.appendChild(cardImg);
-//   cardDiv.appendChild(cardName);
-//   cardDiv.appendChild(cardDescription);
-//   cardDiv.appendChild(cardcost);
-//   cardDiv.appendChild(cardButton);
-//   cardsContainer.appendChild(cardDiv);
-// });
-
-// // combo
-// const comboPizza = document.getElementById("combo-pizza");
-
-// combo.forEach((card) => {
-//   const cardDiv = document.createElement("div");
-//   cardDiv.classList.add("card");
-//   const cardImg = document.createElement("img");
-//   cardImg.src = card.image;
-//   const cardName = document.createElement("p");
-//   cardName.innerText = card.name;
-//   const cardTitle = document.createElement("p");
-//   cardTitle.innerText = "Комбо меню";
-//   cardTitle.classList.add("combo-title");
-//   const cardDescription = document.createElement("p");
-//   cardDescription.innerText = card.description;
-//   const cardcost = document.createElement("p");
-//   cardcost.innerText = "Ціна: " + card.cost + "$";
-//   const cardButton = document.createElement("button");
-//   cardButton.innerText = "В кошик";
-
-//   cardDiv.appendChild(cardTitle);
-//   cardDiv.appendChild(cardImg);
-//   cardDiv.appendChild(cardName);
-//   cardDiv.appendChild(cardDescription);
-//   cardDiv.appendChild(cardcost);
-//   cardDiv.appendChild(cardButton);
-//   comboPizza.appendChild(cardDiv);
-// });
-
-// // drinks
-// const drinksContainer = document.getElementById("drinks-container");
-
-// drinks.forEach((card) => {
-//   const cardDiv = document.createElement("div");
-//   cardDiv.classList.add("card");
-//   const cardImg = document.createElement("img");
-//   cardImg.src = card.image;
-//   const cardName = document.createElement("p");
-//   cardName.innerText = card.name;
-//   const cardTitle = document.createElement("p");
-//   cardTitle.innerText = "Напої";
-//   cardTitle.classList.add("combo-title");
-//   const cardcost = document.createElement("p");
-//   cardcost.innerText = "Ціна: " + card.cost + "$";
-//   const cardButton = document.createElement("button");
-//   cardButton.innerText = "В кошик";
-
-//   cardDiv.appendChild(cardTitle);
-//   cardDiv.appendChild(cardImg);
-//   cardDiv.appendChild(cardName);
-//   cardDiv.appendChild(cardcost);
-//   cardDiv.appendChild(cardButton);
-//   drinksContainer.appendChild(cardDiv);
-// });
-
-
-
 // create card function
 function createCard(card, isCombo = false, isDrink = false) {
   const cardDiv = document.createElement("div");
@@ -295,8 +213,8 @@ function createCard(card, isCombo = false, isDrink = false) {
 
   const cardcost = document.createElement("h3");
 
-  cardcost.dataset.i18n = "price";
-  cardcost.innerText = "Ціна: " + card.cost + "$";
+  cardcost.dataset.i18n = card["cost"];
+  cardcost.innerText = card.cost;
   cardDiv.appendChild(cardcost);
 
   const cardButton = document.createElement("button");
