@@ -47,7 +47,7 @@
   "dolce-pere" : "Вершкова основа, моцарелла, рікота, груша, горгондзола, грецький горіх",
   "tendet-tomato" : "Вершкова основа, моцарелла, рікота, помідор, помідори черрі, пармезан",  "pesto-proshuto" : "Tomato base, mozzarella, ham, cherry tomatoes, pesto sauce.",
   "tenerezza" : "Вершкова основа, моцарелла, рікота, італійське м'ясо Di Parma, рукола, пармезан",
-  "peperoni" : "Томатна основа, моцарела, салямі pepperoni.",
+  "peperoni" : "Томатна основа, моцарела, салямі, пепероні.",
   "diablo" : "Томатна основа, моцарела, салямі Picanto.",
   "salmon" : "Вершкова основа, моцарела, лосось, пармезан, рiкота, рукола, червона iкра.",
   "caesar" : "Вершкова основа,лист салату,моцарела,соус Цезар, курка, пармезан, помідори черрі",
@@ -131,6 +131,20 @@
   "for-buslaeva-price" : "Ціна: 160 грн",
   "hunter-price" : "Ціна: 120 грн",
   "margaryta-price" : "Ціна: 130 грн",
-  "meat-price" : "Ціна: 100 грн"
+  "meat-price" : "Ціна: 100 грн",
+  "quattro-stagioni-price" : "Ціна: 110 грн",
+  "provans-price" : "Ціна: 110 грн",
+  "hawaiian-price" : "Ціна: 110 грн",
+  "combo-s-price" : "Ціна: 190 грн", 
+  "combo-m-price" : "Ціна: 230 грн",
+  "combo-l-price" : "Ціна: 200 грн",
+  "coca-cola-price" : "Ціна: 23 грн",
+  "coca-cola-zero-price" : "Ціна: 23 грн",
+  "fanta-price" : "Ціна: 23 грн",
+  "sprite-price" : "Ціна: 23 грн",
+  "rich-juice-price" : "Ціна: 45 грн",
+  "tomato-juice-price" : "Ціна: 45 грн",
+  "apple-juice-price" : "Ціна: 45 грн",
+  "multifruit-juice-price" : "Ціна: 45 грн"
 
 }

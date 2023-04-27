@@ -169,8 +169,24 @@ function updateTotalPrice() {
     totalPriceValue += parseFloat(checkedInput.value);
   }
 
+  totalPriceValue = Math.round(totalPriceValue * 100) / 100; // округляем до 2 знаков после запятой
   totalPrice.innerHTML = "До сплати: " + totalPriceValue + "$";
+
+  /* Getting the price from the product card and updating the total price */
+  const addButtons = document.querySelectorAll('.add-to-cart-button');
+  addButtons.forEach(button => {
+    button.addEventListener('click', function (event) {
+      const productCard = event.target.closest('.card');
+      const price = productCard.dataset.price;
+      totalPriceValue += parseFloat(price);
+      totalPriceValue = Math.round(totalPriceValue * 100) / 100; // округляем до 2 знаков после запятой
+      totalPrice.innerHTML = "До сплати: " + totalPriceValue + "$";
+    });
+  });
 }
+
+updateTotalPrice(); // вызываем функцию, чтобы она выполнилась сразу после загрузки страницы
+
 
 // statistics
 
@@ -192,6 +208,7 @@ setInterval(() => {
 function createCard(card, isCombo = false, isDrink = false) {
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
+  cardDiv.setAttribute("data-price", card["data-price"]);
 
   const cardTitle = document.createElement("p");
   cardTitle.setAttribute("data-i18n", isCombo ? "combo" : isDrink ? "drinks-lng" : "pizza");
@@ -205,7 +222,7 @@ function createCard(card, isCombo = false, isDrink = false) {
   const cardName = document.createElement("h2");
   cardName.dataset.i18n = card["pizza-name"];
   cardDiv.appendChild(cardName);
- 
+
   const cardDescription = document.createElement("p");
   cardDescription.innerText = isDrink ? "" : card.description;
   cardDescription.dataset.i18n = card["data-i18n"];
@@ -220,6 +237,7 @@ function createCard(card, isCombo = false, isDrink = false) {
   const cardButton = document.createElement("button");
   cardButton.innerText = "В кошик";
   cardButton.dataset.i18n = "add-to-cart";
+  cardButton.classList.add("add-to-cart-button");
   cardDiv.appendChild(cardButton);
   updateTranslation();
   return cardDiv;

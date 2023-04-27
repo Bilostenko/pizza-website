@@ -136,7 +136,17 @@
   "meat-price" : "Price: 13 $",
   "hawaiian-price" : "Price: 12 $",
   "provans-price" : "Price: 11 $",
-  "quattro-stagioni-price" : "Price: 11 $"
+  "quattro-stagioni-price" : "Price: 11 $",  "combo-s-price" : "Price: 190 $", 
+  "combo-m-price" : "Price: 200 $",
+  "combo-l-price" : "Price: 210 $",
+  "coca-cola-price" : "Price: 4 $",
+  "coca-cola-zero-price" : "Price: 4 $",
+  "fanta-price" : "Price: 4 $",
+  "sprite-price" : "Price: 4 $",
+  "rich-juice-price" : "Price: 7 $",
+  "tomato-juice-price" : "Price: 7 $",
+  "apple-juice-price" : "Price: 7 $",
+  "multifruit-juice-price" : "Price: 7 $"
   
   
   
