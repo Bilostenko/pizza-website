@@ -146,6 +146,14 @@
   "tomato-juice-price" : "Ціна: 45 грн",
   "apple-juice-price" : "Ціна: 45 грн",
   "multifruit-juice-price" : "Ціна: 45 грн",
-  "chiken-price" : "20 грн"
+  "chiken-price" : "20 грн",
+  "sausage-price" : "15 грн",
+  "pepper-price" : "18 грн",
+  "pineapple-price" : "18 грн",
+  "corn-price" : "8 грн",
+  "cheese-price" : "6 грн",
+  "mustard-price" : "5 грн",
+  "ketchup-price" : "5 грн",
+  "mayonnaise-price" : "5 грн"
 
 }
