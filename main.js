@@ -170,7 +170,7 @@ function updateTotalPrice() {
   }
 
   totalPriceValue = Math.round(totalPriceValue * 100) / 100; // округляем до 2 знаков после запятой
-  totalPrice.innerHTML = "До сплати: " + totalPriceValue + "$";
+  totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
 
   /* Getting the price from the product card and updating the total price */
   const addButtons = document.querySelectorAll('.add-to-cart-button');
@@ -180,12 +180,12 @@ function updateTotalPrice() {
       const price = productCard.dataset.price;
       totalPriceValue += parseFloat(price);
       totalPriceValue = Math.round(totalPriceValue * 100) / 100; // округляем до 2 знаков после запятой
-      totalPrice.innerHTML = "До сплати: " + totalPriceValue + "$";
+      totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
     });
   });
 }
 
-updateTotalPrice(); // вызываем функцию, чтобы она выполнилась сразу после загрузки страницы
+updateTotalPrice();
 
 
 // statistics

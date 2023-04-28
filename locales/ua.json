@@ -22,9 +22,9 @@
   "drinks" : "Напої",
   "pizza-constructor" : "Піца-конструктор",
   "total-price" : "До сплати: 00",
-  "size-large" : "Велика: 10 $",
-  "size-medium" : "Середня: 8 $",
-  "size-small" : "Маленька: 6 $",
+  "size-large" : "Велика: 54 грн",
+  "size-medium" : "Середня: 45 грн",
+  "size-small" : "Маленька: 32 грн",
   "chiken" : "Курка",
   "sausage" : "Ковбаска",
   "pepper" : "Перець",
@@ -145,6 +145,7 @@
   "rich-juice-price" : "Ціна: 45 грн",
   "tomato-juice-price" : "Ціна: 45 грн",
   "apple-juice-price" : "Ціна: 45 грн",
-  "multifruit-juice-price" : "Ціна: 45 грн"
+  "multifruit-juice-price" : "Ціна: 45 грн",
+  "chiken-price" : "20 грн"
 
 }

@@ -22,9 +22,9 @@
   "drinks" : "Drinks",
   "pizza-constructor" : "Pizza-constructor",
   "total-price" : "Checkout: 00",
-  "size-large" : "Large: 10 $",
-  "size-medium" : "Medium: 8 $",
-  "size-small" : "Small: 6 $",
+  "size-large" : "Large: 54 UAH",
+  "size-medium" : "Medium: 45 UAH",
+  "size-small" : "Small: 32 UAH",
   "chiken" : "Chiken",
   "sausage" : "Sausage",
   "pepper" : "Pepper",
@@ -146,7 +146,8 @@
   "rich-juice-price" : "Price: 7 $",
   "tomato-juice-price" : "Price: 7 $",
   "apple-juice-price" : "Price: 7 $",
-  "multifruit-juice-price" : "Price: 7 $"
+  "multifruit-juice-price" : "Price: 7 $",
+  "chiken-price" : "20 UAH"
   
   
   
