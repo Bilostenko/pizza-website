@@ -156,7 +156,8 @@
   "cheese-price" : "6 UAH",
   "mustard-price" : "5 UAH",
   "ketchup-price" : "5 UAH",
-  "mayonnaise-price" : "5 UAH"
+  "mayonnaise-price" : "5 UAH",
+  "make-order" : "Place an order"
   
   
   

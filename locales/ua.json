@@ -154,6 +154,7 @@
   "cheese-price" : "6 грн",
   "mustard-price" : "5 грн",
   "ketchup-price" : "5 грн",
-  "mayonnaise-price" : "5 грн"
+  "mayonnaise-price" : "5 грн",
+  "make-order" : "Оформити замовлення"
 
 }

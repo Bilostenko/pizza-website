@@ -286,4 +286,57 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
 });
 
 // modal window
+const showModal = document.querySelector('.payment-icon');
+const closeModal = document.querySelector('.modal-close');
+// show modal window
+showModal.addEventListener('click', function () {
+  document.querySelector('.modal').style.display = "block";
+  document.body.style.overflow = 'hidden';
+});
+// close modal window
+closeModal.addEventListener('click', function () {
+  document.querySelector('.modal').style.display = "none";
+  document.body.style.overflow = 'auto';
+});
+// check name
+const nameInput = document.getElementById("name");
+nameInput.addEventListener("input", function() {
+  const regex = /[^а-яА-ЯіІїЇєЄa-zA-Z]/g;
+  nameInput.value = nameInput.value.replace(regex, '');
+});
+// check email
+// const emailInput = document.querySelector('#email');
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// check addresss
+const addressInput = document.querySelector('#address');
+
+addressInput.addEventListener('blur', function() {
+  if (addressInput.value !== '' && !isValidAddress(addressInput.value)) {
+    alert('Пожалуйста, введите действительный домашний адрес');
+    addressInput.focus();
+  }
+});
+
+function isValidAddress(address) {
+  const addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
+  return addressRegex.test(address);
+}
+
+// check phone
+const phoneInput = document.querySelector('#phone');
+
+phoneInput.addEventListener('blur', function() {
+  if (phoneInput.value !== '' && !isValidPhoneNumber(phoneInput.value)) {
+    alert('Пожалуйста, введите действительный номер телефона');
+    phoneInput.focus();
+  }
+});
+
+function isValidPhoneNumber(phoneNumber) {
+  const phoneRegex = /^((\+38|38)?)0[1-9]\d{8}$/;
+  return phoneRegex.test(phoneNumber);
+}
+
+
 

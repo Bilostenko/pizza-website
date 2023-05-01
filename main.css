@@ -180,9 +180,32 @@ span {
   gap: 30px;
 }
 .sticky .menu__list .payament__sum {
-  margin-right: 100px;
   font-size: 34px;
   font-weight: 700;
+}
+.sticky .menu__list .payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #7eb103;
+}
+.sticky .menu__list .payment .payment-icon {
+  display: block;
+  margin: auto;
+  font-size: 40px;
+  color: #7eb103;
+}
+.sticky .menu__list .payment a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #7eb103;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .constructor__wrapper {
@@ -217,11 +240,6 @@ span {
   font-weight: bold;
   margin-left: 20px;
   color: #27ae60;
-}
-
-.payment-icon {
-  width: 56px;
-  margin: 10px;
 }
 
 .ingredient-controls {
@@ -681,7 +699,7 @@ footer .container .footer__info-list li:nth-child(2) {
   padding: 20px;
   border: 2px solid #888;
   width: 50%;
-  color: #d4af37;
+  color: #5f4b07;
 }
 .modal .modal-content #comment {
   width: 400px;
@@ -697,9 +715,9 @@ footer .container .footer__info-list li:nth-child(2) {
   margin-left: 10px;
 }
 .modal .modal-content .modal-footer .btn-flat {
-  color: #d4af37;
+  color: #5f4b07;
   background-color: transparent;
-  border: 1px solid #d4af37;
+  border: 1px solid #5f4b07;
   border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
