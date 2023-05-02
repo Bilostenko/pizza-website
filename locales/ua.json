@@ -155,6 +155,17 @@
   "mustard-price" : "5 грн",
   "ketchup-price" : "5 грн",
   "mayonnaise-price" : "5 грн",
-  "make-order" : "Оформити замовлення"
+  "make-order" : "Оформити замовлення",
+  "checkout" : "Оформлення замовлення",
+  "checkout-name" : "Ім'я",
+  "checkout-email" : "Електронна пошта",
+  "checkout-address" : "Вкажіть адресу доставки",
+  "checkout-phone" : "Телефон",
+  "checkout-card" : "Банківська картка кур'єру",
+  "checkout-cash" : "Готівкою",
+  "checkout-comment" : "Залишити коментар:",
+  "checkout-cancel" : "Відмінити",
+  "checkout-order" : "Замовити",
+  "checkout-payment" : "Розрахунок:"
 
 }

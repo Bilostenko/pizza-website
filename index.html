@@ -8,6 +8,7 @@
   <script defer type="module" src="./main.js"></script>
   <script defer type="module" src="./pizza.mjs"></script>
   <script defer type="module" src="./drinks.mjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <link rel="icon" type="image/png" href="./img/ico.ico">
   <link rel="stylesheet" href="./reset.css">
@@ -242,37 +243,37 @@
   <!-- modal window -->
   <div id="myModal" class="modal">
     <div class="modal-content">
-      <h4>Оформлення замовлення</h4>
+      <h4 data-i18n="checkout">Оформлення замовлення</h4>
       <form>
         <div class="input-field">
           <input id="name" type="text" required>
-          <label for="name">Ім'я</label>
+          <label for="name" data-i18n="checkout-name">Ім'я</label>
         </div>
         <div class="input-field">
           <input id="email" type="email" required>
-          <label for="email">Email</label>
+          <label for="email" data-i18n="checkout-email">Email</label>
         </div>
         <div class="input-field">
           <input id="address" type="text" required>
-          <label for="address">Вкажіть адресу доставки</label>
+          <label for="address" data-i18n="checkout-address">Вкажіть адресу доставки</label>
         </div>
         <div class="input-field">
           <input id="phone" type="tel" required>
-          <label for="phone">Телефон</label>
+          <label for="phone" data-i18n="checkout-phone">Телефон</label>
         </div>
         <div class="payment-form">
-          <h2>Розрахунок:</h2>
+          <h2 data-i18n="checkout-payment">Розрахунок:</h2>
           <input type="radio" id="card" name="payment" value="card">
-          <label for="card">Банківська картка кур'єру</label><br>
+          <label for="card" data-i18n="checkout-card">Банківська картка кур'єру</label><br>
           <input type="radio" id="cash" name="payment" value="cash">
-          <label for="cash">Готівкою</label><br>
+          <label for="cash" data-i18n="checkout-cash">Готівкою</label><br>
         </div>
-        <label for="comment">Залишити коментар:</label>
+        <label for="comment" data-i18n="checkout-comment">Залишити коментар:</label>
         <textarea id="comment" name="comment"></textarea>
       </form>
       <div class="modal-footer">
-        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Відмінити</a>
-        <a href="#" class="modal-action waves-effect waves-green btn-flat" id="submit">Замовити</a>
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat" data-i18n="checkout-cancel">Відмінити</a>
+        <a href="#" class="modal-action waves-effect waves-green btn-flat" id="submit" data-i18n="checkout-order">Замовити</a>
       </div>
     </div>
 

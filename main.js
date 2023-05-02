@@ -288,6 +288,8 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
 // modal window
 const showModal = document.querySelector('.payment-icon');
 const closeModal = document.querySelector('.modal-close');
+const submit = document.querySelector('#submit');
+
 // show modal window
 showModal.addEventListener('click', function () {
   document.querySelector('.modal').style.display = "block";
@@ -298,10 +300,21 @@ closeModal.addEventListener('click', function () {
   document.querySelector('.modal').style.display = "none";
   document.body.style.overflow = 'auto';
 });
+// submit order
+submit.addEventListener('click', function () {
+  document.querySelector('.modal').style.display = "none";
+  document.body.style.overflow = 'auto';
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    showConfirmButton: false,
+    timer: 1500
+  })
+});
 // check name
 const nameInput = document.getElementById("name");
-nameInput.addEventListener("input", function() {
-  const regex = /[^а-яА-ЯіІїЇєЄa-zA-Z]/g;
+nameInput.addEventListener("input", function () {
+  const regex = /[^а-яА-ЯіІїЇєЄa-zA-Z ]/g;
   nameInput.value = nameInput.value.replace(regex, '');
 });
 // check email
@@ -309,34 +322,34 @@ nameInput.addEventListener("input", function() {
 // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // check addresss
-const addressInput = document.querySelector('#address');
+// const addressInput = document.querySelector('#address');
 
-addressInput.addEventListener('blur', function() {
-  if (addressInput.value !== '' && !isValidAddress(addressInput.value)) {
-    alert('Пожалуйста, введите действительный домашний адрес');
-    addressInput.focus();
-  }
-});
+// addressInput.addEventListener('blur', function() {
+//   if (addressInput.value !== '' && !isValidAddress(addressInput.value)) {
+//     alert('Пожалуйста, введите действительный домашний адрес');
+//     addressInput.focus();
+//   }
+// });
 
-function isValidAddress(address) {
-  const addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
-  return addressRegex.test(address);
-}
+// function isValidAddress(address) {
+//   const addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
+//   return addressRegex.test(address);
+// }
 
 // check phone
-const phoneInput = document.querySelector('#phone');
+// const phoneInput = document.querySelector('#phone');
 
-phoneInput.addEventListener('blur', function() {
-  if (phoneInput.value !== '' && !isValidPhoneNumber(phoneInput.value)) {
-    alert('Пожалуйста, введите действительный номер телефона');
-    phoneInput.focus();
-  }
-});
+// phoneInput.addEventListener('blur', function() {
+//   if (phoneInput.value !== '' && !isValidPhoneNumber(phoneInput.value)) {
+//     alert('Пожалуйста, введите действительный номер телефона');
+//     phoneInput.focus();
+//   }
+// });
 
-function isValidPhoneNumber(phoneNumber) {
-  const phoneRegex = /^((\+38|38)?)0[1-9]\d{8}$/;
-  return phoneRegex.test(phoneNumber);
-}
+// function isValidPhoneNumber(phoneNumber) {
+//   const phoneRegex = /^((\+38|38)?)0[1-9]\d{8}$/;
+//   return phoneRegex.test(phoneNumber);
+// }
 
 
 

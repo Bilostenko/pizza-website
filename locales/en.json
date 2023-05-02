@@ -157,7 +157,18 @@
   "mustard-price" : "5 UAH",
   "ketchup-price" : "5 UAH",
   "mayonnaise-price" : "5 UAH",
-  "make-order" : "Place an order"
+  "make-order" : "Place an order",
+  "checkout" : "Checkout",
+  "checkout-name" : "Name",
+  "checkout-email" : "Email",
+  "checkout-address" : "Specify the delivery address",
+  "checkout-phone" : "Phone",
+  "checkout-card" : "Bank card",
+  "checkout-cash" : "Cash",
+  "checkout-comment" : "Leave a comment:",
+  "checkout-cancel" : "Cancel",
+  "checkout-order" : "Order now",
+  "checkout-payment" : "Payment:"
   
   
   
