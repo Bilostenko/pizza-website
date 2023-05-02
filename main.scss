@@ -217,7 +217,7 @@ span {
       font-size: 20px;
       font-weight: 700;
       color: #7eb103;
-  
+
       .payment-icon {
         display: block;
         margin: auto;
@@ -615,6 +615,11 @@ span {
     color: #7eb103;
   }
 
+  h2, h3 {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
   .card {
     width: 400px;
     border: 1px solid #d4af37;
@@ -640,7 +645,6 @@ span {
     p {
       margin: 10px 0;
       font-size: 20px;
-      font-weight: 700;
     }
 
     button {
@@ -696,9 +700,9 @@ span {
       border-radius: 5px 5px 0 0;
     }
 
-    p {
+    h3, h2 {
       margin: 10px 0;
-      font-size: 20px;
+      font-size: 26px;
       font-weight: 700;
     }
 
@@ -793,9 +797,11 @@ footer {
       }
 
       .btn-flat {
-        color: #5f4b07;;
+        color: #5f4b07;
+        ;
         background-color: transparent;
-        border: 1px solid #5f4b07;;
+        border: 1px solid #5f4b07;
+        ;
         border-radius: 3px;
         cursor: pointer;
         font-size: 16px;

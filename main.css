@@ -555,6 +555,10 @@ span {
   margin-bottom: 20px;
   color: #7eb103;
 }
+#combo-pizza h2, #combo-pizza h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
 #combo-pizza .card {
   width: 400px;
   border: 1px solid #d4af37;
@@ -578,7 +582,6 @@ span {
 #combo-pizza .card p {
   margin: 10px 0;
   font-size: 20px;
-  font-weight: 700;
 }
 #combo-pizza .card button {
   margin-top: 20px;
@@ -628,9 +631,9 @@ span {
   height: auto;
   border-radius: 5px 5px 0 0;
 }
-#drinks-container .card p {
+#drinks-container .card h3, #drinks-container .card h2 {
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 700;
 }
 #drinks-container .card button {
