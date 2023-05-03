@@ -1,0 +1,7 @@
+@media screen and (max-width: 830px) {
+ /* navbar */
+  .nav__logo {
+    height: 50%;
+        width: 50%;
+  }
+}
