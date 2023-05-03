@@ -780,6 +780,17 @@ footer {
     width: 50%;
     color: #5f4b07;
 
+    .name-validity-informer, .phone-validity-informer, .email-validity-informer {
+      display: none;
+    }
+
+    .visible {
+      display: block !important;
+    }
+ 
+   
+
+
     #comment {
       width: 400px;
       height: 50px;

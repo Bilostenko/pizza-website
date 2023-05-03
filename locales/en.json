@@ -168,7 +168,9 @@
   "checkout-comment" : "Leave a comment:",
   "checkout-cancel" : "Cancel",
   "checkout-order" : "Order now",
-  "checkout-payment" : "Payment:"
+  "checkout-payment" : "Payment:",
+  "placeholder-address" : "Example: Kyiv city, Bratislavska str., 30, apt. 101"
+  
   
   
   

@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer type="module" src="./main.js"></script>
-  <script defer type="module" src="./pizza.mjs"></script>
-  <script defer type="module" src="./drinks.mjs"></script>
+  <script type="module" src="./main.js"></script>
+  <script type="module" src="./pizza.mjs"></script>
+  <script type="module" src="./drinks.mjs"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <link rel="icon" type="image/png" href="./img/ico.ico">
@@ -40,7 +40,7 @@
           </div>
           <div class="phone-number">
             <span class="phone-icon">&#x1F4DE;</span>
-            <a href="tel:+380507776677" id="phone">050 777 66 77</a>
+            <a href="tel:+380507776677">050 777 66 77</a>
           </div>
         </div>
         <div class="nav__block nav__address">
@@ -249,18 +249,22 @@
         <div class="input-field">
           <input id="name" type="text" required>
           <label for="name" data-i18n="checkout-name">Ім'я</label>
+          <span class="name-validity-informer">Будь-ласка зазначте лише літери</span>
         </div>
         <div class="input-field">
           <input id="email" type="email" required>
           <label for="email" data-i18n="checkout-email">Email</label>
+          <span class="email-validity-informer">Ваша адреса не може містити цих символів</span>
         </div>
         <div class="input-field">
-          <input id="address" type="text" required>
+          <input id="address" type="text" required data-i18n2="placeholder-address">
           <label for="address" data-i18n="checkout-address">Вкажіть адресу доставки</label>
+          <span class="address-validity-informer">Будь-ласка вкажіть адресу доставки</span>
         </div>
         <div class="input-field">
           <input id="phone" type="tel" required>
           <label for="phone" data-i18n="checkout-phone">Телефон</label>
+          <span class="phone-validity-informer">Ваш номер телефону має відповідати формату +380-111-11-11</span>
         </div>
         <div class="payment-form">
           <h2 data-i18n="checkout-payment">Розрахунок:</h2>

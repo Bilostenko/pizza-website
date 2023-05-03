@@ -25,10 +25,18 @@ function updateTranslation() {
     .then(response => response.json())
     .then(data => {
       const translatableElements = document.querySelectorAll('[data-i18n]');
+      const translatableElements2 = document.querySelectorAll('[data-i18n2]');
       translatableElements.forEach(element => {
         const translationKey = element.dataset.i18n;
         if (data.hasOwnProperty(translationKey)) {
           element.textContent = data[translationKey];
+        }
+      });
+
+      translatableElements2.forEach(element => {
+        const translationKey = element.dataset.i18n2;
+        if (data.hasOwnProperty(translationKey)) {
+          element.placeholder = data[translationKey];
         }
       });
     });
@@ -169,7 +177,7 @@ function updateTotalPrice() {
     totalPriceValue += parseFloat(checkedInput.value);
   }
 
-  totalPriceValue = Math.round(totalPriceValue * 100) / 100; // округляем до 2 знаков после запятой
+  totalPriceValue = Math.round(totalPriceValue * 100) / 100;
   totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
 
   /* Getting the price from the product card and updating the total price */
@@ -179,7 +187,7 @@ function updateTotalPrice() {
       const productCard = event.target.closest('.card');
       const price = productCard.dataset.price;
       totalPriceValue += parseFloat(price);
-      totalPriceValue = Math.round(totalPriceValue * 100) / 100; // округляем до 2 знаков после запятой
+      totalPriceValue = Math.round(totalPriceValue * 100) / 100;
       totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
     });
   });
@@ -313,43 +321,49 @@ submit.addEventListener('click', function () {
 });
 // check name
 const nameInput = document.getElementById("name");
-nameInput.addEventListener("input", function () {
-  const regex = /[^а-яА-ЯіІїЇєЄa-zA-Z ]/g;
-  nameInput.value = nameInput.value.replace(regex, '');
+
+nameInput.addEventListener("change", function () {
+  const nameInputCheck = document.querySelector('.name-validity-informer');
+  if (nameInput.value === "" || !isValidName(nameInput.value)) {
+    nameInputCheck.classList.add("visible");
+  } else {
+    nameInputCheck.classList.remove("visible");
+  }
+  function isValidName(name) {
+    return /^[a-zA-Zа-яА-ЯіІїЇєЄ]+$/.test(name);
+  }
 });
+
 // check email
-// const emailInput = document.querySelector('#email');
-// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailInput = document.querySelector('#email');
 
-// check addresss
-// const addressInput = document.querySelector('#address');
+emailInput.addEventListener("change", function () {
+  const emailInputCheck = document.querySelector('.email-validity-informer');
+  if (emailInput.value === "" || !isValidName(emailInput.value)) {
+    emailInputCheck.classList.add("visible");
+  } else {
+    emailInputCheck.classList.remove("visible");
+  }
+  function isValidName(name) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(name);
+  }
+});
 
-// addressInput.addEventListener('blur', function() {
-//   if (addressInput.value !== '' && !isValidAddress(addressInput.value)) {
-//     alert('Пожалуйста, введите действительный домашний адрес');
-//     addressInput.focus();
-//   }
-// });
-
-// function isValidAddress(address) {
-//   const addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
-//   return addressRegex.test(address);
-// }
 
 // check phone
-// const phoneInput = document.querySelector('#phone');
+const phoneInput = document.querySelector('#phone');
 
-// phoneInput.addEventListener('blur', function() {
-//   if (phoneInput.value !== '' && !isValidPhoneNumber(phoneInput.value)) {
-//     alert('Пожалуйста, введите действительный номер телефона');
-//     phoneInput.focus();
-//   }
-// });
-
-// function isValidPhoneNumber(phoneNumber) {
-//   const phoneRegex = /^((\+38|38)?)0[1-9]\d{8}$/;
-//   return phoneRegex.test(phoneNumber);
-// }
+phoneInput.addEventListener("change", function () {
+  const phoneInputCheck = document.querySelector('.phone-validity-informer');
+  if (phoneInput.value === "" || !isValidName(phoneInput.value)) {
+    phoneInputCheck.classList.add("visible");
+  } else {
+    phoneInputCheck.classList.remove("visible");
+  }
+  function isValidName(name) {
+    return /^((\+38|38)?)0[1-9]\d{8}$/.test(name);
+  }
+});
 
 
 

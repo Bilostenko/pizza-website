@@ -166,6 +166,7 @@
   "checkout-comment" : "Залишити коментар:",
   "checkout-cancel" : "Відмінити",
   "checkout-order" : "Замовити",
-  "checkout-payment" : "Розрахунок:"
+  "checkout-payment" : "Розрахунок:",
+  "placeholder-address" : "Приклад: м. Київ, вул. Братиславська,30, кв. 101"
 
 }

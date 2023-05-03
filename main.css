@@ -704,6 +704,12 @@ footer .container .footer__info-list li:nth-child(2) {
   width: 50%;
   color: #5f4b07;
 }
+.modal .modal-content .name-validity-informer, .modal .modal-content .phone-validity-informer, .modal .modal-content .email-validity-informer {
+  display: none;
+}
+.modal .modal-content .visible {
+  display: block !important;
+}
 .modal .modal-content #comment {
   width: 400px;
   height: 50px;
