@@ -167,6 +167,10 @@
   "checkout-cancel" : "Відмінити",
   "checkout-order" : "Замовити",
   "checkout-payment" : "Розрахунок:",
-  "placeholder-address" : "Приклад: м. Київ, вул. Братиславська,30, кв. 101"
+  "placeholder-address" : "Приклад: м. Київ, вул. Братиславська,30, кв. 101",
+  "checkout-email-informer" : "Ваша електронна адреса не може містити цих символів",
+  "checkout-name-informer" : "Будь-ласка зазначте лише літери",
+  "checkout-address-informer" : "Будь-ласка введіть номер телефону",
+  "checkout-phone-informer" : "Ваш номер телефону має відповідати формату +380-111-11-11"
 
 }

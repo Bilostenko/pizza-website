@@ -51,8 +51,6 @@ span {
       flex-direction: column;
       align-items: center;
       padding: 8px;
-      display: flex;
-      align-items: flex-start;
       gap: 20px;
       font-weight: 700;
       font-size: 16px;
@@ -780,8 +778,9 @@ footer {
     width: 50%;
     color: #5f4b07;
 
-    .name-validity-informer, .phone-validity-informer, .email-validity-informer {
+    .name-validity-informer, .phone-validity-informer, .email-validity-informer, .address-validity-informer {
       display: none;
+      color: red;
     }
 
     .visible {

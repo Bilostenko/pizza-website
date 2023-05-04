@@ -1,7 +1,22 @@
-@media screen and (max-width: 830px) {
- /* navbar */
-  .nav__logo {
-    height: 50%;
-        width: 50%;
+@media screen and (max-width: 800px) {
+
+  /* navbar */
+  .language__switcher {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav__block {
+    width: 60px;
+  }
+
+  .nav__block {
+    width: 52%;
+  }
+
+   .dropdown, .phone-number, .nav__address-first, .nav__address-second, .nav__orders, .language__switcher>li>label, .sticky__list, .payament__sum, .total__price{
+    font-weight: 100;
+    font-size: 0.8rem;
+
   }
 }

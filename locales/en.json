@@ -169,7 +169,11 @@
   "checkout-cancel" : "Cancel",
   "checkout-order" : "Order now",
   "checkout-payment" : "Payment:",
-  "placeholder-address" : "Example: Kyiv city, Bratislavska str., 30, apt. 101"
+  "placeholder-address" : "Example: Kyiv city, Bratislavska str., 30, apt. 101",
+  "checkout-email-informer" : "Your email address cannot contain these characters",
+  "checkout-name-informer" : "Please fill in the letters only",
+  "checkout-address-informer" : "Please provide the delivery address",
+  "checkout-phone-informer" : "Your phone number must match the format +380-111-11-11"
   
   
   

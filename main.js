@@ -365,5 +365,17 @@ phoneInput.addEventListener("change", function () {
   }
 });
 
+// check address
+const addressInput = document.querySelector('#address');
+
+addressInput.addEventListener("blur", function () {
+  const addressInputCheck = document.querySelector('.address-validity-informer');
+  if (addressInput.value === '') {
+    addressInputCheck.classList.add("visible");
+  } else {
+    addressInputCheck.classList.remove("visible");
+  }
+});
+
 
 
