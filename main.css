@@ -40,6 +40,7 @@ span {
   display: flex;
 }
 .navbar .container .nav__block {
+  box-sizing: border-box;
   height: calc(100% - 16px);
   width: 100%;
   display: flex;

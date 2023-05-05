@@ -6,17 +6,28 @@
     gap: 5px;
   }
 
-  .nav__block {
-    width: 60px;
-  }
-
-  .nav__block {
-    width: 52%;
-  }
-
-   .dropdown, .phone-number, .nav__address-first, .nav__address-second, .nav__orders, .language__switcher>li>label, .sticky__list, .payament__sum, .total__price{
-    font-weight: 100;
+  .dropdown .phone-number .nav__address-first .nav__address-second .nav__orders .language__switcher>li>label,
+  .sticky__list .payament__sum .total__price {
+    font-weight: 500;
     font-size: 0.8rem;
+  }
 
+}
+
+@media screen and (max-width: 700px) {
+  .navbar .container .logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar .container .nav__block  {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .navbar .container  {
+    flex-direction: column;
   }
 }
