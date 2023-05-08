@@ -72,6 +72,12 @@
                   EN
                 </label>
               </li>
+              <li>
+                <label>
+                  <input type="radio" name="language" value="ru">
+                  <a href="./img/tvaryna.jpg" target="_blank">RU</a>
+                </label>
+              </li>
             </ul>
           </form>
         </div>
@@ -88,10 +94,12 @@
           <li class="sticky__list-item"><a data-i18n="drinks" href="#drinks-nav"> Напої</a>
           </li>
         </ul>
-        <span class="payament__sum total__price" data-i18n="total-price">До сплати: 00</span>
-        <div class="payment">
-          <a href="#"><img src="./img/pay.png" alt="payment-icon" class="payment-icon"></a>
-          <p data-i18n="make-order"></p>
+        <div class="media-box-500px">
+          <span class="payament__sum total__price" data-i18n="total-price">До сплати: 00</span>
+          <div class="payment">
+            <a href="#"><img src="./img/pay.png" alt="payment-icon" class="payment-icon"></a>
+            <p data-i18n="make-order"></p>
+          </div>
         </div>
       </div>
     </nav>
@@ -254,17 +262,20 @@
         <div class="input-field">
           <input id="email" type="email" required>
           <label for="email" data-i18n="checkout-email">Email</label>
-          <span class="email-validity-informer" data-i18n="checkout-email-informer">Ваша електронна адреса не може містити цих символів</span>
+          <span class="email-validity-informer" data-i18n="checkout-email-informer">Ваша електронна адреса не може
+            містити цих символів</span>
         </div>
         <div class="input-field">
           <input id="address" type="text" required data-i18n2="placeholder-address">
           <label for="address" data-i18n="checkout-address">Вкажіть адресу доставки</label>
-          <span class="address-validity-informer" data-i18n="checkout-address-informer">Будь-ласка вкажіть адресу доставки</span>
+          <span class="address-validity-informer" data-i18n="checkout-address-informer">Будь-ласка вкажіть адресу
+            доставки</span>
         </div>
         <div class="input-field">
           <input id="phone" type="tel" required>
           <label for="phone" data-i18n="checkout-phone">Телефон</label>
-          <span class="phone-validity-informer" data-i18n="checkout-phone-informer">Ваш номер телефону має відповідати формату +380-111-11-11</span>
+          <span class="phone-validity-informer" data-i18n="checkout-phone-informer">Ваш номер телефону має відповідати
+            формату +380-111-11-11</span>
         </div>
         <div class="payment-form">
           <h2 data-i18n="checkout-payment">Розрахунок:</h2>

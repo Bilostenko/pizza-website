@@ -98,6 +98,9 @@ span {
   padding: 10px;
   display: block;
 }
+.navbar .container .nav__block ul.language__switcher > li > label > a {
+  color: black;
+}
 .navbar .container .nav__block ul.language__switcher li {
   margin-right: 10px;
   font-size: 16px;
@@ -159,8 +162,8 @@ span {
 .sticky {
   font-size: 15px;
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
-  width: 100vw;
-  height: 70px;
+  width: 100%;
+  height: 80px;
 }
 .sticky .menu__list {
   max-width: 1270px;
@@ -169,7 +172,14 @@ span {
   align-items: center;
   justify-content: space-between;
   padding-left: 15px;
+  padding-right: 15px;
   margin: 0 auto;
+}
+.sticky .menu__list .media-box-500px {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 .sticky .menu__list .sticky__list {
   color: white;
@@ -177,6 +187,7 @@ span {
   font-size: 16px;
   float: left;
   gap: 30px;
+  padding-right: 10px;
 }
 .sticky .menu__list .payament__sum {
   font-size: 34px;
@@ -193,7 +204,6 @@ span {
 .sticky .menu__list .payment .payment-icon {
   display: block;
   margin: auto;
-  font-size: 40px;
   color: #7eb103;
 }
 .sticky .menu__list .payment a {
@@ -209,6 +219,7 @@ span {
 
 .constructor__wrapper {
   display: flex;
+  width: 93%;
 }
 
 .size-controls {
@@ -554,7 +565,8 @@ span {
   margin-bottom: 20px;
   color: #7eb103;
 }
-#combo-pizza h2, #combo-pizza h3 {
+#combo-pizza h2,
+#combo-pizza h3 {
   font-size: 26px;
   font-weight: 700;
 }
@@ -630,7 +642,8 @@ span {
   height: auto;
   border-radius: 5px 5px 0 0;
 }
-#drinks-container .card h3, #drinks-container .card h2 {
+#drinks-container .card h3,
+#drinks-container .card h2 {
   margin: 10px 0;
   font-size: 26px;
   font-weight: 700;
@@ -648,7 +661,7 @@ span {
 
 footer {
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
-  width: 100%;
+  max-width: 2750px;
   height: 190px;
   display: flex;
   text-align: center;
@@ -656,17 +669,21 @@ footer {
   margin-top: 20px;
   color: #dbd9d9;
   font-size: 18px;
+  box-sizing: border-box;
 }
 footer .container {
   padding-right: 2%;
+  width: 100%;
   padding-left: 2%;
   margin-right: auto;
   margin-left: auto;
   max-width: 2750px;
   height: 100%;
   display: inline-block;
+  box-sizing: border-box;
 }
 footer .container .footer__info-list {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -703,7 +720,10 @@ footer .container .footer__info-list li:nth-child(2) {
   width: 50%;
   color: #5f4b07;
 }
-.modal .modal-content .name-validity-informer, .modal .modal-content .phone-validity-informer, .modal .modal-content .email-validity-informer, .modal .modal-content .address-validity-informer {
+.modal .modal-content .name-validity-informer,
+.modal .modal-content .phone-validity-informer,
+.modal .modal-content .email-validity-informer,
+.modal .modal-content .address-validity-informer {
   display: none;
   color: red;
 }

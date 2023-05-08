@@ -12,6 +12,34 @@
     font-size: 0.8rem;
   }
 
+  /* sticky nabar */
+  .sticky {
+    height: 120px;
+  }
+
+  .sticky .menu__list .sticky__list {
+    font-size: 14px;
+    flex-wrap: wrap;
+    max-width: 200px;
+    border-radius: 50px;
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .sticky .menu__list .sticky__list>li {
+
+    border: 1px solid #7eb103;
+    border-radius: 50px;
+    padding: 3px;
+
+  }
+
+  .sticky .menu__list .payament__sum {
+    font-size: 19px;
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -21,13 +49,46 @@
 }
 
 @media screen and (max-width: 500px) {
-  .navbar .container .nav__block  {
+  .navbar .container .nav__block {
     font-size: 13px;
+  }
+
+  .sticky .menu__list .sticky__list {
+    font-size: 12px;
+  }
+
+  .sticky .menu__list .payament__sum {
+    font-size: 14px;
+  }
+
+  .sticky .menu__list .media-box-500px {
+    flex-direction: column;
+  }
+
+  .sticky .menu__list .payament__sum {
+    font-size: 24px;
+  }
+
+  .sticky .menu__list .payment {
+    font-size: 24px ;
   }
 }
 
 @media screen and (max-width: 470px) {
-  .navbar .container  {
+  .navbar {
+    margin-bottom: 160px;
+  }
+
+  .navbar .container {
     flex-direction: column;
+  }
+
+  /* sticky nabar */
+  .sticky .menu__list .payament__sum {
+    font-size: 16px;
+  }
+
+  .sticky .menu__list .payment {
+    font-size: 16px ;
   }
 }

@@ -111,6 +111,10 @@ span {
           display: block;
         }
 
+        >li>label>a {
+          color: black;
+        }
+
         li {
           margin-right: 10px;
           font-size: 16px;
@@ -184,8 +188,8 @@ span {
 .sticky {
   font-size: 15px;
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
-  width: 100vw;
-  height: 70px;
+  width: 100%;
+  height: 80px;
 
   .menu__list {
     max-width: 1270px;
@@ -194,7 +198,15 @@ span {
     align-items: center;
     justify-content: space-between;
     padding-left: 15px;
+    padding-right: 15px;
     margin: 0 auto;
+
+    .media-box-500px {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
 
     .sticky__list {
       color: $text-color;
@@ -202,6 +214,7 @@ span {
       font-size: 16px;
       float: left;
       gap: 30px;
+      padding-right: 10px;
     }
 
     .payament__sum {
@@ -220,7 +233,6 @@ span {
       .payment-icon {
         display: block;
         margin: auto;
-        font-size: 40px;
         color: #7eb103;
 
       }
@@ -244,6 +256,7 @@ span {
 // pizza constructor
 .constructor__wrapper {
   display: flex;
+  width: 93%;
 }
 
 .size-controls {
@@ -614,7 +627,8 @@ span {
     color: #7eb103;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     font-size: 26px;
     font-weight: 700;
   }
@@ -699,7 +713,8 @@ span {
       border-radius: 5px 5px 0 0;
     }
 
-    h3, h2 {
+    h3,
+    h2 {
       margin: 10px 0;
       font-size: 26px;
       font-weight: 700;
@@ -720,7 +735,7 @@ span {
 
 footer {
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
-  width: 100%;
+  max-width: 2750px;
   height: 190px;
   display: flex;
   text-align: center;
@@ -728,17 +743,21 @@ footer {
   margin-top: 20px;
   color: #dbd9d9;
   font-size: 18px;
+  box-sizing: border-box;
 
   .container {
     padding-right: 2%;
+    width: 100%;
     padding-left: 2%;
     margin-right: auto;
     margin-left: auto;
     max-width: 2750px;
     height: 100%;
     display: inline-block;
+    box-sizing: border-box;
 
     .footer__info-list {
+      box-sizing: border-box;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -779,7 +798,10 @@ footer {
     width: 50%;
     color: #5f4b07;
 
-    .name-validity-informer, .phone-validity-informer, .email-validity-informer, .address-validity-informer {
+    .name-validity-informer,
+    .phone-validity-informer,
+    .email-validity-informer,
+    .address-validity-informer {
       display: none;
       color: red;
     }
@@ -787,8 +809,8 @@ footer {
     .visible {
       display: block !important;
     }
- 
-   
+
+
 
 
     #comment {
