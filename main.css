@@ -38,6 +38,10 @@ span {
   max-width: 1270px;
   height: 100%;
   display: flex;
+  align-items: center;
+}
+.navbar .container .nav__block:last-of-type {
+  justify-content: center;
 }
 .navbar .container .nav__block {
   box-sizing: border-box;
@@ -681,6 +685,7 @@ footer .container {
   height: 100%;
   display: inline-block;
   box-sizing: border-box;
+  align-items: center;
 }
 footer .container .footer__info-list {
   box-sizing: border-box;

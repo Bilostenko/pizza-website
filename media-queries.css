@@ -1,4 +1,4 @@
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
   /* navbar */
   .language__switcher {
@@ -59,6 +59,7 @@
 
   .sticky .menu__list .payament__sum {
     font-size: 14px;
+    padding-top: 10px;
   }
 
   .sticky .menu__list .media-box-500px {
@@ -75,12 +76,12 @@
 }
 
 @media screen and (max-width: 470px) {
-  .navbar {
-    margin-bottom: 160px;
-  }
-
+ 
   .navbar .container {
     flex-direction: column;
+  }
+  .language__switcher, .navbar .container {
+    flex-direction: row;
   }
 
   /* sticky nabar */
@@ -90,5 +91,13 @@
 
   .sticky .menu__list .payment {
     font-size: 16px ;
+  }
+  .language__switcher {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .navbar .container .nav__block ul.language__switcher li {
+    font-size: 10px;
   }
 }
