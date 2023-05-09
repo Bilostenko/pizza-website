@@ -740,50 +740,54 @@ span {
 
 footer {
   background-image: url(https://veteranopizza.com/public/assets/img/pat.jpg);
-  max-width: 2750px;
   height: 190px;
   display: flex;
-  text-align: center;
-  flex-wrap: wrap;
   margin-top: 20px;
   color: #dbd9d9;
   font-size: 18px;
   box-sizing: border-box;
 
   .container {
-    padding-right: 2%;
     width: 100%;
-    padding-left: 2%;
     margin-right: auto;
     margin-left: auto;
-    max-width: 2750px;
+    max-width: 1200px;
     height: 100%;
-    display: inline-block;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
 
-    // .container nav__logo:last-child {
-
-    // }
     .footer__info-list {
       box-sizing: border-box;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       height: 100%;
       width: 100%;
-      padding: 0 2%;
-      gap: 2%;
+      padding: 0;
+      gap: 20px;
 
       li:nth-child(2) {
-        display: flex;
-        padding-left: 40px;
-        padding-right: 40px;
-        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      li {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+
+        a {
+          display: block;
+        }
       }
     }
   }
-
 }
 
 // modal window
