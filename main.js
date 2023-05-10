@@ -1,6 +1,10 @@
 import pizza from './pizza.mjs';
 import combo from './combo.mjs';
 import drinks from './drinks.mjs';
+// определение переменных
+// назначение обработчиков событий
+// вызовы
+// функции
 
 // sticky navbar
 window.addEventListener('scroll', function () {
@@ -29,7 +33,7 @@ function updateTranslation() {
       translatableElements.forEach(element => {
         const translationKey = element.dataset.i18n;
         if (data.hasOwnProperty(translationKey)) {
-          element.textContent = data[translationKey];
+          element.innerHTML = data[translationKey];
         }
       });
 

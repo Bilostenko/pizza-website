@@ -257,7 +257,7 @@ span {
 }
 
 .ingredient-controls {
-  height: 70vmin;
+  height: 75vmin;
   width: calc(100% - 60vmin);
   order: 3;
   border: 2px solid #d4af37;
@@ -268,13 +268,15 @@ span {
 
 /* ingredient */
 .ingredient__list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
   width: 100%;
   height: 100%;
-  padding: 0;
 }
 
 .ingredient {
@@ -284,6 +286,7 @@ span {
   background-position: center;
   background-size: 80% 80%;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 .ingredient:nth-child(1) {
@@ -336,10 +339,8 @@ span {
   font-size: 20px;
   color: #333;
   cursor: pointer;
-  margin-right: 10px;
   font-size: 24px;
   font-weight: bold;
-  margin-left: 20px;
   text-align: center;
 }
 
@@ -371,12 +372,12 @@ span {
   background-size: 100% 100%;
 }
 
-:has([value="8"]:checked) ~ .preview > .pizza {
+:has(#middle:checked) ~ .constructor__wrapper .pizza {
   height: 75%;
   width: 75%;
 }
 
-:has([value="6"]:checked) ~ .preview > .pizza {
+:has(#small:checked) ~ .constructor__wrapper .pizza {
   height: 60%;
   width: 60%;
 }
@@ -404,7 +405,7 @@ span {
 }
 
 .layer:nth-child(2) {
-  background-image: url("./img/ingredients/PepperGroup.png");
+  background-image: url("./img/ingredients/PepperoniGroup.png");
   background-size: 81% 76%;
   background-repeat: no-repeat;
 }
@@ -416,7 +417,7 @@ span {
 }
 
 .layer:nth-child(4) {
-  background-image: url("./img/ingredients/PineappleGroup.png");
+  background-image: url("./img/ingredients/Pineapple.png");
   background-size: 54% 46%;
   background-repeat: no-repeat;
 }
