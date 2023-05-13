@@ -6,7 +6,6 @@ import drinks from './drinks.mjs';
 // вызовы
 // функции
 
-
 // sticky navbar
 window.addEventListener('scroll', function () {
   const stickyNav = document.querySelector('.sticky');

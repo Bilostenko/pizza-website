@@ -6,7 +6,6 @@ import drinks from './drinks.mjs';
 
 // change language
 const languageSwitcher = document.querySelector('form');
-const languageRadios = languageSwitcher.querySelectorAll('input[type="radio"]');
 // changing data according to dropdown value
 const dropdown = document.querySelector("#drop");
 const phoneElement = document.querySelector("#phone");
@@ -37,6 +36,7 @@ const emailInput = document.querySelector('#email');
 const phoneInput = document.querySelector('#phone');
 // check address
 const addressInput = document.querySelector('#address');
+
 
 // назначение обработчиков событий-------------------
 
@@ -86,7 +86,7 @@ dropdown.addEventListener("change", function () {
     address1.setAttribute("data-i18n", "Yalta-address1");
     address2.setAttribute("data-i18n", "Yalta-address2");
   }
-  updateTranslation();
+  // updateTranslation();
 });
 /* drag and drop */
 dragItems.forEach(item => {
@@ -123,7 +123,6 @@ setInterval(() => {
   clientCount.textContent = (parseFloat(clientCount.textContent) + 1).toFixed(0);
 }, 3000);
 // scrolling to menu-items
-// Due to the fact that some elements are dynamically generated through JavaScript, the navigation was also made through JavaScript.
 document.querySelector('a[href="#pizza-construct-nav"]').addEventListener('click', function (event) {
   event.preventDefault();
   document.querySelector('#pizza-construct-nav').scrollIntoView({ behavior: 'smooth' });
@@ -237,7 +236,7 @@ function updateTranslation() {
     });
 
 }
-updateTranslation(); /* убрать? */
+// updateTranslation();
 
 /* drag and drop */
 function dragStart() {
@@ -292,9 +291,11 @@ function updateTotalPrice() {
   totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
 
   /* Getting the price from the product card and updating the total price */
+
   const addButtons = document.querySelectorAll('.add-to-cart-button');
   addButtons.forEach(button => {
     button.addEventListener('click', function (event) {
+      console.log(event.target);
       const productCard = event.target.closest('.card');
       const price = productCard.dataset.price;
       totalPriceValue += parseFloat(price);
@@ -304,7 +305,8 @@ function updateTotalPrice() {
   });
 }
 
-updateTotalPrice();
+
+// updateTotalPrice();
 
 // create card function
 function createCard(card, isCombo = false, isDrink = false) {

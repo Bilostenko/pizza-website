@@ -131,6 +131,13 @@
   #cards-container .card button {
     font-size: 16px;
   }
+
+  footer .container .footer__info-list{
+    flex-direction: column;
+  }
+  footer {
+    height: 380px;
+  }
 }
 
 @media screen and (max-width: 500px) {
