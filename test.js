@@ -292,19 +292,33 @@ function updateTotalPrice() {
 
   /* Getting the price from the product card and updating the total price */
 
+  // const addButtons = document.querySelectorAll('.add-to-cart-button');
+  // addButtons.forEach(button => {
+  //   button.addEventListener('click', function (event) {
+  //     console.log(event.target);
+  //     const productCard = event.target.closest('.card');
+  //     const price = productCard.dataset.price;
+  //     totalPriceValue += parseFloat(price);
+  //     totalPriceValue = Math.round(totalPriceValue * 100) / 100;
+  //     totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
+  //   });
+  // });
+}
+document.addEventListener('DOMContentLoaded', function() {
   const addButtons = document.querySelectorAll('.add-to-cart-button');
   addButtons.forEach(button => {
-    button.addEventListener('click', function (event) {
+    button.addEventListener('click', function(event) {
+      let totalPriceValue = 0;
       console.log(event.target);
       const productCard = event.target.closest('.card');
       const price = productCard.dataset.price;
       totalPriceValue += parseFloat(price);
       totalPriceValue = Math.round(totalPriceValue * 100) / 100;
       totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
+      updateTotalPrice();
     });
   });
-}
-
+});
 
 // updateTotalPrice();
 
