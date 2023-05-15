@@ -271,6 +271,7 @@ function drop() {
   updateTotalPrice();
 }
 // update price
+
 function updateTotalPrice() {
   let totalPriceValue = 0;
 
@@ -304,21 +305,23 @@ function updateTotalPrice() {
   //   });
   // });
 }
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
   const addButtons = document.querySelectorAll('.add-to-cart-button');
+  let totalPriceValue = 0;
+
   addButtons.forEach(button => {
-    button.addEventListener('click', function(event) {
-      let totalPriceValue = 0;
-      console.log(event.target);
+    button.addEventListener('click', function (event) {
       const productCard = event.target.closest('.card');
       const price = productCard.dataset.price;
       totalPriceValue += parseFloat(price);
-      totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-      totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
-      updateTotalPrice();
+      totalPrice.innerHTML = `До сплати: ${totalPriceValue} &#x20B4`;
+      updateTotalPrice(); // Раскомментируйте эту строку
     });
   });
 });
+
+
 
 // updateTotalPrice();
 
