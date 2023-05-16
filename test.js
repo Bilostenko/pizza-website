@@ -271,10 +271,10 @@ function drop() {
   updateTotalPrice();
 }
 // update price
+let totalPriceValue = 0;
 
 function updateTotalPrice() {
-  let totalPriceValue = 0;
-
+  totalPriceValue = 0;
   /* Calculation of the cost of selected ingredients */
   ingredientInputs.forEach(input => {
     if (input.checked) {
@@ -290,36 +290,24 @@ function updateTotalPrice() {
 
   totalPriceValue = Math.round(totalPriceValue * 100) / 100;
   totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
-
-  /* Getting the price from the product card and updating the total price */
-
-  // const addButtons = document.querySelectorAll('.add-to-cart-button');
-  // addButtons.forEach(button => {
-  //   button.addEventListener('click', function (event) {
-  //     console.log(event.target);
-  //     const productCard = event.target.closest('.card');
-  //     const price = productCard.dataset.price;
-  //     totalPriceValue += parseFloat(price);
-  //     totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-  //     totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
-  //   });
-  // });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   const addButtons = document.querySelectorAll('.add-to-cart-button');
-  let totalPriceValue = 0;
-
   addButtons.forEach(button => {
     button.addEventListener('click', function (event) {
       const productCard = event.target.closest('.card');
       const price = productCard.dataset.price;
       totalPriceValue += parseFloat(price);
-      totalPrice.innerHTML = `До сплати: ${totalPriceValue} &#x20B4`;
-      updateTotalPrice(); // Раскомментируйте эту строку
+      totalPriceValue = Math.round(totalPriceValue * 100) / 100;
+      totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
     });
+    updateTotalPrice();
   });
 });
+
+
+
 
 
 
