@@ -141,6 +141,26 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
   event.preventDefault();
   document.querySelector('#drinks-container').scrollIntoView({ behavior: 'smooth' });
 });
+// add to cart
+document.addEventListener('DOMContentLoaded', () => {
+  const addButton = document.querySelector('.add-to-cart-button');
+  console.log(addButton);
+  const counter = document.querySelector('.cart-counter');
+  console.log(counter);
+
+  let itemCount = 0;
+  let addedToCart = false;
+
+  cardButton.addEventListener('click', () => {
+    if (!addedToCart) {
+      itemCount++;
+      cartCounter.innerText = itemCount; // Обновляем значение счетчика в глобальном элементе
+      addedToCart = true;
+      cardButton.disabled = true; // Опционально: можно заблокировать кнопку после добавления товара
+    }
+  });
+});
+
 // show modal window
 showModal.addEventListener('click', function () {
   document.querySelector('.modal').style.display = "block";
@@ -271,40 +291,40 @@ function drop() {
   updateTotalPrice();
 }
 // update price
-let totalPriceValue = 0;
+// let totalPriceValue = 0;
 
-function updateTotalPrice() {
-  totalPriceValue = 0;
-  /* Calculation of the cost of selected ingredients */
-  ingredientInputs.forEach(input => {
-    if (input.checked) {
-      totalPriceValue += parseFloat(input.value);
-    }
-  });
+// function updateTotalPrice() {
+//   totalPriceValue = 0;
+//   /* Calculation of the cost of selected ingredients */
+//   ingredientInputs.forEach(input => {
+//     if (input.checked) {
+//       totalPriceValue += parseFloat(input.value);
+//     }
+//   });
 
-  /* Adding the cost of the selected size */
-  const checkedInput = sizeControls.querySelector('input:checked');
-  if (checkedInput) {
-    totalPriceValue += parseFloat(checkedInput.value);
-  }
+//   /* Adding the cost of the selected size */
+//   const checkedInput = sizeControls.querySelector('input:checked');
+//   if (checkedInput) {
+//     totalPriceValue += parseFloat(checkedInput.value);
+//   }
 
-  totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-  totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
-}
+//   totalPriceValue = Math.round(totalPriceValue * 100) / 100;
+//   totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
+// }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const addButtons = document.querySelectorAll('.add-to-cart-button');
-  addButtons.forEach(button => {
-    button.addEventListener('click', function (event) {
-      const productCard = event.target.closest('.card');
-      const price = productCard.dataset.price;
-      totalPriceValue += parseFloat(price);
-      totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-      totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
-    });
-    updateTotalPrice();
-  });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//   const addButtons = document.querySelectorAll('.add-to-cart-button');
+//   addButtons.forEach(button => {
+//     button.addEventListener('click', function (event) {
+//       const productCard = event.target.closest('.card');
+//       const price = productCard.dataset.price;
+//       totalPriceValue += parseFloat(price);
+//       totalPriceValue = Math.round(totalPriceValue * 100) / 100;
+//       totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
+//     });
+//     updateTotalPrice();
+//   });
+// });
 
 
 
@@ -312,7 +332,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // updateTotalPrice();
-
+const cartCounter = document.createElement("span");
+cartCounter.classList.add("cart-counter");
+cartCounter.innerText = "0";
 // create card function
 function createCard(card, isCombo = false, isDrink = false) {
   const cardDiv = document.createElement("div");
@@ -347,10 +369,15 @@ function createCard(card, isCombo = false, isDrink = false) {
   cardButton.innerText = "В кошик";
   cardButton.dataset.i18n = "add-to-cart";
   cardButton.classList.add("add-to-cart-button");
+  
   cardDiv.appendChild(cardButton);
+  cardDiv.appendChild(cartCounter);
+  
   updateTranslation();
   return cardDiv;
+  
 }
+
 // cards container
 const cardsContainer = document.getElementById("cards-container");
 pizza.forEach((card) => {

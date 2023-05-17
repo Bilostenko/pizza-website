@@ -611,6 +611,22 @@ span {
       margin-bottom: 10px;
       font-size: 18px;
     }
+
+    .cart-counter::after {
+      content: attr(data-count);
+      background: red;
+      color: white;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-weight: bold;
+      text-align: center;
+      margin-left: 5px;
+      line-height: 30px;
+      font-size: 22px;
+    }
+
   }
 }
 
