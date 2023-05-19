@@ -15,10 +15,12 @@ const address2 = document.querySelector("#street2");
 const dragItems = document.querySelectorAll('.drag-item');
 const dropContainer = document.querySelector('.drop-container');
 let draggedItem = null;
-// price calculation
+// price calculation and add to cart
 const totalPrice = document.querySelector('.total__price');
 const sizeControls = document.querySelector('.size-controls');
 const inputs = sizeControls.querySelectorAll('input');
+let selectedIds = [];
+
 /* ingradients */
 const ingredientInputs = document.querySelectorAll('.ingredient-input');
 // statistics
@@ -144,21 +146,18 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
 // add to cart
 document.addEventListener('DOMContentLoaded', () => {
   const addButton = document.querySelector('.add-to-cart-button');
-  console.log(addButton);
   const counter = document.querySelector('.cart-counter');
-  console.log(counter);
-
   let itemCount = 0;
   let addedToCart = false;
 
-  cardButton.addEventListener('click', () => {
-    if (!addedToCart) {
-      itemCount++;
-      cartCounter.innerText = itemCount; // Обновляем значение счетчика в глобальном элементе
-      addedToCart = true;
-      cardButton.disabled = true; // Опционально: можно заблокировать кнопку после добавления товара
-    }
-  });
+  // cardButton.addEventListener('click', () => {
+  //   if (!addedToCart) {
+  //     itemCount++;
+  //     cartCounter.innerText = itemCount; // Обновляем значение счетчика в глобальном элементе
+  //     addedToCart = true;
+  //     cardButton.disabled = true; // Опционально: можно заблокировать кнопку после добавления товара
+  //   }
+  // });
 });
 
 // show modal window
@@ -325,6 +324,25 @@ function drop() {
 //     updateTotalPrice();
 //   });
 // });
+document.addEventListener('DOMContentLoaded', function () {
+  const addButtons = document.querySelectorAll('.add-to-cart-button');
+  
+  addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (button.classList.contains('disabled')) {
+        return;
+      }
+      const id = button.dataset.id;
+      if (selectedIds.includes(id)) {
+        selectedIds = selectedIds.filter(selectedId => selectedId !== id);
+      } else {
+        selectedIds.push(id);
+      }
+      button.classList.add('disabled');
+      console.log('Выбранные data-id:', selectedIds);
+    });
+  });
+});
 
 
 
@@ -335,7 +353,7 @@ function drop() {
 const cartCounter = document.createElement("span");
 cartCounter.classList.add("cart-counter");
 cartCounter.innerText = "0";
-// create card function
+// create card 
 function createCard(card, isCombo = false, isDrink = false) {
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
@@ -369,13 +387,14 @@ function createCard(card, isCombo = false, isDrink = false) {
   cardButton.innerText = "В кошик";
   cardButton.dataset.i18n = "add-to-cart";
   cardButton.classList.add("add-to-cart-button");
-  
+  cardButton.dataset.id = card["id"];
+
   cardDiv.appendChild(cardButton);
   cardDiv.appendChild(cartCounter);
-  
+
   updateTranslation();
   return cardDiv;
-  
+
 }
 
 // cards container
