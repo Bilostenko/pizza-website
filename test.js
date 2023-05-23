@@ -16,10 +16,10 @@ const dragItems = document.querySelectorAll('.drag-item');
 const dropContainer = document.querySelector('.drop-container');
 let draggedItem = null;
 // price calculation and add to cart
-const totalPrice = document.querySelector('.total__price');
 const sizeControls = document.querySelector('.size-controls');
 const inputs = sizeControls.querySelectorAll('input');
 let selectedIds = [];
+const paymentElement = document.querySelector('.payment');
 
 /* ingradients */
 const ingredientInputs = document.querySelectorAll('.ingredient-input');
@@ -143,22 +143,29 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
   event.preventDefault();
   document.querySelector('#drinks-container').scrollIntoView({ behavior: 'smooth' });
 });
-// add to cart
-document.addEventListener('DOMContentLoaded', () => {
-  const addButton = document.querySelector('.add-to-cart-button');
-  const counter = document.querySelector('.cart-counter');
-  let itemCount = 0;
-  let addedToCart = false;
-
-  // cardButton.addEventListener('click', () => {
-  //   if (!addedToCart) {
-  //     itemCount++;
-  //     cartCounter.innerText = itemCount; // Обновляем значение счетчика в глобальном элементе
-  //     addedToCart = true;
-  //     cardButton.disabled = true; // Опционально: можно заблокировать кнопку после добавления товара
-  //   }
-  // });
+// add items to cart
+document.addEventListener('DOMContentLoaded', function () {
+  const addButtons = document.querySelectorAll('.add-to-cart-button');
+  
+  addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (button.classList.contains('disabled')) {
+        return;
+      }
+      const id = button.dataset.id;
+      if (selectedIds.includes(id)) {
+        selectedIds = selectedIds.filter(selectedId => selectedId !== id);
+      } else {
+        selectedIds.push(id);
+      }
+      button.classList.add('disabled');
+      updateCount();
+      console.log('Выбранные data-id:', selectedIds);
+     
+    });
+  });
 });
+
 
 // show modal window
 showModal.addEventListener('click', function () {
@@ -289,64 +296,12 @@ function drop() {
   this.classList.remove('hovered');
   updateTotalPrice();
 }
-// update price
-// let totalPriceValue = 0;
-
-// function updateTotalPrice() {
-//   totalPriceValue = 0;
-//   /* Calculation of the cost of selected ingredients */
-//   ingredientInputs.forEach(input => {
-//     if (input.checked) {
-//       totalPriceValue += parseFloat(input.value);
-//     }
-//   });
-
-//   /* Adding the cost of the selected size */
-//   const checkedInput = sizeControls.querySelector('input:checked');
-//   if (checkedInput) {
-//     totalPriceValue += parseFloat(checkedInput.value);
-//   }
-
-//   totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-//   totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
-// }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const addButtons = document.querySelectorAll('.add-to-cart-button');
-//   addButtons.forEach(button => {
-//     button.addEventListener('click', function (event) {
-//       const productCard = event.target.closest('.card');
-//       const price = productCard.dataset.price;
-//       totalPriceValue += parseFloat(price);
-//       totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-//       totalPrice.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4;";
-//     });
-//     updateTotalPrice();
-//   });
-// });
-document.addEventListener('DOMContentLoaded', function () {
-  const addButtons = document.querySelectorAll('.add-to-cart-button');
-  
-  addButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      if (button.classList.contains('disabled')) {
-        return;
-      }
-      const id = button.dataset.id;
-      if (selectedIds.includes(id)) {
-        selectedIds = selectedIds.filter(selectedId => selectedId !== id);
-      } else {
-        selectedIds.push(id);
-      }
-      button.classList.add('disabled');
-      console.log('Выбранные data-id:', selectedIds);
-    });
-  });
-});
-
-
-
-
+// update added items to cart
+function updateCount() {
+  const count = selectedIds.length;
+  paymentElement.setAttribute('item-count', count);
+  paymentElement.style.setProperty('--item-count', `"${count}"`);
+}
 
 
 // updateTotalPrice();
