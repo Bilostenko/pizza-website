@@ -146,7 +146,7 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
 // add items to cart
 document.addEventListener('DOMContentLoaded', function () {
   const addButtons = document.querySelectorAll('.add-to-cart-button');
-  
+
   addButtons.forEach(button => {
     button.addEventListener('click', () => {
       if (button.classList.contains('disabled')) {
@@ -161,16 +161,41 @@ document.addEventListener('DOMContentLoaded', function () {
       button.classList.add('disabled');
       updateCount();
       console.log('Выбранные data-id:', selectedIds);
-     
+
     });
   });
 });
+const orderedItems = document.querySelector('.ordered-items');
+function showOrderedItems() {
+  if (selectedIds.length > 0) {
+    selectedIds.forEach((id) => {
+      const item = pizza.find((pizzaItem) => pizzaItem.id === parseInt(id));
+      if (item) {
+        
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('ordered-item');
+        itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" width="100" height="100">
+            <div class="ordered-item__name">${item['pizza-name']}</div>
+            <div class="ordered-item__price">${item['data-price']} UAH/грн</div>`;
+        orderedItems.appendChild(itemDiv);
+      }
+    });
+  }
+}
+
+
+
+
+
 
 
 // show modal window
 showModal.addEventListener('click', function () {
+  showOrderedItems()
   document.querySelector('.modal').style.display = "block";
   document.body.style.overflow = 'hidden';
+
 });
 // close modal window
 closeModal.addEventListener('click', function () {
@@ -262,7 +287,6 @@ function updateTranslation() {
     });
 
 }
-// updateTranslation();
 
 /* drag and drop */
 function dragStart() {

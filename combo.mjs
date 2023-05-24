@@ -5,7 +5,8 @@ const combo = [
     "description": "Піца Маргарита + Піца Мисливська + Піца Гавайська + Піца Вегетаріанська",  
     "cost": "combo-s-price",
     "data-i18n": "combo-s",
-    "data-price": "300"
+    "data-price": "300",
+    "id": 28
   },
   {
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_d861077e37de281e368c49db2e02042d.png",
@@ -13,7 +14,8 @@ const combo = [
     "description": "Піца Песто Прошуто 30см. + Піца Прованс 30см.+ Піца Українська 30см. + Coca-Cola 0.5л. 3шт",
     "cost": "combo-m-price",
     "data-i18n": "combo-m",
-    "data-price": "400"
+    "data-price": "400",
+    "id": 29
   },
   {
     "image": "https://veteranopizza.com/public/uploads/site_catalog/original_32504bb98ead1fba947c0350c9f11596.jpg",
@@ -21,7 +23,8 @@ const combo = [
     "description": "Піца Dolce Pere 30 см. + Тірольська 30см. + Чотири Сири. + Для Буслаєва 30см. + Coca-Cola 0.5л. 4шт.",
     "cost": "combo-l-price",
     "data-i18n": "combo-l",
-    "data-price": "500"
+    "data-price": "500",
+    "id": 30
   }
 ]
 
