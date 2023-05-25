@@ -18,8 +18,9 @@ let draggedItem = null;
 // price calculation and add to cart
 const sizeControls = document.querySelector('.size-controls');
 const inputs = sizeControls.querySelectorAll('input');
-let selectedIds = [];
+let selectedIds = []; /* тут хранится id выбранных товаров */
 const paymentElement = document.querySelector('.payment');
+const orderedItems = document.querySelector('.ordered-items');
 
 /* ingradients */
 const ingredientInputs = document.querySelectorAll('.ingredient-input');
@@ -165,27 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-const orderedItems = document.querySelector('.ordered-items');
-function showOrderedItems() {
-  if (selectedIds.length > 0) {
-    selectedIds.forEach((id) => {
-      const item = pizza.find((pizzaItem) => pizzaItem.id === parseInt(id));
-      if (item) {
-        
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('ordered-item');
-        itemDiv.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" width="100" height="100">
-            <div class="ordered-item__name">${item['pizza-name']}</div>
-            <div class="ordered-item__price">${item['data-price']} UAH/грн</div>`;
-        orderedItems.appendChild(itemDiv);
-      }
-    });
-  }
-}
-
-
-
 
 
 
@@ -193,6 +173,7 @@ function showOrderedItems() {
 // show modal window
 showModal.addEventListener('click', function () {
   showOrderedItems()
+  // updateTotalPrice()
   document.querySelector('.modal').style.display = "block";
   document.body.style.overflow = 'hidden';
 
@@ -396,3 +377,93 @@ drinks.forEach((card) => {
   const cardDiv = createCard(card, false, true);
   drinksContainer.appendChild(cardDiv);
 });
+
+function showOrderedItems() {
+  const language = localStorage.getItem('language') || 'en';
+  fetch(`locales/${language}.json`)
+    .then(response => response.json())
+    .then(data => {
+      orderedItems.innerHTML = ''; // Очистка содержимого контейнера
+      if (selectedIds.length > 0) {
+        selectedIds.forEach((id) => {
+
+          const itemPizza = pizza.find((pizzaItem) => pizzaItem.id === parseInt(id));
+          if (itemPizza) {
+            const pizzaItemDiv = document.createElement('div');
+            pizzaItemDiv.classList.add('ordered-item');
+            pizzaItemDiv.innerHTML = `
+              <img src="${itemPizza.image}" alt="${itemPizza.name}" width="100" height="100">
+              <div class="ordered-item__name" pizza-name="${itemPizza['pizza-name']}">${data[itemPizza['pizza-name']]}</div>
+              <div class="ordered-item__price" data-i18n="data-price">${data[itemPizza['cost']]}</div>
+              <button class="plus-btn">+</button>
+              <button class="minus-btn">-</button>`;
+            orderedItems.appendChild(pizzaItemDiv);
+          }
+
+          const itemCombo = combo.find((comboItem) => comboItem.id === parseInt(id));
+          if (itemCombo) {
+            const comboItemDiv = document.createElement('div');
+            comboItemDiv.classList.add('ordered-item');
+            comboItemDiv.innerHTML = `
+            <img src="${itemCombo.image}" alt="${itemCombo.name}" width="100" height="100">
+            <div class="ordered-item__name" pizza-name="${itemCombo['pizza-name']}">${data[itemCombo['pizza-name']]}</div>
+            <div class="ordered-item__price" data-i18n="data-price">${data[itemCombo['cost']]}</div>`;
+            orderedItems.appendChild(comboItemDiv);
+          }
+
+          const itemDrinks = drinks.find((drinksItem) => drinksItem.id === parseInt(id));
+          if (itemDrinks) {
+            const drinksItemDiv = document.createElement('div');
+            drinksItemDiv.classList.add('ordered-item');
+            drinksItemDiv.innerHTML = `
+            <img src="${itemDrinks.image}" alt="${itemDrinks.name}" width="100" height="100">
+            <div class="ordered-item__name" pizza-name="${itemDrinks['pizza-name']}">${data[itemDrinks['pizza-name']]}</div>
+            <div class="ordered-item__price" data-i18n="data-price">${data[itemDrinks['cost']]}</div>`;
+            orderedItems.appendChild(drinksItemDiv);
+          }
+        });
+      }
+    })
+}
+
+// price calculation
+const totalPriceConstructor = document.querySelector('.total__price-constructor');
+const totalPricePizza = document.querySelector('.total__price-pizza');
+const totalPrice = document.querySelector('.total__price');
+const addButtons = document.querySelectorAll('.add-to-cart-button');
+let totalPriceValue = 0; // Объявляем totalPriceValue вне функции и инициализируем значением 0
+
+function updateTotalPrice() {
+  totalPriceValue = 0; // Обнуляем totalPriceValue перед каждым обновлением
+
+  /* Calculation of the cost of selected ingredients */
+  ingredientInputs.forEach(input => {
+    if (input.checked) {
+      totalPriceValue += parseFloat(input.value);
+    }
+  });
+
+  /* Adding the cost of the selected size */
+  const checkedInput = sizeControls.querySelector('input:checked');
+  if (checkedInput) {
+    totalPriceValue += parseFloat(checkedInput.value);
+  }
+
+  totalPriceValue = Math.round(totalPriceValue * 100) / 100;
+  totalPriceConstructor.innerHTML = "До сплати (конструктор піци): " + totalPriceValue + "&#x20B4;";
+}
+
+/* Getting the price from the product card and updating the total price */
+addButtons.forEach(button => {
+  button.addEventListener('click', function (event) {
+    const productCard = event.target.closest('.card');
+    const price = productCard.dataset.price;
+    totalPriceValue += parseFloat(price);
+    totalPriceValue = Math.round(totalPriceValue * 100) / 100;
+    console.log(totalPriceValue);
+    totalPricePizza.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
+  });
+});
+
+
+

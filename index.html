@@ -96,9 +96,10 @@
           </li>
         </ul>
         <div class="media-box-500px">
-          <!-- <span class="payament__sum total__price" data-i18n="total-price">До сплати: 00</span> -->
           <div class="payment">
-            <a href="#"><img src="./img/pay.png" alt="payment-icon" class="payment-icon"><p data-i18n="make-order"></p></a>
+            <a href="#"><img src="./img/pay.png" alt="payment-icon" class="payment-icon">
+              <p data-i18n="make-order"></p>
+            </a>
           </div>
         </div>
       </div>
@@ -289,6 +290,9 @@
       </form>
       <div class="ordered-items"></div>
       <div class="modal-footer">
+        <span class="payament__sum total__price-constructor" data-i18n="total-price"></span>
+        <span class="payament__sum total__price-pizza" data-i18n="total-price"></span>
+        <span class="payament__sum total__price" data-i18n="total-price"></span>
         <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat"
           data-i18n="checkout-cancel">Відмінити</a>
         <a href="#" class="modal-action waves-effect waves-green btn-flat" id="submit"

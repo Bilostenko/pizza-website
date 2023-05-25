@@ -234,7 +234,7 @@ span {
       font-size: 20px;
       font-weight: 700;
       color: #7eb103;
-    
+
       a::after {
         content: var(--item-count);
         background: #7eb103;
@@ -855,6 +855,46 @@ footer {
       display: block !important;
     }
 
+    .ordered-items {
+      flex-direction: row;
+      overflow-x: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #d4af37;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px #d4af37;
+
+      .ordered-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d4af37;
+        padding: 10px;
+        gap: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px #d4af37;
+      }
+
+      .ordered-item__name {
+        font-weight: bold;
+        font-size: 19px;
+      }
+
+      .plus-btn,
+      .minus-btn {
+        border: 1px solid #d4af37;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px #d4af37;
+        color: #5f4b07;
+        cursor: pointer;
+        width: 26px;
+        height: 26px;
+      }
+    }
 
 
 

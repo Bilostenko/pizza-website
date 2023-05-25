@@ -11,7 +11,8 @@ const pizza = [
   {
     "pizza-name": "tendet_tomato-name",
     "description": "Вершкова основа, моцарелла, рікота, помідор, помідори черрі, пармезан",
-    "image": "https://veteranopizza.com/public/uploads/site_catalog/original_d3c8726c47d80b7800a03216342be5f1.png", "cost": "tendet-tomato-price",
+    "image": "https://veteranopizza.com/public/uploads/site_catalog/original_d3c8726c47d80b7800a03216342be5f1.png",
+    "cost": "tendet-tomato-price",
     "data-i18n": "tendet-tomato",
     "data-price": "124",
     "id": 2
