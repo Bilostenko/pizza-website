@@ -396,9 +396,11 @@ function showOrderedItems() {
               <div class="ordered-item__name" pizza-name="${itemPizza['pizza-name']}">${data[itemPizza['pizza-name']]}</div>
               <div class="ordered-item__price" data-i18n="data-price">${data[itemPizza['cost']]}</div>
               <button class="plus-btn">+</button>
+              <button class="zero-btn">0</button>
               <button class="minus-btn">-</button>`;
             orderedItems.appendChild(pizzaItemDiv);
           }
+
 
           const itemCombo = combo.find((comboItem) => comboItem.id === parseInt(id));
           if (itemCombo) {
@@ -442,7 +444,7 @@ addButtons.forEach(button => {
     totalPricePizzaValue += parseFloat(price);
     totalPricePizzaValue = Math.round(totalPricePizzaValue * 100) / 100;
     totalPricePizza.innerHTML = "Піца: " + totalPricePizzaValue + "&#x20B4";
-    
+
     // Обновление общей суммы после каждого нажатия кнопки
     updateTotalPrice();
   });
@@ -466,7 +468,7 @@ function updateTotalPrice() {
 
   totalPriceConstructorValue = Math.round(totalPriceConstructorValue * 100) / 100;
   totalPriceConstructor.innerHTML = "Конструктор піци: " + totalPriceConstructorValue + "&#x20B4;";
-  
+
   // Обновление общей суммы после каждого обновления
   totalPrice.innerHTML = "Всього: " + (totalPricePizzaValue + totalPriceConstructorValue) + "&#x20B4;";
 }
