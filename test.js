@@ -431,39 +431,44 @@ const totalPriceConstructor = document.querySelector('.total__price-constructor'
 const totalPricePizza = document.querySelector('.total__price-pizza');
 const totalPrice = document.querySelector('.total__price');
 const addButtons = document.querySelectorAll('.add-to-cart-button');
-let totalPriceValue = 0; // Объявляем totalPriceValue вне функции и инициализируем значением 0
+
+let totalPricePizzaValue = 0; // Переменная для суммы пиццы
+let totalPriceConstructorValue = 0; // Переменная для суммы конструктора пиццы
+
+addButtons.forEach(button => {
+  button.addEventListener('click', function (event) {
+    const productCard = event.target.closest('.card');
+    const price = productCard.dataset.price;
+    totalPricePizzaValue += parseFloat(price);
+    totalPricePizzaValue = Math.round(totalPricePizzaValue * 100) / 100;
+    totalPricePizza.innerHTML = "Піца: " + totalPricePizzaValue + "&#x20B4";
+    
+    // Обновление общей суммы после каждого нажатия кнопки
+    updateTotalPrice();
+  });
+});
 
 function updateTotalPrice() {
-  totalPriceValue = 0; // Обнуляем totalPriceValue перед каждым обновлением
+  totalPriceConstructorValue = 0; // Обнуляем сумму конструктора перед каждым обновлением
 
   /* Calculation of the cost of selected ingredients */
   ingredientInputs.forEach(input => {
     if (input.checked) {
-      totalPriceValue += parseFloat(input.value);
+      totalPriceConstructorValue += parseFloat(input.value);
     }
   });
 
   /* Adding the cost of the selected size */
   const checkedInput = sizeControls.querySelector('input:checked');
   if (checkedInput) {
-    totalPriceValue += parseFloat(checkedInput.value);
+    totalPriceConstructorValue += parseFloat(checkedInput.value);
   }
 
-  totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-  totalPriceConstructor.innerHTML = "До сплати (конструктор піци): " + totalPriceValue + "&#x20B4;";
+  totalPriceConstructorValue = Math.round(totalPriceConstructorValue * 100) / 100;
+  totalPriceConstructor.innerHTML = "Конструктор піци: " + totalPriceConstructorValue + "&#x20B4;";
+  
+  // Обновление общей суммы после каждого обновления
+  totalPrice.innerHTML = "Всього: " + (totalPricePizzaValue + totalPriceConstructorValue) + "&#x20B4;";
 }
-
-/* Getting the price from the product card and updating the total price */
-addButtons.forEach(button => {
-  button.addEventListener('click', function (event) {
-    const productCard = event.target.closest('.card');
-    const price = productCard.dataset.price;
-    totalPriceValue += parseFloat(price);
-    totalPriceValue = Math.round(totalPriceValue * 100) / 100;
-    console.log(totalPriceValue);
-    totalPricePizza.innerHTML = "До сплати: " + totalPriceValue + "&#x20B4";
-  });
-});
-
 
 

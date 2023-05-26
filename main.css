@@ -817,6 +817,11 @@ footer .container .footer__info-list li a {
   padding: 10px;
   text-align: right;
 }
+.modal .modal-content .modal-footer .total__price-constructor, .modal .modal-content .modal-footer .total__price-pizza, .modal .modal-content .modal-footer .total__price {
+  color: #5f4b07;
+  font-size: 19px;
+  margin-right: 20px;
+}
 .modal .modal-content .modal-footer a {
   margin-left: 10px;
 }

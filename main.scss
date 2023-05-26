@@ -909,6 +909,11 @@ footer {
       padding: 10px;
       text-align: right;
 
+      .total__price-constructor, .total__price-pizza,.total__price{
+        color: #5f4b07;
+        font-size: 19px;
+        margin-right: 20px;
+      }
 
       a {
         margin-left: 10px;
