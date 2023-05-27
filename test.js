@@ -173,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // show modal window
 showModal.addEventListener('click', function () {
   showOrderedItems()
-  // updateTotalPrice()
   document.querySelector('.modal').style.display = "block";
   document.body.style.overflow = 'hidden';
 
@@ -395,9 +394,9 @@ function showOrderedItems() {
               <img src="${itemPizza.image}" alt="${itemPizza.name}" width="100" height="100">
               <div class="ordered-item__name" pizza-name="${itemPizza['pizza-name']}">${data[itemPizza['pizza-name']]}</div>
               <div class="ordered-item__price" data-i18n="data-price">${data[itemPizza['cost']]}</div>
-              <button class="plus-btn">+</button>
+              <button class="plus-btn ordered-item">+</button>
               <button class="zero-btn">0</button>
-              <button class="minus-btn">-</button>`;
+              <button class="minus-btn ordered-item">-</button>`;
             orderedItems.appendChild(pizzaItemDiv);
           }
 
@@ -426,6 +425,8 @@ function showOrderedItems() {
         });
       }
     })
+
+    
 }
 
 // price calculation
@@ -450,17 +451,18 @@ addButtons.forEach(button => {
   });
 });
 
+// Функция для обновления итоговой цены
 function updateTotalPrice() {
   totalPriceConstructorValue = 0; // Обнуляем сумму конструктора перед каждым обновлением
-
-  /* Calculation of the cost of selected ingredients */
+  
+  // Calculation of the cost of selected ingredients
   ingredientInputs.forEach(input => {
     if (input.checked) {
       totalPriceConstructorValue += parseFloat(input.value);
     }
   });
 
-  /* Adding the cost of the selected size */
+  // Adding the cost of the selected size
   const checkedInput = sizeControls.querySelector('input:checked');
   if (checkedInput) {
     totalPriceConstructorValue += parseFloat(checkedInput.value);
@@ -473,4 +475,32 @@ function updateTotalPrice() {
   totalPrice.innerHTML = "Всього: " + (totalPricePizzaValue + totalPriceConstructorValue) + "&#x20B4;";
 }
 
+const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
+const minusButtons = document.querySelectorAll('.ordered-item .minus-btn');
 
+// Добавить обработчики событий для кнопок плюс и минус
+plusButtons.forEach(button => {
+  button.addEventListener('click', function (event) {
+    const orderedItem = event.target.closest('.ordered-item');
+    const priceElement = orderedItem.querySelector('.ordered-item__price');
+    let price = parseFloat(priceElement.textContent);
+    price *= 2; // Удваиваем цену товара
+    priceElement.textContent = price.toFixed(2);
+
+    updateTotalPrice(); // Обновляем итоговую цену
+  });
+});
+
+minusButtons.forEach(button => {
+  button.addEventListener('click', function (event) {
+    const orderedItem = event.target.closest('.ordered-item');
+    const priceElement = orderedItem.querySelector('.ordered-item__price');
+    let price = parseFloat(priceElement.textContent);
+    if (price >= 1) {
+      price /= 2; // Уменьшаем цену товара вдвое
+      priceElement.textContent = price.toFixed(2);
+
+      updateTotalPrice(); // Обновляем итоговую цену
+    }
+  });
+});
