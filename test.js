@@ -400,6 +400,10 @@ function showOrderedItems() {
             orderedItems.appendChild(pizzaItemDiv);
           }
 
+          const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
+          plusButtons.forEach(button => {
+            button.addEventListener('click', handlePlus);
+          });
 
           const itemCombo = combo.find((comboItem) => comboItem.id === parseInt(id));
           if (itemCombo) {
@@ -426,7 +430,7 @@ function showOrderedItems() {
       }
     })
 
-    
+
 }
 
 // price calculation
@@ -454,7 +458,7 @@ addButtons.forEach(button => {
 // Функция для обновления итоговой цены
 function updateTotalPrice() {
   totalPriceConstructorValue = 0; // Обнуляем сумму конструктора перед каждым обновлением
-  
+
   // Calculation of the cost of selected ingredients
   ingredientInputs.forEach(input => {
     if (input.checked) {
@@ -475,21 +479,26 @@ function updateTotalPrice() {
   totalPrice.innerHTML = "Всього: " + (totalPricePizzaValue + totalPriceConstructorValue) + "&#x20B4;";
 }
 
-const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
+// const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
 const minusButtons = document.querySelectorAll('.ordered-item .minus-btn');
 
 // Добавить обработчики событий для кнопок плюс и минус
-plusButtons.forEach(button => {
-  button.addEventListener('click', function (event) {
-    const orderedItem = event.target.closest('.ordered-item');
-    const priceElement = orderedItem.querySelector('.ordered-item__price');
-    let price = parseFloat(priceElement.textContent);
-    price *= 2; // Удваиваем цену товара
-    priceElement.textContent = price.toFixed(2);
+function handlePlus(event) {
+  const orderedItem = document.querySelector('.ordered-item');
+  const priceElement = orderedItem.querySelector('.ordered-item__price');
+  let price = parseFloat(priceElement.textContent);
+  price *= 2; // Удваиваем цену товара
+  priceElement.textContent = price.toFixed(2);
 
-    updateTotalPrice(); // Обновляем итоговую цену
-  });
-});
+  updateTotalPrice(); // Обновляем итоговую цену
+}
+// const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
+// plusButtons.forEach(button => {
+//   button.addEventListener('click', handlePlus());
+// });
+
+//! При нажатии на кнопку вызывается метод addEventListener и при клике передается вызов функции handlePlus()
+//* Создается строка, вызывается функция handlePlus(), и затем созданая строка и значение возвращенное функцией handlePlus() передаются аргументами в метод addEventListener вызваный у кнопки.
 
 minusButtons.forEach(button => {
   button.addEventListener('click', function (event) {
