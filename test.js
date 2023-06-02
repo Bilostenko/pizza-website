@@ -377,6 +377,8 @@ drinks.forEach((card) => {
   drinksContainer.appendChild(cardDiv);
 });
 
+
+let initialPricePizza
 function showOrderedItems() {
   const language = localStorage.getItem('language') || 'en';
   fetch(`locales/${language}.json`)
@@ -385,6 +387,7 @@ function showOrderedItems() {
       orderedItems.innerHTML = ''; // Очистка содержимого контейнера
       if (selectedIds.length > 0) {
         selectedIds.forEach((id) => {
+
 
           const itemPizza = pizza.find((pizzaItem) => pizzaItem.id === parseInt(id));
           if (itemPizza) {
@@ -398,6 +401,13 @@ function showOrderedItems() {
               <button class="zero-btn">0</button>
               <button class="minus-btn">-</button>`;
             orderedItems.appendChild(pizzaItemDiv);
+
+
+            const priceElement = document.querySelector('.ordered-item__price');
+            const priceText = priceElement.textContent;
+            const regex = /[0-9]+(?:\.[0-9]+)?/; // Регулярное выражение для поиска числа
+            initialPricePizza = parseFloat(priceText.match(regex)[0]); //! цена первоначальная исправить получение
+            console.log(initialPricePizza);
           }
 
           const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
@@ -483,6 +493,17 @@ function updateTotalPrice() {
 const minusButtons = document.querySelectorAll('.ordered-item .minus-btn');
 
 // Добавить обработчики событий для кнопок плюс и минус
+// function handlePlus(event) {
+//   const plusButton = event.target; // Кнопка, на которую было нажатие
+//   const orderedItem = plusButton.closest('.ordered-item'); // Родительский элемент, содержащий товар
+//   const priceElement = orderedItem.querySelector('.ordered-item__price');
+//   const initialPrice = parseFloat(priceElement.textContent);
+//   const newPrice = initialPrice + initialPrice; // Добавляем изначальную цену к текущей цене
+//   priceElement.textContent = newPrice.toFixed(2);
+
+//   updateTotalPrice(); // Обновляем итоговую цену
+// }
+
 function handlePlus(event) {
   const plusButton = event.target; // Кнопка, на которую было нажатие
   const orderedItem = plusButton.closest('.ordered-item'); // Родительский элемент, содержащий товар
@@ -490,7 +511,7 @@ function handlePlus(event) {
   const priceText = priceElement.textContent;
   const regex = /[0-9]+(?:\.[0-9]+)?/; // Регулярное выражение для поиска числа
   const price = parseFloat(priceText.match(regex)[0]);
-  const newPrice = price * 2; // Удваиваем цену товара
+  const newPrice = price + initialPricePizza; // Удваиваем цену товара
   priceElement.textContent = priceText.replace(regex, newPrice.toFixed(2));
 
   updateTotalPrice(); // Обновляем итоговую цену
