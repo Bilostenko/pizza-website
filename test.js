@@ -394,9 +394,9 @@ function showOrderedItems() {
               <img src="${itemPizza.image}" alt="${itemPizza.name}" width="100" height="100">
               <div class="ordered-item__name" pizza-name="${itemPizza['pizza-name']}">${data[itemPizza['pizza-name']]}</div>
               <div class="ordered-item__price" data-i18n="data-price">${data[itemPizza['cost']]}</div>
-              <button class="plus-btn ordered-item">+</button>
+              <button class="plus-btn">+</button>
               <button class="zero-btn">0</button>
-              <button class="minus-btn ordered-item">-</button>`;
+              <button class="minus-btn">-</button>`;
             orderedItems.appendChild(pizzaItemDiv);
           }
 
@@ -484,16 +484,18 @@ const minusButtons = document.querySelectorAll('.ordered-item .minus-btn');
 
 // Добавить обработчики событий для кнопок плюс и минус
 function handlePlus(event) {
-  const orderedItem = document.querySelector('.ordered-item');
-  console.log(orderedItem);
+  const plusButton = event.target; // Кнопка, на которую было нажатие
+  const orderedItem = plusButton.closest('.ordered-item'); // Родительский элемент, содержащий товар
   const priceElement = orderedItem.querySelector('.ordered-item__price');
-  console.log(priceElement);
-  let price = parseFloat(priceElement.textContent);
-  price *= 2; // Удваиваем цену товара
-  priceElement.textContent = price.toFixed(2);
+  const priceText = priceElement.textContent;
+  const regex = /[0-9]+(?:\.[0-9]+)?/; // Регулярное выражение для поиска числа
+  const price = parseFloat(priceText.match(regex)[0]);
+  const newPrice = price * 2; // Удваиваем цену товара
+  priceElement.textContent = priceText.replace(regex, newPrice.toFixed(2));
 
   updateTotalPrice(); // Обновляем итоговую цену
 }
+
 // function handlePlus(event) {
 //   const orderedItem = event.target.closest('.ordered-item');
 //   console.log(orderedItem);
