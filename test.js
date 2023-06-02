@@ -412,7 +412,7 @@ function showOrderedItems() {
             comboItemDiv.innerHTML = `
             <img src="${itemCombo.image}" alt="${itemCombo.name}" width="100" height="100">
             <div class="ordered-item__name" pizza-name="${itemCombo['pizza-name']}">${data[itemCombo['pizza-name']]}</div>
-            <div class="ordered-item__price" data-i18n="data-price">${data[itemCombo['cost']]}</div>`;
+            <div class="ordered-item__price" data-i18n="data-price">"${data[itemCombo['cost']]}"</div>`;
             orderedItems.appendChild(comboItemDiv);
           }
 
@@ -485,13 +485,26 @@ const minusButtons = document.querySelectorAll('.ordered-item .minus-btn');
 // Добавить обработчики событий для кнопок плюс и минус
 function handlePlus(event) {
   const orderedItem = document.querySelector('.ordered-item');
+  console.log(orderedItem);
   const priceElement = orderedItem.querySelector('.ordered-item__price');
+  console.log(priceElement);
   let price = parseFloat(priceElement.textContent);
   price *= 2; // Удваиваем цену товара
   priceElement.textContent = price.toFixed(2);
 
   updateTotalPrice(); // Обновляем итоговую цену
 }
+// function handlePlus(event) {
+//   const orderedItem = event.target.closest('.ordered-item');
+//   console.log(orderedItem);
+//   const priceElement = orderedItem.querySelector('.ordered-item__price');
+//   console.log(priceElement);
+//   let price = parseFloat(priceElement.textContent);
+//   price *= 2; // Удваиваем цену товара
+//   priceElement.textContent = price.toFixed(2);
+
+//   updateTotalPrice(); // Обновляем итоговую цену
+// }
 // const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
 // plusButtons.forEach(button => {
 //   button.addEventListener('click', handlePlus());
