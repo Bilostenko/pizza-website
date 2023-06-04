@@ -388,41 +388,33 @@ function showOrderedItems() {
       if (selectedIds.length > 0) {
         selectedIds.forEach((id) => {
 
-
           const itemPizza = pizza.find((pizzaItem) => pizzaItem.id === parseInt(id));
           if (itemPizza) {
             const pizzaItemDiv = document.createElement('div');
             pizzaItemDiv.classList.add('ordered-item');
+            pizzaItemDiv.dataset.price = itemPizza['data-price'];
             pizzaItemDiv.innerHTML = `
               <img src="${itemPizza.image}" alt="${itemPizza.name}" width="100" height="100">
               <div class="ordered-item__name" pizza-name="${itemPizza['pizza-name']}">${data[itemPizza['pizza-name']]}</div>
               <div class="ordered-item__price" data-i18n="data-price">${data[itemPizza['cost']]}</div>
               <button class="plus-btn">+</button>
-              <button class="zero-btn">0</button>
+              <button class="zero-btn">1</button>
               <button class="minus-btn">-</button>`;
             orderedItems.appendChild(pizzaItemDiv);
-
-
-            const priceElement = document.querySelector('.ordered-item__price');
-            const priceText = priceElement.textContent;
-            const regex = /[0-9]+(?:\.[0-9]+)?/; // Регулярное выражение для поиска числа
-            initialPricePizza = parseFloat(priceText.match(regex)[0]); //! цена первоначальная исправить получение
-            console.log(initialPricePizza);
           }
-
-          const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
-          plusButtons.forEach(button => {
-            button.addEventListener('click', handlePlus);
-          });
 
           const itemCombo = combo.find((comboItem) => comboItem.id === parseInt(id));
           if (itemCombo) {
             const comboItemDiv = document.createElement('div');
             comboItemDiv.classList.add('ordered-item');
+            comboItemDiv.dataset.price = itemCombo['data-price'];
             comboItemDiv.innerHTML = `
             <img src="${itemCombo.image}" alt="${itemCombo.name}" width="100" height="100">
             <div class="ordered-item__name" pizza-name="${itemCombo['pizza-name']}">${data[itemCombo['pizza-name']]}</div>
-            <div class="ordered-item__price" data-i18n="data-price">"${data[itemCombo['cost']]}"</div>`;
+            <div class="ordered-item__price" data-i18n="data-price">${data[itemCombo['cost']]}</div>
+            <button class="plus-btn">+</button>
+            <button class="zero-btn">1</button>
+            <button class="minus-btn">-</button>`;
             orderedItems.appendChild(comboItemDiv);
           }
 
@@ -430,18 +422,31 @@ function showOrderedItems() {
           if (itemDrinks) {
             const drinksItemDiv = document.createElement('div');
             drinksItemDiv.classList.add('ordered-item');
+            drinksItemDiv.dataset.price = itemDrinks['data-price'];
             drinksItemDiv.innerHTML = `
             <img src="${itemDrinks.image}" alt="${itemDrinks.name}" width="100" height="100">
             <div class="ordered-item__name" pizza-name="${itemDrinks['pizza-name']}">${data[itemDrinks['pizza-name']]}</div>
-            <div class="ordered-item__price" data-i18n="data-price">${data[itemDrinks['cost']]}</div>`;
+            <div class="ordered-item__price" data-i18n="data-price">${data[itemDrinks['cost']]}</div>
+            <button class="plus-btn">+</button>
+            <button class="zero-btn">1</button>
+            <button class="minus-btn">-</button>`;
             orderedItems.appendChild(drinksItemDiv);
           }
         });
+
+        const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
+        plusButtons.forEach(button => {
+          button.addEventListener('click', handlePlus);
+        });
+
+        const minusButtons = document.querySelectorAll('.ordered-item .minus-btn');
+        minusButtons.forEach(button => {
+          button.addEventListener('click', handleMinus);
+        });
       }
-    })
-
-
+    });
 }
+
 
 // price calculation
 const totalPriceConstructor = document.querySelector('.total__price-constructor');
@@ -489,20 +494,6 @@ function updateTotalPrice() {
   totalPrice.innerHTML = "Всього: " + (totalPricePizzaValue + totalPriceConstructorValue) + "&#x20B4;";
 }
 
-// const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
-const minusButtons = document.querySelectorAll('.ordered-item .minus-btn');
-
-// Добавить обработчики событий для кнопок плюс и минус
-// function handlePlus(event) {
-//   const plusButton = event.target; // Кнопка, на которую было нажатие
-//   const orderedItem = plusButton.closest('.ordered-item'); // Родительский элемент, содержащий товар
-//   const priceElement = orderedItem.querySelector('.ordered-item__price');
-//   const initialPrice = parseFloat(priceElement.textContent);
-//   const newPrice = initialPrice + initialPrice; // Добавляем изначальную цену к текущей цене
-//   priceElement.textContent = newPrice.toFixed(2);
-
-//   updateTotalPrice(); // Обновляем итоговую цену
-// }
 
 function handlePlus(event) {
   const plusButton = event.target; // Кнопка, на которую было нажатие
@@ -511,41 +502,31 @@ function handlePlus(event) {
   const priceText = priceElement.textContent;
   const regex = /[0-9]+(?:\.[0-9]+)?/; // Регулярное выражение для поиска числа
   const price = parseFloat(priceText.match(regex)[0]);
-  const newPrice = price + initialPricePizza; // Удваиваем цену товара
-  priceElement.textContent = priceText.replace(regex, newPrice.toFixed(2));
+  const initialPrice = parseFloat(orderedItem.dataset.price); // Получаем стоимость товара из атрибута данных
+  const newPrice = price + initialPrice; // Увеличиваем цену товара
+  priceElement.textContent = priceText.replace(regex, newPrice);
 
-  updateTotalPrice(); // Обновляем итоговую цену
+  const zeroButton = orderedItem.querySelector('.zero-btn');
+  const zeroValue = parseInt(zeroButton.textContent);
+  zeroButton.textContent = (zeroValue + 1).toString();
 }
 
-// function handlePlus(event) {
-//   const orderedItem = event.target.closest('.ordered-item');
-//   console.log(orderedItem);
-//   const priceElement = orderedItem.querySelector('.ordered-item__price');
-//   console.log(priceElement);
-//   let price = parseFloat(priceElement.textContent);
-//   price *= 2; // Удваиваем цену товара
-//   priceElement.textContent = price.toFixed(2);
+function handleMinus(event) {
+  const minusButton = event.target; // Кнопка, на которую было нажатие
+  const orderedItem = minusButton.closest('.ordered-item'); // Родительский элемент, содержащий товар
+  const priceElement = orderedItem.querySelector('.ordered-item__price');
+  const priceText = priceElement.textContent;
+  const regex = /[0-9]+(?:\.[0-9]+)?/; // Регулярное выражение для поиска числа
+  const price = parseFloat(priceText.match(regex)[0]);
+  const initialPrice = parseFloat(orderedItem.dataset.price); // Получаем стоимость товара из атрибута данных
+  const newPrice = price - initialPrice; // Уменьшаем цену товара
+ 
+  const zeroButton = orderedItem.querySelector('.zero-btn');
+  const zeroValue = parseInt(zeroButton.textContent);
 
-//   updateTotalPrice(); // Обновляем итоговую цену
-// }
-// const plusButtons = document.querySelectorAll('.ordered-item .plus-btn');
-// plusButtons.forEach(button => {
-//   button.addEventListener('click', handlePlus());
-// });
+  if (zeroValue > 1) {
+    priceElement.textContent = priceText.replace(regex, newPrice);
+    zeroButton.textContent = (zeroValue - 1).toString();
+  }
+}
 
-//! При нажатии на кнопку вызывается метод addEventListener и при клике передается вызов функции handlePlus()
-//* Создается строка, вызывается функция handlePlus(), и затем созданая строка и значение возвращенное функцией handlePlus() передаются аргументами в метод addEventListener вызваный у кнопки.
-
-minusButtons.forEach(button => {
-  button.addEventListener('click', function (event) {
-    const orderedItem = event.target.closest('.ordered-item');
-    const priceElement = orderedItem.querySelector('.ordered-item__price');
-    let price = parseFloat(priceElement.textContent);
-    if (price >= 1) {
-      price /= 2; // Уменьшаем цену товара вдвое
-      priceElement.textContent = price.toFixed(2);
-
-      updateTotalPrice(); // Обновляем итоговую цену
-    }
-  });
-});
