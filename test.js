@@ -509,7 +509,14 @@ function handlePlus(event) {
   const zeroButton = orderedItem.querySelector('.zero-btn');
   const zeroValue = parseInt(zeroButton.textContent);
   zeroButton.textContent = (zeroValue + 1).toString();
+
+  totalPricePizzaValue += initialPrice; // Увеличиваем значение переменной totalPricePizzaValue
+  totalPricePizzaValue = Math.round(totalPricePizzaValue * 100) / 100;
+  totalPricePizza.innerHTML = "Піца: " + totalPricePizzaValue + "&#x20B4";
+
+  updateTotalPrice();
 }
+
 
 function handleMinus(event) {
   const minusButton = event.target; // Кнопка, на которую было нажатие
@@ -527,6 +534,13 @@ function handleMinus(event) {
   if (zeroValue > 1) {
     priceElement.textContent = priceText.replace(regex, newPrice);
     zeroButton.textContent = (zeroValue - 1).toString();
+    
+    totalPricePizzaValue -= initialPrice; // Уменьшаем значение переменновой 
+    totalPricePizzaValue = Math.round(totalPricePizzaValue * 100) / 100;
+    totalPricePizza.innerHTML = "Піца: " + totalPricePizzaValue + "&#x20B4";
+    updateTotalPrice()
   }
+
+
 }
 

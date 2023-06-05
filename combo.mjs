@@ -5,7 +5,7 @@ const combo = [
     "description": "Піца Маргарита + Піца Мисливська + Піца Гавайська + Піца Вегетаріанська",  
     "cost": "combo-s-price",
     "data-i18n": "combo-s",
-    "data-price": "300",
+    "data-price": "190",
     "id": 28
   },
   {
@@ -14,7 +14,7 @@ const combo = [
     "description": "Піца Песто Прошуто 30см. + Піца Прованс 30см.+ Піца Українська 30см. + Coca-Cola 0.5л. 3шт",
     "cost": "combo-m-price",
     "data-i18n": "combo-m",
-    "data-price": "400",
+    "data-price": "230",
     "id": 29
   },
   {
@@ -23,7 +23,7 @@ const combo = [
     "description": "Піца Dolce Pere 30 см. + Тірольська 30см. + Чотири Сири. + Для Буслаєва 30см. + Coca-Cola 0.5л. 4шт.",
     "cost": "combo-l-price",
     "data-i18n": "combo-l",
-    "data-price": "500",
+    "data-price": "200",
     "id": 30
   }
 ]
