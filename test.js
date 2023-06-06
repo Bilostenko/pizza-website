@@ -176,19 +176,24 @@ showModal.addEventListener('click', function () {
 
 });
 // close modal window
-closeModal.addEventListener('click', function () {
+
+closeModal.addEventListener('click', function (event) {
   document.querySelector('.modal').style.display = "none";
   document.body.style.overflow = 'auto';
 
-  const itemToRemove = event.target.closest('.ordered-item');
-  orderedItems.removeChild(itemToRemove);
+  const itemToRemove = document.querySelectorAll('.ordered-item');
+  if (itemToRemove) {
+    orderedItems.remove(itemToRemove);
+  } else {
+    console.log('The element does not exist in the parent element.');
+  }
 
   totalPricePizzaValue = 0;
   totalPriceConstructorValue = 0;
 
   updateTotalPrice();
-
 });
+
 // submit order
 submit.addEventListener('click', function () {
   document.querySelector('.modal').style.display = "none";
