@@ -168,8 +168,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-
 // show modal window
 showModal.addEventListener('click', function () {
   showOrderedItems()
@@ -181,6 +179,15 @@ showModal.addEventListener('click', function () {
 closeModal.addEventListener('click', function () {
   document.querySelector('.modal').style.display = "none";
   document.body.style.overflow = 'auto';
+
+  const itemToRemove = event.target.closest('.ordered-item');
+  orderedItems.removeChild(itemToRemove);
+
+  totalPricePizzaValue = 0;
+  totalPriceConstructorValue = 0;
+
+  updateTotalPrice();
+
 });
 // submit order
 submit.addEventListener('click', function () {
@@ -378,7 +385,6 @@ drinks.forEach((card) => {
 });
 
 
-let initialPricePizza
 function showOrderedItems() {
   const language = localStorage.getItem('language') || 'en';
   fetch(`locales/${language}.json`)
@@ -527,14 +533,14 @@ function handleMinus(event) {
   const price = parseFloat(priceText.match(regex)[0]);
   const initialPrice = parseFloat(orderedItem.dataset.price); // Получаем стоимость товара из атрибута данных
   const newPrice = price - initialPrice; // Уменьшаем цену товара
- 
+
   const zeroButton = orderedItem.querySelector('.zero-btn');
   const zeroValue = parseInt(zeroButton.textContent);
 
   if (zeroValue > 1) {
     priceElement.textContent = priceText.replace(regex, newPrice);
     zeroButton.textContent = (zeroValue - 1).toString();
-    
+
     totalPricePizzaValue -= initialPrice; // Уменьшаем значение переменновой 
     totalPricePizzaValue = Math.round(totalPricePizzaValue * 100) / 100;
     totalPricePizza.innerHTML = "Піца: " + totalPricePizzaValue + "&#x20B4";
