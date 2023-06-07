@@ -181,18 +181,18 @@ closeModal.addEventListener('click', function (event) {
   document.querySelector('.modal').style.display = "none";
   document.body.style.overflow = 'auto';
 
-  const itemToRemove = document.querySelectorAll('.ordered-item');
-  if (itemToRemove) {
-    orderedItems.remove(itemToRemove);
-  } else {
-    console.log('The element does not exist in the parent element.');
-  }
+  const itemsToRemove = document.querySelectorAll('.ordered-item');
+  itemsToRemove.forEach(item => {
+    item.remove();
+    console.log(item)
+  });
 
   totalPricePizzaValue = 0;
   totalPriceConstructorValue = 0;
-
+  // selectedIds = [] !!! проблема в том была, что коллекция айди не чистилась и товары заново отрисовывались. проверь всё ли ок
   updateTotalPrice();
 });
+
 
 // submit order
 submit.addEventListener('click', function () {
