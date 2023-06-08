@@ -33,13 +33,16 @@ const closeModal = document.querySelector('.modal-close');
 const submit = document.querySelector('#submit');
 // check name
 const nameInput = document.getElementById("name");
+const nameInputCheck = document.querySelector('.name-validity-informer');
 // check email
 const emailInput = document.querySelector('#email');
+const emailInputCheck = document.querySelector('.email-validity-informer');
 // check phone
 const phoneInput = document.querySelector('#phone');
+const phoneInputCheck = document.querySelector('.phone-validity-informer');
 // check address
 const addressInput = document.querySelector('#address');
-
+const addressInputCheck = document.querySelector('.address-validity-informer');
 
 // назначение обработчиков событий-------------------
 
@@ -146,7 +149,6 @@ document.querySelector('a[href="#drinks-nav"]').addEventListener('click', functi
 });
 // add items to cart
 document.addEventListener('DOMContentLoaded', function () {
-  const addButtons = document.querySelectorAll('.add-to-cart-button');
 
   addButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -184,14 +186,28 @@ closeModal.addEventListener('click', function (event) {
   const itemsToRemove = document.querySelectorAll('.ordered-item');
   itemsToRemove.forEach(item => {
     item.remove();
-    console.log(item)
   });
 
   totalPricePizzaValue = 0;
   totalPriceConstructorValue = 0;
-  // selectedIds = [] !!! проблема в том была, что коллекция айди не чистилась и товары заново отрисовывались. проверь всё ли ок
+  selectedIds = [];
   updateTotalPrice();
+  updateCount();
+  // разблокировать кнопки, что бы можно было снова добавлять товар
+  addButtons.forEach(button => {
+    button.classList.remove('disabled');
+  });
+
+  // Обнулить цену на пиццу
+  totalPricePizza.innerHTML = "Піца: 0&#x20B4";
+
+  // Обнулить данные с формы инпут
+  const form = document.querySelector('.contact-info');
+  form.reset();
+
+  resetEnteredData()
 });
+
 
 
 // submit order
@@ -205,9 +221,9 @@ submit.addEventListener('click', function () {
     timer: 1500
   })
 });
+
 // check name
 nameInput.addEventListener("change", function () {
-  const nameInputCheck = document.querySelector('.name-validity-informer');
   if (nameInput.value === "" || !isValidName(nameInput.value)) {
     nameInputCheck.classList.add("visible");
   } else {
@@ -220,7 +236,6 @@ nameInput.addEventListener("change", function () {
 
 // check email
 emailInput.addEventListener("change", function () {
-  const emailInputCheck = document.querySelector('.email-validity-informer');
   if (emailInput.value === "" || !isValidName(emailInput.value)) {
     emailInputCheck.classList.add("visible");
   } else {
@@ -232,7 +247,6 @@ emailInput.addEventListener("change", function () {
 });
 // check phone
 phoneInput.addEventListener("change", function () {
-  const phoneInputCheck = document.querySelector('.phone-validity-informer');
   if (phoneInput.value === "" || !isValidName(phoneInput.value)) {
     phoneInputCheck.classList.add("visible");
   } else {
@@ -245,7 +259,6 @@ phoneInput.addEventListener("change", function () {
 
 // check address
 addressInput.addEventListener("blur", function () {
-  const addressInputCheck = document.querySelector('.address-validity-informer');
   if (addressInput.value === '') {
     addressInputCheck.classList.add("visible");
   } else {
@@ -551,7 +564,15 @@ function handleMinus(event) {
     totalPricePizza.innerHTML = "Піца: " + totalPricePizzaValue + "&#x20B4";
     updateTotalPrice()
   }
-
-
 }
 
+function resetEnteredData() {
+  nameInputCheck.classList.remove("visible");
+  emailInputCheck.classList.remove("visible");
+  phoneInputCheck.classList.remove("visible");
+  addressInputCheck.classList.remove("visible");
+}
+// 2. Кнопка Замовити видаляє всі данні
+// 3. Вибір місто має працювати корректно
+// 4. При натиску ескейп звернути модалку
+// 5.конструктор  піцци обнуляє значення при наж кнопки
