@@ -92,7 +92,7 @@ dropdown.addEventListener("change", function () {
     address1.setAttribute("data-i18n", "Yalta-address1");
     address2.setAttribute("data-i18n", "Yalta-address2");
   }
-  // updateTranslation();
+  updateTranslation();
 });
 /* drag and drop */
 dragItems.forEach(item => {
@@ -176,6 +176,7 @@ showModal.addEventListener('click', function () {
   document.querySelector('.modal').style.display = "block";
   document.body.style.overflow = 'hidden';
 
+  document.addEventListener('keydown', closeModalOnEsc);
 });
 // close modal window
 
@@ -183,6 +184,30 @@ closeModal.addEventListener('click', function (event) {
   document.querySelector('.modal').style.display = "none";
   document.body.style.overflow = 'auto';
 
+  resetValues();
+
+  closeModal();
+});
+
+
+
+// submit order
+submit.addEventListener('click', function () {
+
+  document.querySelector('.modal').style.display = "none";
+  document.body.style.overflow = 'auto';
+
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    showConfirmButton: false,
+    timer: 1500
+  });
+
+  resetValues();
+});
+
+function resetValues() {
   const itemsToRemove = document.querySelectorAll('.ordered-item');
   itemsToRemove.forEach(item => {
     item.remove();
@@ -193,34 +218,20 @@ closeModal.addEventListener('click', function (event) {
   selectedIds = [];
   updateTotalPrice();
   updateCount();
-  // разблокировать кнопки, что бы можно было снова добавлять товар
+
   addButtons.forEach(button => {
     button.classList.remove('disabled');
   });
 
-  // Обнулить цену на пиццу
   totalPricePizza.innerHTML = "Піца: 0&#x20B4";
+  totalPriceConstructor.innerHTML = "Конструктор піци: 0&#x20B4;";
+  totalPrice.innerHTML = "Всього: 0&#x20B4;";
 
-  // Обнулить данные с формы инпут
   const form = document.querySelector('.contact-info');
   form.reset();
-
-  resetEnteredData()
-});
-
-
-
-// submit order
-submit.addEventListener('click', function () {
-  document.querySelector('.modal').style.display = "none";
-  document.body.style.overflow = 'auto';
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    showConfirmButton: false,
-    timer: 1500
-  })
-});
+  clearSelectedIngredients();
+  resetEnteredData();
+}
 
 // check name
 nameInput.addEventListener("change", function () {
@@ -572,7 +583,27 @@ function resetEnteredData() {
   phoneInputCheck.classList.remove("visible");
   addressInputCheck.classList.remove("visible");
 }
-// 2. Кнопка Замовити видаляє всі данні
-// 3. Вибір місто має працювати корректно
-// 4. При натиску ескейп звернути модалку
-// 5.конструктор  піцци обнуляє значення при наж кнопки
+
+function clearSelectedIngredients(){
+  const checkboxes = document.querySelectorAll(".ingredient-input")
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  })
+}
+
+function closeModalOnEsc(event) {
+  if (event.key === 'Escape') {
+    EscModal();
+  }
+}
+
+function EscModal() {
+  document.querySelector('.modal').style.display = "none";
+  document.body.style.overflow = 'auto';
+
+  // Remove event listener for ESC key press
+  document.removeEventListener('keydown', closeModalOnEsc);
+}
+
+
+// 6. Додати переклад де його ще немає
