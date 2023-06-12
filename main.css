@@ -825,8 +825,11 @@ footer .container .footer__info-list li a {
   margin-top: 34px;
   padding: 10px;
   text-align: right;
+  display: flex;
 }
-.modal .modal-content .modal-footer .total__price-constructor, .modal .modal-content .modal-footer .total__price-pizza, .modal .modal-content .modal-footer .total__price {
+.modal .modal-content .modal-footer .total__price-constructor,
+.modal .modal-content .modal-footer .total__price-pizza,
+.modal .modal-content .modal-footer .total__price {
   color: #5f4b07;
   font-size: 19px;
   margin-right: 20px;
@@ -836,6 +839,9 @@ footer .container .footer__info-list li a {
 }
 .modal .modal-content .modal-footer .btn-flat {
   color: #5f4b07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   border: 1px solid #5f4b07;
   border-radius: 3px;
@@ -843,6 +849,7 @@ footer .container .footer__info-list li a {
   font-size: 16px;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 .modal .modal-content .modal-footer .btn-flat:hover {
   background-color: #d4af37;

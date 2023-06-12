@@ -30,6 +30,12 @@
     height: 63vmin;
     width: calc(100% - 73vmin);
   }
+
+  .modal-footer{
+    flex-direction: column;
+    font-weight: bold;
+  }
+
 }
 
 @media screen and (max-width: 990px) {
@@ -101,6 +107,10 @@
   /* statistics */
   .statistics .statistics__wrapper {
     font-size: 24px;
+  }
+
+  .ordered-items{
+    display: block !important;
   }
 }
 

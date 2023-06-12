@@ -604,6 +604,3 @@ function EscModal() {
   // Remove event listener for ESC key press
   document.removeEventListener('keydown', closeModalOnEsc);
 }
-
-
-// 6. Додати переклад де його ще немає
