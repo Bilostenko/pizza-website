@@ -319,19 +319,24 @@ span {
 
 
 .ingredient-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 75vmin;
-  width: calc(100% - 60vmin);
+  width: calc(100% - 130vmin);
   order: 3;
   border: 2px solid #d4af37;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  padding: 23px;
 }
 
 /* ingredient */
 
 .ingredient__list {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 10px;
@@ -340,6 +345,7 @@ span {
   list-style: none;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .ingredient {
@@ -868,6 +874,7 @@ footer {
       border-radius: 5px;
       box-shadow: 0px 2px 5px #d4af37;
 
+
       .ordered-item {
         display: flex;
         align-items: center;
@@ -877,6 +884,7 @@ footer {
         gap: 10px;
         border-radius: 5px;
         box-shadow: 0px 2px 5px #d4af37;
+
       }
 
       .ordered-item__name {
@@ -909,7 +917,7 @@ footer {
 
 
     #comment {
-     width: 400px;
+      width: 100%;
       height: 50px;
       resize: none;
     }
@@ -919,7 +927,7 @@ footer {
       padding: 10px;
       text-align: right;
       display: flex;
-    
+
 
       .total__price-constructor,
       .total__price-pizza,

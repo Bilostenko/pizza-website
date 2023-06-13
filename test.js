@@ -432,9 +432,11 @@ function showOrderedItems() {
               <img src="${itemPizza.image}" alt="${itemPizza.name}" width="100" height="100">
               <div class="ordered-item__name" pizza-name="${itemPizza['pizza-name']}">${data[itemPizza['pizza-name']]}</div>
               <div class="ordered-item__price" data-i18n="data-price">${data[itemPizza['cost']]}</div>
+              <div class="btns-wrapper">
               <button class="plus-btn">+</button>
               <button class="zero-btn">1</button>
-              <button class="minus-btn">-</button>`;
+              <button class="minus-btn">-</button>
+              </div>`;
             orderedItems.appendChild(pizzaItemDiv);
           }
 
@@ -584,7 +586,7 @@ function resetEnteredData() {
   addressInputCheck.classList.remove("visible");
 }
 
-function clearSelectedIngredients(){
+function clearSelectedIngredients() {
   const checkboxes = document.querySelectorAll(".ingredient-input")
   checkboxes.forEach(checkbox => {
     checkbox.checked = false;

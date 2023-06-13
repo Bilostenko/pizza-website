@@ -59,6 +59,15 @@
     width: 80px;
     height: 80px;
   }
+
+  .ingredient-text, .price{
+    font-size: 18px;
+  }
+  .ingredient-controls{
+        width: calc(100% - 85vmin);
+        border: none;
+         box-shadow: none;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -111,6 +120,13 @@
 
   .ordered-items{
     display: block !important;
+  }
+
+    .ordered-item{
+    flex-wrap: wrap;
+  }
+  .constructor__wrapper{
+    margin-top: 5rem;
   }
 }
 
@@ -174,6 +190,10 @@
 
   .sticky .menu__list .payment {
     font-size: 24px;
+  }
+
+  .payment-form>h2{
+    margin-bottom: 10px;
   }
 }
 
