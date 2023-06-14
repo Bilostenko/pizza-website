@@ -28,10 +28,10 @@
 
   .ingredient-controls {
     height: 63vmin;
-    width: calc(100% - 73vmin);
+
   }
 
-  .modal-footer{
+  .modal-footer {
     flex-direction: column;
     font-weight: bold;
   }
@@ -60,13 +60,27 @@
     height: 80px;
   }
 
-  .ingredient-text, .price{
+  .ingredient-text,
+  .price {
     font-size: 18px;
   }
-  .ingredient-controls{
-        width: calc(100% - 85vmin);
-        border: none;
-         box-shadow: none;
+
+  .ingredient-controls {
+    width: calc(100% - 85vmin);
+    height: 41vmin;
+    border: none;
+    box-shadow: none;
+  }
+
+  .constructor__wrapper {
+    flex-direction: column;
+  }
+
+  .ingredient__list {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+    margin-bottom: 10rem;
   }
 }
 
@@ -118,15 +132,20 @@
     font-size: 24px;
   }
 
-  .ordered-items{
+  .ordered-items {
     display: block !important;
   }
 
-    .ordered-item{
+  .ordered-item {
     flex-wrap: wrap;
   }
-  .constructor__wrapper{
+
+  /* .constructor__wrapper {
     margin-top: 5rem;
+  } */
+
+  .price {
+    margin-bottom: 10px;
   }
 }
 
@@ -158,9 +177,10 @@
     font-size: 16px;
   }
 
-  footer .container .footer__info-list{
+  footer .container .footer__info-list {
     flex-direction: column;
   }
+
   footer {
     height: 380px;
   }
@@ -192,7 +212,7 @@
     font-size: 24px;
   }
 
-  .payment-form>h2{
+  .payment-form>h2 {
     margin-bottom: 10px;
   }
 }
