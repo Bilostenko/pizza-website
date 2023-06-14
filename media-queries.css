@@ -22,13 +22,16 @@
   }
 
   .ingredient__list {
-    width: 80%;
     height: 80%;
+    margin-bottom: 10rem;
+    grid-gap: 33px
   }
 
   .ingredient-controls {
     height: 63vmin;
-
+    border: none;
+    box-shadow: none;
+    margin-right: 100px;
   }
 
   .modal-footer {
@@ -81,6 +84,15 @@
     grid-template-rows: repeat(2, 1fr);
     position: relative;
     margin-bottom: 10rem;
+  }
+
+  .preview {
+    height: 40vmin;
+    width: 40vmin;
+  }
+
+  .ingredient-controls {
+    height: 30vmin;
   }
 }
 
@@ -139,10 +151,6 @@
   .ordered-item {
     flex-wrap: wrap;
   }
-
-  /* .constructor__wrapper {
-    margin-top: 5rem;
-  } */
 
   .price {
     margin-bottom: 10px;
@@ -215,6 +223,26 @@
   .payment-form>h2 {
     margin-bottom: 10px;
   }
+
+  .ingredient-text,
+  .price {
+    font-size: 15px;
+  }
+
+  .ingredient__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin-top: 40px;
+  }
+
+  .constructor__wrapper {
+    margin-bottom: 80px;
+
+  }
+
+  .size-controls>label {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 470px) {
@@ -253,5 +281,11 @@
   .navbar .container .nav__block .nav__address-second,
   .navbar .container .nav__block .nav__orders {
     margin-top: 10px;
+  }
+
+  .size-controls {
+    flex-direction: column;
+    margin-top: 36px;
+    gap: 7px;
   }
 }
